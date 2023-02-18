@@ -18,15 +18,46 @@ def chamarMetodo():
 def Bis():
     print("método da bissecção")
 def FalsaPos():
-    print("método da bissecção")
+    print("método da falsa posição")
 def PontoFixo():
-    print("método da bissecção")
+    print("método do ponto fixo")
 def Secante():
-    print("método da bissecção")
+    print("método da secante")
 def Newton():
-    print("método da bissecção")
+    print("método de newton")
 window = Tk()
-
+fLabel = Label( window,
+                text ='função')
+fLabel.pack()
+fEntry = Entry(
+    window,
+    font=("Arial", 15)
+)
+fEntry.pack()
+aLabel = Label( window,
+                text ='início do intervalo')
+aLabel.pack()
+aEntry = Entry(
+    window,
+    font=("Arial", 15)
+)
+aEntry.pack()
+bLabel = Label( window,
+                text ='final do intervalo')
+bLabel.pack()
+bEntry = Entry(
+    window,
+    font=("Arial", 15)
+)
+bEntry.pack()
+pLabel = Label( window,
+                text ='precisão')
+pLabel.pack()
+pEntry = Entry(
+    window,
+    font=("Arial", 15)
+)
+pEntry.pack()
 metodo = StringVar()
 
 for i in range(len(metodos)):
@@ -34,7 +65,9 @@ for i in range(len(metodos)):
                         text=metodos[i],
                         variable=metodo,
                         value=metodos[i],
-                        command=chamarMetodo)
+                        command=chamarMetodo,
+                        indicatoron=0,
+                        bg="gray")
     opc.pack()
 
 window.mainloop()
