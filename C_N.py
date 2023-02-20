@@ -25,7 +25,7 @@ def Secante():
     print("método da secante")
 def Newton():
     print("método de newton")
-def equacao():
+class Equacao():
     equ = fEntry.get()
     print("em progresso")
 window = Tk()
