@@ -25,13 +25,16 @@ def Secante():
     print("método da secante")
 def Newton():
     print("método de newton")
+def equacao():
+    equ = fEntry.get()
+    print("em progresso")
 window = Tk()
 fLabel = Label( window,
                 text ='função')
 fLabel.pack()
 fEntry = Entry(
     window,
-    font=("Arial", 15)
+    font=("Arial", 15),
 )
 fEntry.pack()
 aLabel = Label( window,
