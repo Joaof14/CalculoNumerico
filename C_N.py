@@ -1,33 +1,37 @@
 from tkinter import *
+from sympy import expand, Symbol, Subs
 
-metodos = ("Bissecção", "Falsa Posição", "Ponto Fixo", "Secante", "Newton")
 
-def chamarMetodo():
-    if metodo.get() == metodos[0]:
-        Bis()
-    elif metodo.get() == metodos[1]:
-        FalsaPos()
-    elif metodo.get() == metodos[2]:
-        PontoFixo()
-    elif metodo.get() == metodos[3]:
-        Secante()
-    elif metodo.get() == metodos[4]:
-        Newton()
+class Metodos():
+    nomes = ("Bissecção", "Falsa Posição", "Ponto Fixo", "Secante", "Newton")
+    def Variaveis(F, A, B, P):
+        a = a
+        b = b
+        P = P
+        f = F
+    def Bis():
+        print("método da bissecção")
+    def FalsaPos():
+        print("método da falsa posição")
+    def PontoFixo():
+        print("método do ponto fixo")
+    def Secante():
+        print("método da secante")
+    def Newton():
+        print("método de newton")
+def verificaMetodo():
+    if metodo.get() == Metodos.nomes[0]:
+        Metodos.Bis()
+    elif metodo.get() == Metodos.nomes[1]:
+        Metodos.FalsaPos()
+    elif metodo.get() == Metodos.nomes[2]:
+        Metodos.PontoFixo()
+    elif metodo.get() == Metodos.nomes[3]:
+        Metodos.Secante()
+    elif metodo.get() == Metodos.nomes[4]:
+        Metodos.Newton()
     else:
         print("método não selecionado")
-def Bis():
-    print("método da bissecção")
-def FalsaPos():
-    print("método da falsa posição")
-def PontoFixo():
-    print("método do ponto fixo")
-def Secante():
-    print("método da secante")
-def Newton():
-    print("método de newton")
-class Equacao():
-    equ = fEntry.get()
-    print("em progresso")
 window = Tk()
 fLabel = Label( window,
                 text ='função')
@@ -37,6 +41,7 @@ fEntry = Entry(
     font=("Arial", 15),
 )
 fEntry.pack()
+xS = Symbol('x')
 aLabel = Label( window,
                 text ='início do intervalo')
 aLabel.pack()
@@ -63,14 +68,13 @@ pEntry = Entry(
 pEntry.pack()
 metodo = StringVar()
 
-for i in range(len(metodos)):
+for i in range(len(Metodos.nomes)):
     opc = Radiobutton(  window,
-                        text=metodos[i],
+                        text=Metodos.nomes[i],
                         variable=metodo,
-                        value=metodos[i],
-                        command=chamarMetodo,
+                        value=Metodos.nomes[i],
+                        command=verificaMetodo,
                         indicatoron=0,
                         bg="gray")
     opc.pack()
-
 window.mainloop()
