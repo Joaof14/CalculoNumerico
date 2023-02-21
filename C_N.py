@@ -1,18 +1,17 @@
 from tkinter import *
 from sympy import expand, Symbol, Subs
-
+xS = Symbol('x')
 class Metodos():
     nomes = ("Bissecção", "Falsa Posição", "Ponto Fixo", "Secante", "Newton")
     f = None
     a = None
     b = None
     p = None
+    
     def Bis():
         print("método da bissecção")
-        print(Metodos.f)
     def FalsaPos():
         print("método da falsa posição")
-        print(Metodos.b)
     def PontoFixo():
         print("método do ponto fixo")
     def Secante():
@@ -28,7 +27,6 @@ fEntry = Entry(
     font=("Arial", 15),
 )
 fEntry.pack()
-xS = Symbol('x')
 aLabel = Label( window,
                 text ='início do intervalo')
 aLabel.pack()
@@ -56,10 +54,10 @@ pEntry.pack()
 metodo = StringVar()
 def chamaMetodo():
     #atualiza atributos do metodo
-    Metodos.f = fEntry.get()
-    Metodos.a = aEntry.get()
-    Metodos.b = bEntry.get()
-    Metodos.p = pEntry.get()
+    Metodos.f = expand(fEntry.get())
+    Metodos.a = int(aEntry.get())
+    Metodos.b = int(bEntry.get())
+    Metodos.p = int(pEntry.get())
     #checa o método a ser utilzado
     if metodo.get() == Metodos.nomes[0]:
         Metodos.Bis()
