@@ -1,20 +1,18 @@
 from tkinter import *
 from sympy import expand, Symbol, Subs
-q = None
-w = None
-e = None
-r = None
+
 class Metodos():
     nomes = ("Bissecção", "Falsa Posição", "Ponto Fixo", "Secante", "Newton")
-    f = q
-    a = w
-    b = e
-    p = r
+    f = None
+    a = None
+    b = None
+    p = None
     def Bis():
         print("método da bissecção")
         print(Metodos.f)
     def FalsaPos():
         print("método da falsa posição")
+        print(Metodos.b)
     def PontoFixo():
         print("método do ponto fixo")
     def Secante():
@@ -56,11 +54,13 @@ pEntry = Entry(
 )
 pEntry.pack()
 metodo = StringVar()
-def verificaMetodo():
-    q = fEntry.get()
-    w = aEntry.get()
-    e = bEntry.get()
-    r = pEntry.get()
+def chamaMetodo():
+    #atualiza atributos do metodo
+    Metodos.f = fEntry.get()
+    Metodos.a = aEntry.get()
+    Metodos.b = bEntry.get()
+    Metodos.p = pEntry.get()
+    #checa o método a ser utilzado
     if metodo.get() == Metodos.nomes[0]:
         Metodos.Bis()
     elif metodo.get() == Metodos.nomes[1]:
@@ -78,7 +78,7 @@ for i in range(len(Metodos.nomes)):
                         text=Metodos.nomes[i],
                         variable=metodo,
                         value=Metodos.nomes[i],
-                        command=verificaMetodo,
+                        command=chamaMetodo,
                         indicatoron=0,
                         bg="gray")
     opc.pack()
