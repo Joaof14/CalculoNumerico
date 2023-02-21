@@ -9,7 +9,25 @@ class Metodos():
     p = None
     
     def Bis():
-        print("método da bissecção")
+        print('')
+        while True:
+            cond = (Metodos.f.subs(xS,Metodos.a))*(Metodos.f.subs(xS,Metodos.b))
+            print(cond)
+            if cond < Metodos.p:
+                x = (Metodos.a+Metodos.b)/2
+                if abs(Metodos.a) > abs(Metodos.b):
+                    Metodos.a = x
+                else:
+                    Metodos.b = x
+            elif cond > Metodos.p:
+                print("não há zero na função")
+                break
+            else:
+                if (Metodos.f.subs(xS,Metodos.a) == Metodos.p):
+                    print("a raíz da função é: ", Metodos.a)
+                else:
+                    print("a raíz da função é: ", Metodos.b)
+                break
     def FalsaPos():
         print("método da falsa posição")
     def PontoFixo():
