@@ -9,33 +9,48 @@ class CalcZeroF():
     p = None
     fa = None
     fb = None
+    cond = True
+    def calc(self, x):
+        fx = self.f.subs(xS, x)
+        if self.fa*self.fb < 0:
+            if abs(fx) < self.p:
+                print("a raíz da função é: ", x)
+                self.cond = False
+            else:
+                if abs(self.fa)>abs(self.fb):
+                    self.a = x
+                else:
+                    self.b = x
+                    print("")
+        elif self.fa*self.fb == 0:
+            if self.fa == 0:
+                print("a raíz da função é: ", self.a)
+            else:
+                print("a raíz da função é: ", self.b)
+            self.cond = False
+        elif self.a==self.b:
+            print("sem raízes no intervalo")
+            self.cond = False
+        else:
+            if self.a > self.b:
+                self.a -= 1
+            else:
+                self.b -=1
+        return self.cond
     def Bis(self):
         print('')
-        while True:
+        while self.cond:
             x = (self.a + self.b)/2
-            fx = self.f.subs(xS, x)
             print("a: ",self.a,"b: ",self.b,"x: ", x)
-            if self.fa*self.fb < 0:
-                if abs(fx) < self.p:
-                    print("a raíz da função é: ", x)
-                    break
-                else:
-                    if abs(self.fa)>abs(self.fb):
-                        self.a = x
-                    else:
-                        self.b = x
-                    print("")
-            elif self.fa*self.fb == 0:
-                if self.fa == 0:
-                    print("a raíz da função é: ", self.a)
-                else:
-                    print("a raíz da função é: ", self.b)
-                break
-            else:
-                print("sem raízes no intervalo")
-                break
-    def FalsaPos():
+            self.calc(self,x)
+        self.cond = True        
+    def FalsaPos(self):
         print("método da falsa posição")
+        while True:
+            x = ((self.a*self.fb)-(self.b*self.a))/(self.b-self.a)
+            print("a: ",self.a,"b: ",self.b,"x: ", x)
+            self.calc(self,x)
+        self.cond = True
     def PontoFixo():
         print("método do ponto fixo")
     def Secante():
@@ -79,8 +94,8 @@ metodo = StringVar()
 def chamaMetodo():
     #atualiza atributos do metodo
     CalcZeroF.f = expand(fEntry.get())
-    CalcZeroF.a = int(aEntry.get())
-    CalcZeroF.b = int(bEntry.get())
+    CalcZeroF.a = float(aEntry.get())
+    CalcZeroF.b = float(bEntry.get())
     CalcZeroF.p = float(pEntry.get())
     CalcZeroF.fa = CalcZeroF.f.subs(xS, CalcZeroF.a)
     CalcZeroF.fb = CalcZeroF.f.subs(xS, CalcZeroF.b)
@@ -88,7 +103,7 @@ def chamaMetodo():
     if metodo.get() == CalcZeroF.nomes[0]:
         CalcZeroF.Bis(self=CalcZeroF)
     elif metodo.get() == CalcZeroF.nomes[1]:
-        CalcZeroF.FalsaPos()
+        CalcZeroF.FalsaPos(self=CalcZeroF)
     elif metodo.get() == CalcZeroF.nomes[2]:
         CalcZeroF.PontoFixo()
     elif metodo.get() == CalcZeroF.nomes[3]:
