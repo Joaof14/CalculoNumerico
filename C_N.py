@@ -1,34 +1,39 @@
 from tkinter import *
 from sympy import expand, Symbol, Subs
 xS = Symbol('x')
-class Metodos():
+class CalcZeroF():
     nomes = ("Bissecção", "Falsa Posição", "Ponto Fixo", "Secante", "Newton")
     f = None
     a = None
     b = None
     p = None
-    
-    def Bis():
+    fa = None
+    fb = None
+    def Bis(self):
         print('')
         while True:
-            cond = (Metodos.f.subs(xS,Metodos.a))*(Metodos.f.subs(xS,Metodos.b))
-            print(cond)
-            x = (Metodos.a+Metodos.b)/2
-            print("loop; a: ",Metodos.a, "b: ",Metodos.b, "x: ",x)
-            if cond <= 0: #possui raiz entre a e b
-                if (abs(Metodos.f.subs(xS,Metodos.a)) <= Metodos.p):
-                    print("a raíz da função é: ", Metodos.a)
-                elif (abs(Metodos.f.subs(xS,Metodos.a))) <= Metodos.p:
-                    print("a raíz da função é: ", Metodos.b)
-                else:    
-                    if abs(Metodos.a) > abs(Metodos.b):
-                        Metodos.a = x
+            x = (self.a + self.b)/2
+            fx = self.f.subs(xS, x)
+            print("a: ",self.a,"b: ",self.b,"x: ", x)
+            if self.fa*self.fb < 0:
+                if abs(fx) < self.p:
+                    print("a raíz da função é: ", x)
+                    break
+                else:
+                    if abs(self.fa)>abs(self.fb):
+                        self.a = x
                     else:
-                        Metodos.b = x
-            else:
-                print("não há zero na função")
+                        self.b = x
+                    print("")
+            elif self.fa*self.fb == 0:
+                if self.fa == 0:
+                    print("a raíz da função é: ", self.a)
+                else:
+                    print("a raíz da função é: ", self.b)
                 break
-            
+            else:
+                print("sem raízes no intervalo")
+                break
     def FalsaPos():
         print("método da falsa posição")
     def PontoFixo():
@@ -73,28 +78,30 @@ pEntry.pack()
 metodo = StringVar()
 def chamaMetodo():
     #atualiza atributos do metodo
-    Metodos.f = expand(fEntry.get())
-    Metodos.a = int(aEntry.get())
-    Metodos.b = int(bEntry.get())
-    Metodos.p = int(pEntry.get())
+    CalcZeroF.f = expand(fEntry.get())
+    CalcZeroF.a = int(aEntry.get())
+    CalcZeroF.b = int(bEntry.get())
+    CalcZeroF.p = float(pEntry.get())
+    CalcZeroF.fa = CalcZeroF.f.subs(xS, CalcZeroF.a)
+    CalcZeroF.fb = CalcZeroF.f.subs(xS, CalcZeroF.b)
     #checa o método a ser utilzado
-    if metodo.get() == Metodos.nomes[0]:
-        Metodos.Bis()
-    elif metodo.get() == Metodos.nomes[1]:
-        Metodos.FalsaPos()
-    elif metodo.get() == Metodos.nomes[2]:
-        Metodos.PontoFixo()
-    elif metodo.get() == Metodos.nomes[3]:
-        Metodos.Secante()
-    elif metodo.get() == Metodos.nomes[4]:
-        Metodos.Newton()
+    if metodo.get() == CalcZeroF.nomes[0]:
+        CalcZeroF.Bis(self=CalcZeroF)
+    elif metodo.get() == CalcZeroF.nomes[1]:
+        CalcZeroF.FalsaPos()
+    elif metodo.get() == CalcZeroF.nomes[2]:
+        CalcZeroF.PontoFixo()
+    elif metodo.get() == CalcZeroF.nomes[3]:
+        CalcZeroF.Secante()
+    elif metodo.get() == CalcZeroF.nomes[4]:
+        CalcZeroF.Newton()
     else:
         print("método não selecionado")
-for i in range(len(Metodos.nomes)):
+for i in range(len(CalcZeroF.nomes)):
     opc = Radiobutton(  window,
-                        text=Metodos.nomes[i],
+                        text=CalcZeroF.nomes[i],
                         variable=metodo,
-                        value=Metodos.nomes[i],
+                        value=CalcZeroF.nomes[i],
                         command=chamaMetodo,
                         indicatoron=0,
                         bg="gray")
