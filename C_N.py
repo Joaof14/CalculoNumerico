@@ -12,30 +12,28 @@ class CalcZeroF():
     cond = True
     def calc(self, x):
         fx = self.f.subs(xS, x)
-        if self.fa*self.fb < 0:
+        if self.fa*self.fb <= 0:
             if abs(fx) < self.p:
                 print("a raíz da função é: ", x)
                 self.cond = False
+            elif self.fa == 0:
+                print("a raíz da função é: ", self.a)
+            elif self.fb == 0:
+                print("a raíz da função é: ", self.b)
             else:
                 if abs(self.fa)>abs(self.fb):
                     self.a = x
                 else:
                     self.b = x
-                    print("")
-        elif self.fa*self.fb == 0:
-            if self.fa == 0:
-                print("a raíz da função é: ", self.a)
-            else:
-                print("a raíz da função é: ", self.b)
-            self.cond = False
-        elif self.a==self.b:
-            print("sem raízes no intervalo")
-            self.cond = False
+                    print("")     
         else:
             if self.a > self.b:
                 self.a -= 1
-            else:
+            elif self.a<self.b:
                 self.b -=1
+            else:
+                print("sem raízes no intervalo")
+                self.cond = False
         return self.cond
     def Bis(self):
         print('')
