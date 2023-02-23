@@ -1,12 +1,6 @@
 from tkinter import *
 from Calc import CalcZeroF
 
-def graf():
-    if fEntry.get():
-        print("ok")
-        CalcZeroF.grafico(self=CalcZeroF, f = fEntry.get())
-    else:
-        print('not ok')
 
 #função para chamar a classe com parametros para seus atributos
 def chamaClasse():
@@ -17,7 +11,7 @@ def chamaClasse():
     pr = pEntry.get()
     metd = metodo.get()
     #chama metodo para atualizar atributos da classe e verificar metodo de calculo escolhido
-    CalcZeroF.verificaMetodo(self = CalcZeroF, f=fun, a=aI, b=bI,p=pr,metodo=metd)
+    CalcZeroF.Controle(self = CalcZeroF, f=fun, a=aI, b=bI,p=pr,metodo=metd)
 
 window = Tk() #instanciando a classe Tk para criar uma janela
 
@@ -30,13 +24,6 @@ fEntry = Entry(
     font=("Arial", 15), #cria prompt de entrada
 )
 fEntry.pack()
-
-grafi = Button(  
-            window, 
-            text='gráfico da função',
-            font=("Arial", 15),
-            command=graf)
-grafi.pack()
 
 aLabel = Label( 
         window,
@@ -75,4 +62,5 @@ for i in range(len(CalcZeroF.nomes)):
                         indicatoron=0,
                         bg="gray")
     opc.pack()
+
 window.mainloop() #faz janela aparecer

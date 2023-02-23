@@ -8,13 +8,17 @@ class CalcZeroF():
 
     #declarando variáveis
     nomes = ("Bissecção", "Falsa Posição", "Ponto Fixo", "Secante", "Newton")
+
     #função para verificar metodo chamado
-    def verificaMetodo(self, f,a,b,p, metodo):
+    def Controle(self, f,a,b,p, metodo):
         self.f = expand(f)
         self.a = float(a)
         self.b = float(b)
         self.p = float(p)
         self.cond = True
+
+        self.grafico(self, self.f, self.a, self.b)
+
         #checa o método a ser utilzado
         if metodo == self.nomes[0]:
             self.Bis(self=CalcZeroF)
@@ -30,11 +34,10 @@ class CalcZeroF():
             print("método não selecionado")
 
     #função para gráfico
-    def grafico(self, f):
-        self.f = expand(f)
+    def grafico(self, f,a,b):
         print("função chamada")
         try:
-            plot(self.f)
+            plot(self.f,(xS,a,b))
         except:
             print("something wrong")
 
