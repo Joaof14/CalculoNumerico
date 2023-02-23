@@ -1,4 +1,5 @@
 from sympy import expand, Symbol, Subs
+from sympy.plotting import plot
 xS = Symbol('x') #declarando que o caractere x no input será tratado 
 #como um símbolo e será armazenado na variavel xS
 
@@ -7,15 +8,13 @@ class CalcZeroF():
 
     #declarando variáveis
     nomes = ("Bissecção", "Falsa Posição", "Ponto Fixo", "Secante", "Newton")
-    cond = True
     #função para verificar metodo chamado
     def verificaMetodo(self, f,a,b,p, metodo):
         self.f = expand(f)
         self.a = float(a)
         self.b = float(b)
         self.p = float(p)
-        self.fa = self.f.subs(xS, a)
-        self.fb = self.f.subs(xS, b)
+        self.cond = True
         #checa o método a ser utilzado
         if metodo == self.nomes[0]:
             self.Bis(self=CalcZeroF)
@@ -29,6 +28,10 @@ class CalcZeroF():
             self.Newton()
         else:
             print("método não selecionado")
+
+    #função para gráfico
+    def grafico(self, f):
+        print("função chamada")
 
     #função para calculo geral
     def calc(self, x):
@@ -57,17 +60,21 @@ class CalcZeroF():
     #método da bissecção, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def Bis(self):
         while self.cond:
+            self.fa = self.f.subs(xS, self.a) #descobrimos f(a) e fb substituindo a e b em f(x)
+            self.fb = self.f.subs(xS, self.b) #para isso, é usado a função a subs
             x = (self.a + self.b)/2
             print("a: ",self.a,"b: ",self.b,"x: ", x)
             self.cond = self.calc(self,x)
+
     #método da falsa posição, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def FalsaPos(self):
         print("método da falsa posição")
-        while True:
-            x = ((self.a*self.fb)-(self.b*self.a))/(self.b-self.a)
+        while self.cond:
+            self.fa = self.f.subs(xS, self.a) 
+            self.fb = self.f.subs(xS, self.b)
+            x = ((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa)
             print("a: ",self.a,"b: ",self.b,"x: ", x)
             self.cond = self.calc(self,x)
-       
 
     #método do ponto fixo, com seu respectivo x
     def PontoFixo():

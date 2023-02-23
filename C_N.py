@@ -1,17 +1,44 @@
 from tkinter import *
 from Calc import CalcZeroF
 
-window = Tk()
+def graf():
+    if fEntry:
+        print("ok")
+    CalcZeroF.grafico(self=CalcZeroF, f=0)
+
+#função para chamar a classe com parametros para seus atributos
+def chamaClasse():
+    #atualiza variáveis que serão parametros para atributos da classe
+    fun = fEntry.get()
+    aI = aEntry.get()
+    bI = bEntry.get()
+    pr = pEntry.get()
+    metd = metodo.get()
+    #chama metodo para atualizar atributos da classe e verificar metodo de calculo escolhido
+    CalcZeroF.verificaMetodo(self = CalcZeroF, f=fun, a=aI, b=bI,p=pr,metodo=metd)
+
+window = Tk() #instanciando a classe Tk para criar uma janela
+
 fLabel = Label( window,
-                text ='função')
-fLabel.pack()
+                text ='função') #cria label e indica o que nele deve estar escrito
+fLabel.pack() #insere label na janela
+
 fEntry = Entry(
     window,
-    font=("Arial", 15),
+    font=("Arial", 15), #cria prompt de entrada
 )
 fEntry.pack()
-aLabel = Label( window,
-                text ='início do intervalo')
+
+grafi = Button(  
+            window, 
+            text='gráfico da função',
+            font=("Arial", 15),
+            command=graf)
+grafi.pack()
+
+aLabel = Label( 
+        window,
+        text ='início do intervalo')
 aLabel.pack()
 aEntry = Entry(
     window,
@@ -36,17 +63,7 @@ pEntry = Entry(
 pEntry.pack()
 metodo = StringVar()
 
-#função para chamar a classe com parametros para seus atributos
-def chamaClasse():
-    #atualiza variáveis que serão parametros para atributos da classe
-    fun = fEntry.get()
-    aI = aEntry.get()
-    bI = bEntry.get()
-    pr = pEntry.get()
-    metd = metodo.get()
-
-    CalcZeroF.verificaMetodo(self = CalcZeroF, f=fun, a=aI, b=bI,p=pr,metodo=metd)
-
+#cria botões de seleção para escolher método de cálculo
 for i in range(len(CalcZeroF.nomes)):
     opc = Radiobutton(  window,
                         text=CalcZeroF.nomes[i],
@@ -56,4 +73,4 @@ for i in range(len(CalcZeroF.nomes)):
                         indicatoron=0,
                         bg="gray")
     opc.pack()
-window.mainloop()
+window.mainloop() #faz janela aparecer
