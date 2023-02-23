@@ -36,6 +36,7 @@ class CalcZeroF():
     #função para calculo geral
     def calc(self, x):
         fx = self.f.subs(xS, x)
+        print("fx: ", fx)
         if self.fa*self.fb <= 0:
             if abs(fx) < self.p:
                 print("a raíz da função é: ", x)
@@ -47,7 +48,7 @@ class CalcZeroF():
                 print("a raíz da função é: ", self.b)
                 self.cond = False
             else:
-                if abs(self.fa)>abs(self.fb):
+                if self.fa*fx > 0:
                     self.a = x
                 else:
                     self.b = x
@@ -74,6 +75,7 @@ class CalcZeroF():
             self.fb = self.f.subs(xS, self.b)
             x = ((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa)
             print("a: ",self.a,"b: ",self.b,"x: ", x)
+            print("fa: ",self.fa,"fb: ",self.fb, "fx: ", self.f)
             self.cond = self.calc(self,x)
 
     #método do ponto fixo, com seu respectivo x
