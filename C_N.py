@@ -5,6 +5,8 @@ def graf():
     if fEntry.get():
         print("ok")
         CalcZeroF.grafico(self=CalcZeroF, f = fEntry.get())
+    else:
+        print('not ok')
 
 #função para chamar a classe com parametros para seus atributos
 def chamaClasse():
