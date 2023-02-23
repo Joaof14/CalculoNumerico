@@ -31,7 +31,12 @@ class CalcZeroF():
 
     #função para gráfico
     def grafico(self, f):
+        self.f = expand(f)
         print("função chamada")
+        try:
+            plot(self.f)
+        except:
+            print("something wrong")
 
     #função para calculo geral
     def calc(self, x):

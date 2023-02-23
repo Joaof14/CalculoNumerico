@@ -2,9 +2,9 @@ from tkinter import *
 from Calc import CalcZeroF
 
 def graf():
-    if fEntry:
+    if fEntry.get():
         print("ok")
-    CalcZeroF.grafico(self=CalcZeroF, f=0)
+        CalcZeroF.grafico(self=CalcZeroF, f = fEntry.get())
 
 #função para chamar a classe com parametros para seus atributos
 def chamaClasse():
