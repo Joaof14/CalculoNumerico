@@ -32,12 +32,11 @@ class CalcZeroF():
             self.Newton()
         else:
             print("método não selecionado")
-
+        self.gr.show()
     #função para gráfico
     def grafico(self, f,a,b):
-        print("função chamada")
         try:
-            plot(self.f,(xS,a,b))
+            self.gr = plot(self.f,(xS,a,b),show = False)
         except:
             print("something wrong")
 
