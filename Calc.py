@@ -68,7 +68,7 @@ class CalcZeroF():
     #método da bissecção, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def Bis(self):
         self.linha = self.linha + "método da bissecção \n \n"
-        while self.cond and self.iter <= 5:
+        while self.cond and self.iter <= 50:
             self.fa = self.f.subs(xS, self.a) #descobrimos f(a) e fb substituindo a e b em f(x)
             self.fb = self.f.subs(xS, self.b) #para isso, é usado a função a subs
             x = (self.a + self.b)/2
@@ -77,7 +77,7 @@ class CalcZeroF():
     #método da falsa posição, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def FalsaPos(self):
         self.linha = self.linha + "método da bissecção \n \n"
-        while self.cond and self.iter <= 5:
+        while self.cond and self.iter <= 50:
             self.fa = self.f.subs(xS, self.a) 
             self.fb = self.f.subs(xS, self.b)
             x = ((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa)
