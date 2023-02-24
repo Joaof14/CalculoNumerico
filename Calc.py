@@ -31,6 +31,7 @@ class CalcZeroF():
 
     #função para calculo geral
     def calc(self, x):
+        self.linha += 'iteração: ' + str(self.iter) + '\n' 
         self.iter  += 1
         self.linha += "a: "+ str(self.a) + "    fa: "+ str(self.fa) + "\n"
         self.linha += "b: " + str(self.b) + "   fb: " + str(self.fb) + "\n"
@@ -57,8 +58,7 @@ class CalcZeroF():
                     self.linha += "Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano \n"
                     self.linha += "sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo \n"
                     self.linha += "portanto existe pelo menos uma raíz entre eles, com isso a recebe x \n \n"
-                    self.b = x 
-                self.linha += 'iteração: ' + str(self.iter) + '\n'  
+                    self.b = x  
         else:
             self.linha+= "não há garantia de raíz no local"
             self.cond=False

@@ -74,4 +74,23 @@ for i in range(len(CalcZeroF.nomes)):
                         bg="gray")
     opc.pack()
 
+fILabel = Label( window,
+                text ='função de iteração, caso exista') #cria label e indica o que nele deve estar escrito
+fILabel.pack() #insere label na janela
+fIEntry = Entry(
+    window,
+    font=("Arial", 15), #cria prompt de entrada
+)
+fIEntry.pack()
+
+chuteILabel = Label( window,
+                text ='chute inicial para metodo de newton e ponto fixo') #cria label e indica o que nele deve estar escrito
+chuteILabel.pack() #insere label na janela
+chuteIEntry = Entry(
+    window,
+    font=("Arial", 15), #cria prompt de entrada
+)
+chuteIEntry.pack()
+
+
 window.mainloop() #faz janela aparecer
