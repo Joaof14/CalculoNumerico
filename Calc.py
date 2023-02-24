@@ -11,7 +11,7 @@ class CalcZeroF():
     #declarando variáveis
     nomes = ("Bissecção", "Falsa Posição", "Ponto Fixo", "Secante", "Newton")
     #função para verificar metodo chamado
-    def Controle(self, f,a,b,p, metodo):
+    def Atribui(self, f,a,b,p):
         self.f = expand(f)
         self.a = float(a)
         self.b = float(b)
@@ -20,22 +20,7 @@ class CalcZeroF():
         self.linha = ""
         self.file = open("resolução.txt","w")
         self.file.close()
-        self.grafico(self, self.f, self.a, self.b)
-
-        #checa o método a ser utilzado
-        if metodo == self.nomes[0]:
-            self.Bis(self=CalcZeroF)
-        elif metodo == self.nomes[1]:
-            self.FalsaPos(self=CalcZeroF)
-        elif metodo == self.nomes[2]:
-            self.PontoFixo()
-        elif metodo == self.nomes[3]:
-            self.Secante()
-        elif metodo == self.nomes[4]:
-            self.Newton()
-        else:
-            print("método não selecionado")
-        self.gr.show()
+        
     #função para gráfico
     def grafico(self, f,a,b):
         try:
@@ -48,7 +33,7 @@ class CalcZeroF():
         self.linha += "a: "+ str(self.a) + "    fa: "+ str(self.fa) + "\n"
         self.linha += "b: " + str(self.b) + "   fb: " + str(self.fb) + "\n"
         self.fx = self.f.subs(xS, x)
-        self.outputtxt(self)
+        self.outputtxt()
         self.linha += "x: "+ str(x) + "    fx: " + str(self.fx) + "\n"
         if self.fa*self.fb <= 0:
             if abs(self.fx) < self.p:
@@ -74,7 +59,7 @@ class CalcZeroF():
         else:
             self.linha+= "não há garantia de raíz no local"
             self.cond=False
-        self.outputtxt(self)
+        self.outputtxt()
         return self.cond
 
     #método da bissecção, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
@@ -84,7 +69,7 @@ class CalcZeroF():
             self.fa = self.f.subs(xS, self.a) #descobrimos f(a) e fb substituindo a e b em f(x)
             self.fb = self.f.subs(xS, self.b) #para isso, é usado a função a subs
             x = (self.a + self.b)/2
-            self.cond = self.calc(self,x)
+            self.cond = self.calc(x)
 
     #método da falsa posição, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def FalsaPos(self):
@@ -93,7 +78,7 @@ class CalcZeroF():
             self.fa = self.f.subs(xS, self.a) 
             self.fb = self.f.subs(xS, self.b)
             x = ((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa)
-            self.cond = self.calc(self,x)
+            self.cond = self.calc(x)
 
     #método do ponto fixo, com seu respectivo x
     def PontoFixo():

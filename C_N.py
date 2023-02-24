@@ -3,16 +3,27 @@ from Calc import CalcZeroF
 
 
 #função para chamar a classe com parametros para seus atributos
-def chamaClasse():
-    #atualiza variáveis que serão parametros para atributos da classe
-    fun = fEntry.get()
-    aI = aEntry.get()
-    bI = bEntry.get()
-    pr = pEntry.get()
-    metd = metodo.get()
-    #chama metodo para atualizar atributos da classe e verificar metodo de calculo escolhido
-    CalcZeroF.Controle(self = CalcZeroF, f=fun, a=aI, b=bI,p=pr,metodo=metd)
-
+def Controle():
+    #cria objeto para calcular
+    FunCalc = CalcZeroF()
+    #atribui valores aos atributos do objeto
+    FunCalc.Atribui(f=fEntry.get(), a=aEntry.get(), b=bEntry.get(),p=pEntry.get())
+    #chama grafico
+    FunCalc.grafico(f=fEntry.get(), a=aEntry.get(), b=bEntry.get())
+    #checa o método a ser utilzado
+    if metodo.get() == FunCalc.nomes[0]:
+        FunCalc.Bis()
+    elif metodo.get() == FunCalc.nomes[1]:
+        FunCalc.FalsaPos()
+    elif metodo.get() == FunCalc.nomes[2]:
+        FunCalc.PontoFixo()
+    elif metodo.get() == FunCalc.nomes[3]:
+        FunCalc.Secante()
+    elif metodo.get() == FunCalc.nomes[4]:
+        FunCalc.Newton()
+    else:
+        print("método não selecionado")
+    FunCalc.gr.show()
 window = Tk() #instanciando a classe Tk para criar uma janela
 
 fLabel = Label( window,
@@ -58,7 +69,7 @@ for i in range(len(CalcZeroF.nomes)):
                         text=CalcZeroF.nomes[i],
                         variable=metodo,
                         value=CalcZeroF.nomes[i],
-                        command=chamaClasse,
+                        command=Controle,
                         indicatoron=0,
                         bg="gray")
     opc.pack()
