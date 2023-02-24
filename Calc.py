@@ -18,18 +18,20 @@ class CalcZeroF():
         self.p = float(p)
         self.cond = True
         self.linha = ""
+        self.iter = 0
         self.file = open("resolução.txt","w")
         self.file.close()
         
     #função para gráfico
     def grafico(self, f,a,b):
         try:
-            self.gr = plot(self.f,(xS,0,b),show = False)
+            self.gr = plot(self.f,(xS,a,b),show = False)
         except:
             print("something wrong")
 
     #função para calculo geral
     def calc(self, x):
+        self.iter  += 1
         self.linha += "a: "+ str(self.a) + "    fa: "+ str(self.fa) + "\n"
         self.linha += "b: " + str(self.b) + "   fb: " + str(self.fb) + "\n"
         self.fx = self.f.subs(xS, x)
@@ -55,7 +57,8 @@ class CalcZeroF():
                     self.linha += "Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano \n"
                     self.linha += "sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo \n"
                     self.linha += "portanto existe pelo menos uma raíz entre eles, com isso a recebe x \n \n"
-                    self.b = x   
+                    self.b = x 
+                self.linha += 'iteração: ' + str(self.iter) + '\n'  
         else:
             self.linha+= "não há garantia de raíz no local"
             self.cond=False
@@ -65,7 +68,7 @@ class CalcZeroF():
     #método da bissecção, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def Bis(self):
         self.linha = self.linha + "método da bissecção \n \n"
-        while self.cond:
+        while self.cond and self.iter <= 5:
             self.fa = self.f.subs(xS, self.a) #descobrimos f(a) e fb substituindo a e b em f(x)
             self.fb = self.f.subs(xS, self.b) #para isso, é usado a função a subs
             x = (self.a + self.b)/2
@@ -74,7 +77,7 @@ class CalcZeroF():
     #método da falsa posição, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def FalsaPos(self):
         self.linha = self.linha + "método da bissecção \n \n"
-        while self.cond:
+        while self.cond and self.iter <= 5:
             self.fa = self.f.subs(xS, self.a) 
             self.fb = self.f.subs(xS, self.b)
             x = ((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa)
