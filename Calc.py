@@ -84,7 +84,16 @@ class CalcZeroF():
             self.cond = self.calc(x)
 
     #método do ponto fixo, com seu respectivo x
-    def PontoFixo():
+    def PontoFixo(self, ChuteI, fIter):
+        x = float(ChuteI)
+        fIter = expand(fIter)
+        while self.cond and self.iter <= 50:
+            if self.iter != 0:
+                x = fIter.subs(xS,x)
+            self.fa = self.f.subs(xS, self.a) 
+            self.fb = self.f.subs(xS, self.b)
+            self.cond = self.calc(x)
+
         print("método do ponto fixo")
 
     #método da secante, com seu respectivo x
@@ -94,6 +103,7 @@ class CalcZeroF():
     #método de newton, com seu respectivo x
     def Newton():
         print("método de newton")
+
     def outputtxt(self):
         self.file = open('resolução.txt', 'a')
         self.file.write(self.linha)

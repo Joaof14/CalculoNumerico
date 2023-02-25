@@ -16,7 +16,7 @@ def Controle():
     elif metodo.get() == FunCalc.nomes[1]:
         FunCalc.FalsaPos()
     elif metodo.get() == FunCalc.nomes[2]:
-        FunCalc.PontoFixo()
+        FunCalc.PontoFixo(ChuteI=chuteIEntry.get(), fIter=fIEntry.get())
     elif metodo.get() == FunCalc.nomes[3]:
         FunCalc.Secante()
     elif metodo.get() == FunCalc.nomes[4]:
