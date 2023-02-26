@@ -101,7 +101,15 @@ class CalcZeroF():
         print("método da secante")
 
     #método de newton, com seu respectivo x
-    def Newton():
+    def Newton(self, ChuteI,fIter):
+        x = float(ChuteI)
+        fIter = expand(fIter)
+        while self.cond and self.iter <= 50:
+            if self.iter != 0:
+                x = fIter.subs(xS,x)
+            self.fa = self.f.subs(xS, self.a) 
+            self.fb = self.f.subs(xS, self.b)
+            self.cond = self.calc(x)
         print("método de newton")
 
     def outputtxt(self):

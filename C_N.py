@@ -20,7 +20,7 @@ def Controle():
     elif metodo.get() == FunCalc.nomes[3]:
         FunCalc.Secante()
     elif metodo.get() == FunCalc.nomes[4]:
-        FunCalc.Newton()
+        FunCalc.Newton(ChuteI=chuteIEntry.get(), fIter=fIEntry.get())
     else:
         print("método não selecionado")
     FunCalc.gr.show()
