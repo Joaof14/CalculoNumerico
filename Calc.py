@@ -33,107 +33,100 @@ class CalcZeroF():
 
     #função para calculo geral
     def calc(self, x):
-        self.linha += 'iteração: ' + str(self.i) + '\n' 
-        self.i  += 1
-        self.linha += "a: "+ str(self.a) + "    fa: "+ str(self.fa) + "\n"
-        self.linha += "b: " + str(self.b) + "   fb: " + str(self.fb) + "\n"
-        self.fx = self.f.subs(xS, x)
+        self.fx = self.f.subs(xS, self.x)
         self.outputtxt()
-        self.linha += "x: "+ str(x) + "    fx: " + str(self.fx) + "\n"
+        self.i  += 1
+        
         if self.fa*self.fb <= 0:
             if abs(self.fx) < self.p:
-                self.linha+= " \na raíz da função é: " + str(x)
+                self.linha = " \na raíz da função é: " + str(self.x)
                 self.cond = False
             elif self.fa == 0:
-                self.linha += "\na raíz da função é: " + str(self.a)
+                self.linha  = "\na raíz da função é: " + str(self.a)
                 self.cond = False
             elif self.fb == 0:
-                self.linha += "\na raíz da função é: " + str(self.b) 
+                self.RESU = "\na raíz da função é: " + str(self.b) 
                 self.cond = False
             else:
                 if self.fa*self.fx > 0:
                     self.linha += "Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano \n"
                     self.linha += "sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo \n"
                     self.linha += "portanto existe pelo menos uma raíz entre eles, com isso a recebe x \n \n"
-                    self.a = x
+                    self.a = self.x
+                    self.fa = self.f.subs(xS, self.a) 
+            
                 else:
                     self.linha += "Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano \n"
                     self.linha += "sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo \n"
                     self.linha += "portanto existe pelo menos uma raíz entre eles, com isso a recebe x \n \n"
-                    self.b = x  
+                    self.b = self.x
+                    self.fb = self.f.subs(xS, self.b)
         else:
             self.linha+= "não há garantia de raíz no local"
             self.cond=False
-        self.outputtxt()
         return self.cond
 
-    #método da bissecção, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
+    #método da bissecção, com seu respectivo self.x, chamando o cálculo geral enquanto resultado for válido
     def Bis(self):
         self.linha = self.linha + "método da bissecção \n \n"
-        while self.cond and self.i <= 50:
-            self.fa = self.f.subs(xS, self.a) #descobrimos f(a) e fb substituindo a e b em f(x)
-            self.fb = self.f.subs(xS, self.b) #para isso, é usado a função a subs
-            x = (self.a + self.b)/2
-            self.cond = self.calc(x)
+        self.x = (self.a + self.b)/2
+        self.cond = self.calc(self.x)
 
-    #método da falsa posição, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
+    #método da falsa posição, com seu respectivo self.x, chamando o cálculo geral enquanto resultado for válido
     def FalsaPos(self):
         self.linha = self.linha + "método da bissecção \n \n"
-        while self.cond and self.i <= 50:
-            self.fa = self.f.subs(xS, self.a) 
-            self.fb = self.f.subs(xS, self.b)
-            x = ((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa)
-            self.cond = self.calc(x)
+        self.x = ((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa)
+        self.cond = self.calc(self.x)
 
-    #método do ponto fixo, com seu respectivo x
+    #método do ponto fiself.xo, com seu respectivo self.x
     def PontoFixo(self, ChuteI, fIter):
-        x = float(ChuteI)
+        self.x = float(ChuteI)
         fIter = expand(fIter)
-        while self.cond and self.i <= 50:
-            if self.i != 0:
-                x = fIter.subs(xS,x)
-            self.fa = self.f.subs(xS, self.a) 
-            self.fb = self.f.subs(xS, self.b)
-            self.cond = self.calc(x)
+        if self.i != 0:
+            self.x = fIter.subs(xS,self.x)
+        self.cond = self.calc(self.x)
 
         print("método do ponto fixo")
 
-    #método da secante, com seu respectivo x
-    def Secante(self):
-        x = []
-        fx = []
-        while self.cond and self.i <= 2:
-            if self.i != 0:
-                fx.append(self.fx)
-                xk = x[self.i]-((self.fx* (x[self.i]-x[self.i-1]))/(fx[self.i]-fx[self.i - 1]))
-                print(xk)
-                x.append(xk)
-            else: 
-                x.append(self.a)
-                fx.append(self.fa)
-                x.append(self.b)
-                fx.append(self.fb)
-            self.fa = self.f.subs(xS, self.a) 
-            self.fb = self.f.subs(xS, self.b)
-            print(fx[self.i])
-            self.cond = self.calc(x[self.i])
-        print("método da secante")
-        
-
-    #método de newton, com seu respectivo x
+ #método de newton, com seu respectivo self.x
     def Newton(self, ChuteI,fIter):
-        x = float(ChuteI)
+        self.x = float(ChuteI)
         fIter = expand(fIter)
         while self.cond and self.i <= 50:
             if self.i != 0:
-                x = fIter.subs(xS,x)
-            self.fa = self.f.subs(xS, self.a) 
-            self.fb = self.f.subs(xS, self.b)
-            self.cond = self.calc(x)
-        print("método de newton")
+                self.x = fIter.subs(xS,self.x)
+            self.cond = self.calc(self.x)
+        
+
+
+    #método da secante, com seu respectivo self.x
+    def Secante(self):
+        self.x = []
+        fx = []
+        while self.cond and self.i <= 50:
+            if self.i >= 2:
+                fx.append(self.fx)
+                xk = self.x[self.i-1]-((self.fx* (self.x[self.i-1]-self.x[self.i-2]))/(fx[self.i-1]-fx[self.i - 2]))
+                print(xk)
+                self.x.append(xk)
+            elif self.i == 0: 
+                self.x.append(self.a)
+                fx.append(self.fa)
+                self.x.append(self.b)
+                fx.append(self.fb)
+            print(fx[self.i])
+            self.cond = self.calc(self.x[self.i])
+        print(self.x)
+    print("método da secante")
+    
+
 
     def outputtxt(self):
         self.file = open('resolução.txt', 'a')
+        self.linha += 'iteração: ' + str(self.i) + '\n' 
+        self.linha += "a: "+ str(self.a) + "    fa: "+ str(self.fa) + "\n"
+        self.linha += "b: " + str(self.b) + "   fb: " + str(self.fb) + "\n"
+        self.linha += "x: "+ str(self.x) + "    fx: " + str(self.fx) + "\n"
         self.file.write(self.linha)
         self.file.close()
         self.linha = ''
