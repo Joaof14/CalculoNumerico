@@ -9,7 +9,7 @@ def Controle():
     #atribui valores aos atributos do objeto
     FunCalc.Atribui(f=fEntry.get(), a=aEntry.get(), b=bEntry.get(),p=pEntry.get())
     #chama grafico
-    FunCalc.grafico(f=fEntry.get(), a=aEntry.get(), b=bEntry.get())
+    #FunCalc.grafico(f=fEntry.get(), a=aEntry.get(), b=bEntry.get())
     #checa o método a ser utilzado
     if metodo.get() == FunCalc.nomes[0]:
         FunCalc.Bis()
@@ -23,7 +23,7 @@ def Controle():
         FunCalc.Newton(ChuteI=chuteIEntry.get(), fIter=fIEntry.get())
     else:
         print("método não selecionado")
-    FunCalc.gr.show()
+    #FunCalc.gr.show()
 window = Tk() #instanciando a classe Tk para criar uma janela
 
 fLabel = Label( window,
