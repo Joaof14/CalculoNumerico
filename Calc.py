@@ -18,7 +18,9 @@ class CalcZeroF():
         self.p = float(p)
         self.cond = True
         self.linha = ""
-        self.iter = 0
+        self.i = 0
+        self.fa = self.f.subs(xS, self.a) 
+        self.fb = self.f.subs(xS, self.b)
         self.file = open("resolução.txt","w")
         self.file.close()
         
@@ -31,8 +33,8 @@ class CalcZeroF():
 
     #função para calculo geral
     def calc(self, x):
-        self.linha += 'iteração: ' + str(self.iter) + '\n' 
-        self.iter  += 1
+        self.linha += 'iteração: ' + str(self.i) + '\n' 
+        self.i  += 1
         self.linha += "a: "+ str(self.a) + "    fa: "+ str(self.fa) + "\n"
         self.linha += "b: " + str(self.b) + "   fb: " + str(self.fb) + "\n"
         self.fx = self.f.subs(xS, x)
@@ -68,7 +70,7 @@ class CalcZeroF():
     #método da bissecção, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def Bis(self):
         self.linha = self.linha + "método da bissecção \n \n"
-        while self.cond and self.iter <= 50:
+        while self.cond and self.i <= 50:
             self.fa = self.f.subs(xS, self.a) #descobrimos f(a) e fb substituindo a e b em f(x)
             self.fb = self.f.subs(xS, self.b) #para isso, é usado a função a subs
             x = (self.a + self.b)/2
@@ -77,7 +79,7 @@ class CalcZeroF():
     #método da falsa posição, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def FalsaPos(self):
         self.linha = self.linha + "método da bissecção \n \n"
-        while self.cond and self.iter <= 50:
+        while self.cond and self.i <= 50:
             self.fa = self.f.subs(xS, self.a) 
             self.fb = self.f.subs(xS, self.b)
             x = ((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa)
@@ -87,8 +89,8 @@ class CalcZeroF():
     def PontoFixo(self, ChuteI, fIter):
         x = float(ChuteI)
         fIter = expand(fIter)
-        while self.cond and self.iter <= 50:
-            if self.iter != 0:
+        while self.cond and self.i <= 50:
+            if self.i != 0:
                 x = fIter.subs(xS,x)
             self.fa = self.f.subs(xS, self.a) 
             self.fb = self.f.subs(xS, self.b)
@@ -97,15 +99,33 @@ class CalcZeroF():
         print("método do ponto fixo")
 
     #método da secante, com seu respectivo x
-    def Secante():
+    def Secante(self):
+        x = []
+        fx = []
+        while self.cond and self.i <= 2:
+            if self.i != 0:
+                fx.append(self.fx)
+                xk = x[self.i]-((self.fx* (x[self.i]-x[self.i-1]))/(fx[self.i]-fx[self.i - 1]))
+                print(xk)
+                x.append(xk)
+            else: 
+                x.append(self.a)
+                fx.append(self.fa)
+                x.append(self.b)
+                fx.append(self.fb)
+            self.fa = self.f.subs(xS, self.a) 
+            self.fb = self.f.subs(xS, self.b)
+            print(fx[self.i])
+            self.cond = self.calc(x[self.i])
         print("método da secante")
+        
 
     #método de newton, com seu respectivo x
     def Newton(self, ChuteI,fIter):
         x = float(ChuteI)
         fIter = expand(fIter)
-        while self.cond and self.iter <= 50:
-            if self.iter != 0:
+        while self.cond and self.i <= 50:
+            if self.i != 0:
                 x = fIter.subs(xS,x)
             self.fa = self.f.subs(xS, self.a) 
             self.fb = self.f.subs(xS, self.b)
