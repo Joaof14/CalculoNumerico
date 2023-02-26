@@ -27,7 +27,6 @@ class CalcZeroF():
         
     #função para gráfico
     def grafico(self, a,b, fI):
-        print(fI)
         if fI != '':
             try:
                 fI = expand(fI)
