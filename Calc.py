@@ -19,13 +19,21 @@ class CalcZeroF():
         self.cond = True
         self.linha = ""
         self.i = 0
-        self.fa = self.f.subs(xS, self.a) 
+        self.fa = self.f.subs(xS, self.a)
         self.fb = self.f.subs(xS, self.b)
         self.file = open("resolução.txt","w")
+        self.resultado = ''
         self.file.close()
         
     #função para gráfico
-    def grafico(self, f,a,b):
+    def grafico(self, a,b, fI):
+        print(fI)
+        if fI != '':
+            try:
+                fI = expand(fI)
+                self.gr = plot( (self.f,(xS,a,b)),(fI,(xS,a,b)), show = False)
+            except:
+                print("something wrong")
         try:
             self.gr = plot(self.f,(xS,a,b),show = False)
         except:
@@ -40,13 +48,13 @@ class CalcZeroF():
         
         if self.fa*self.fb <= 0:
             if abs(self.fx) < self.p:
-                self.linha = " \na raíz da função é: " + str(self.x)
+                self.resultado = " \na raíz da função é: " + str(self.x)
                 self.cond = False
             elif self.fa == 0:
-                self.linha  = "\na raíz da função é: " + str(self.a)
+                self.resultado  = "\na raíz da função é: " + str(self.a)
                 self.cond = False
             elif self.fb == 0:
-                self.RESU = "\na raíz da função é: " + str(self.b) 
+                self.resultado = "\na raíz da função é: " + str(self.b) 
                 self.cond = False
             else:
                 if self.fa*self.fx > 0:
@@ -63,7 +71,7 @@ class CalcZeroF():
                     self.b = self.x
                     self.fb = self.f.subs(xS, self.b)
         else:
-            self.linha+= "não há garantia de raíz no local"
+            self.resultado = "não há garantia de raíz no local"
             self.cond=False
         return self.cond
 
@@ -86,17 +94,18 @@ class CalcZeroF():
         x = float(ChuteI)
         fIter = expand(fIter)
         while self.cond and self.i <= 50:
+            self.linha = self.linha + "método do ponto fixo\n \n"
             if self.i != 0:
                 x = fIter.subs(xS,x)
             self.cond = self.calc(x)
 
-        print("método do ponto fixo")
 
  #método de newton, com seu respectivo x
     def Newton(self, ChuteI,fIter):
         x = float(ChuteI)
         fIter = expand(fIter)
         while self.cond and self.i <= 50:
+            self.linha = self.linha + "método de Newton \n \n"
             if self.i != 0:
                 x = fIter.subs(xS,x)
             self.cond = self.calc(x)
@@ -112,9 +121,9 @@ class CalcZeroF():
         x.append(self.b)
         fx.append(self.fb)
         while self.cond and self.i <= 50:
+            self.linha = self.linha + "método da secante \n \n"
             if self.i >= 2:
                 xk = x[self.i-1]-((self.fx* (x[self.i-1]-x[self.i-2]))/(fx[self.i-1]-fx[self.i - 2]))
-                print(xk)
                 x.append(xk)
                 self.cond = self.calc(x[self.i])
                 fx.append(self.fx)
@@ -124,17 +133,25 @@ class CalcZeroF():
                 self.outputtxt()
                 self.i += 1
             
-        print(x)
-    print("método da secante")
     
 
 
+    def verificaResultado(self, a, b):
+        a = float(a) 
+        b = float(b)
+        if not ((self.x <= a and self.x >= b) or (self.x >= a and self.x <= b)):
+            self.resultado = "raíz encontrada mas não está no intervalo"
+        self.outputtxt()
+
     def outputtxt(self):
         self.file = open('resolução.txt', 'a')
-        self.linha += 'iteração: ' + str(self.i) + '\n' 
-        self.linha += "a: "+ str(self.a) + "    fa: "+ str(self.fa) + "\n"
-        self.linha += "b: " + str(self.b) + "   fb: " + str(self.fb) + "\n"
-        self.linha += "x: "+ str(self.x) + "    fx: " + str(self.fx) + "\n"
+        if self.resultado == '':
+            self.linha += 'iteração: ' + str(self.i) + '\n' 
+            self.linha += "a: "+ str(self.a) + "    fa: "+ str(self.fa) + "\n"
+            self.linha += "b: " + str(self.b) + "   fb: " + str(self.fb) + "\n"
+            self.linha += "x: "+ str(self.x) + "    fx: " + str(self.fx) + "\n"
+        else:
+            self.linha = self.resultado
         self.file.write(self.linha)
         self.file.close()
         self.linha = ''
