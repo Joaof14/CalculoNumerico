@@ -1,17 +1,15 @@
 from tkinter import *
 from Calc import CalcZeroF
 
+#cria objeto para calcular
+FunCalc = CalcZeroF()
 
 #função para chamar a classe com parametros para seus atributos
 def Controle():
-    #cria objeto para calcular
-    FunCalc = CalcZeroF()
+    
     #atribui valores aos atributos do objeto
     FunCalc.Atribui(f=fEntry.get(), a=aEntry.get(), b=bEntry.get(),p=pEntry.get())
 
-    #chama grafico
-    FunCalc.grafico(a=aEntry.get(), b=bEntry.get(),fI=fIEntry.get())
-    
     #checa o método a ser utilzado
     if metodo.get() == FunCalc.nomes[0]:
         FunCalc.Bis()
@@ -27,8 +25,10 @@ def Controle():
         print("método não selecionado")
     FunCalc.verificaResultado(a=aEntry.get(), b=bEntry.get())
 
-        
-    FunCalc.gr.show()
+def grafico():
+    #chama grafico
+    FunCalc.grafico(a=aEntry.get(), b=bEntry.get(),f=fEntry.get())
+
 window = Tk() #instanciando a classe Tk para criar uma janela
 
 window.geometry("420x420")
@@ -60,6 +60,10 @@ bEntry = Entry(
     font=("Arial", 15)
 )
 bEntry.pack()
+graf = Button(window,
+              text='Gráfico',
+              command=grafico)
+graf.pack()
 pLabel = Label( window,
                 text ='precisão')
 pLabel.pack()

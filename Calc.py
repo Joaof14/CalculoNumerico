@@ -10,6 +10,12 @@ class CalcZeroF():
 
     #declarando variáveis
     nomes = ("Bissecção", "Falsa Posição", "Ponto Fixo", "Secante", "Newton")
+    linha = ""
+    i = 0
+    file = open("resolução.txt","w")
+    resultado = ''
+    file.close()
+    
     #função para verificar metodo chamado
     def Atribui(self, f,a,b,p):
         self.f = expand(f)
@@ -17,26 +23,16 @@ class CalcZeroF():
         self.b = float(b)
         self.p = float(p)
         self.cond = True
-        self.linha = ""
-        self.i = 0
         self.fa = self.f.subs(xS, self.a)
         self.fb = self.f.subs(xS, self.b)
-        self.file = open("resolução.txt","w")
-        self.resultado = ''
-        self.file.close()
         
     #função para gráfico
-    def grafico(self, a,b, fI):
-        if fI != '':
-            try:
-                fI = expand(fI)
-                self.gr = plot( (self.f,(xS,a,b)),(fI,(xS,a,b)), show = False)
-            except:
-                print("something wrong")
-        try:
-            self.gr = plot(self.f,(xS,a,b),show = False)
-        except:
-            print("something wrong")
+    def grafico(self, a,b,f):
+        self.f = expand(f)
+        self.a = float(a)
+        self.b = float(b)
+        self.gr = plot(self.f,(xS,self.a,self.b))
+
 
     #função para calculo geral
     def calc(self, x):
