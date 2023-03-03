@@ -30,7 +30,7 @@ def grafico():
 
 window = Tk() #instanciando a classe Tk para criar uma janela
 
-window.geometry("420x420")
+window.geometry("480x480")
 fLabel = Label( window,
                 text ='função') #cria label e indica o que nele deve estar escrito
 
