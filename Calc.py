@@ -41,7 +41,7 @@ class CalcZeroF():
     #função para calculo geral
     def calc(self, x):
         self.x = x
-        self.fx = self.f.subs(xS, self.x)
+        self.fx = float(self.f.subs(xS, self.x))
         self.outputtxt()
         self.i  += 1
         
@@ -61,14 +61,14 @@ class CalcZeroF():
                     self.linha += "sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo \n"
                     self.linha += "portanto existe pelo menos uma raíz entre eles, com isso a recebe x \n \n"
                     self.a = self.x
-                    self.fa = self.f.subs(xS, self.a) 
+                    self.fa = float(self.f.subs(xS, self.a))
             
                 else:
                     self.linha += "Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano \n"
                     self.linha += "sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo \n"
                     self.linha += "portanto existe pelo menos uma raíz entre eles, com isso a recebe x \n \n"
                     self.b = self.x
-                    self.fb = self.f.subs(xS, self.b)
+                    self.fb = float(self.f.subs(xS, self.b))
         else:
             self.resultado = "não há garantia de raíz no local"
             self.cond=False
@@ -78,14 +78,14 @@ class CalcZeroF():
     def Bis(self):
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método da bissecção \n \n"
-            x = (self.a + self.b)/2
+            x = float((self.a + self.b))/2
             self.cond = self.calc(x)
 
     #método da falsa posição, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def FalsaPos(self):
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método da falsa posição \n \n"
-            x = ((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa)
+            x = float(((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa))
             self.cond = self.calc(x)
 
     #método do ponto fixo, com seu respectivo x
@@ -106,7 +106,7 @@ class CalcZeroF():
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método de Newton \n \n"
             if self.i != 0:
-                x = fIter.subs(xS,x)
+                x = float(fIter.subs(xS,x))
             self.cond = self.calc(x)
         
 
@@ -115,14 +115,14 @@ class CalcZeroF():
     def Secante(self):
         x = []
         fx = []
-        x.append(self.a)
-        fx.append(self.fa)
-        x.append(self.b)
-        fx.append(self.fb)
+        x.append(float(self.a))
+        fx.append(float(self.fa))
+        x.append(float(self.b))
+        fx.append(float(self.fb))
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método da secante \n \n"
             if self.i >= 2:
-                xk = x[self.i-1]-((self.fx* (x[self.i-1]-x[self.i-2]))/(fx[self.i-1]-fx[self.i - 2]))
+                xk = float(x[self.i-1]-((self.fx* (x[self.i-1]-x[self.i-2]))/(fx[self.i-1]-fx[self.i - 2])))
                 x.append(xk)
                 self.cond = self.calc(x[self.i])
                 fx.append(self.fx)

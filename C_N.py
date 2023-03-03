@@ -31,8 +31,10 @@ def Controle():
     FunCalc.gr.show()
 window = Tk() #instanciando a classe Tk para criar uma janela
 
+window.geometry("420x420")
 fLabel = Label( window,
                 text ='função') #cria label e indica o que nele deve estar escrito
+
 fLabel.pack() #insere label na janela
 
 fEntry = Entry(
