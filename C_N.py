@@ -6,7 +6,6 @@ FunCalc = CalcZeroF()
 
 #função para chamar a classe com parametros para seus atributos
 def Controle():
-    
     #atribui valores aos atributos do objeto
     FunCalc.Atribui(f=fEntry.get(), a=aEntry.get(), b=bEntry.get(),p=pEntry.get())
 
