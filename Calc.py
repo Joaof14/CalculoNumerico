@@ -1,4 +1,4 @@
-from sympy import expand, Symbol, Subs
+from sympy import expand, Symbol, Subs, diff
 from sympy.plotting import plot
 xS = Symbol('x') #declarando que o caractere x no input será tratado 
 #como um símbolo e será armazenado na variavel xS
@@ -102,11 +102,11 @@ class CalcZeroF():
  #método de newton, com seu respectivo x
     def Newton(self, ChuteI,fIter):
         x = float(ChuteI)
-        fIter = expand(fIter)
+        flinha = diff(self.f, xS)
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método de Newton \n \n"
             if self.i != 0:
-                x = float(fIter.subs(xS,x))
+                x = x - (self.f.subs(xS,x)/flinha.subs(xS,x))
             self.cond = self.calc(x)
         
 

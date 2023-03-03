@@ -83,7 +83,7 @@ for i in range(len(CalcZeroF.nomes)):
     opc.pack()
 
 fILabel = Label( window,
-                text ='função de iteração, caso exista') #cria label e indica o que nele deve estar escrito
+                text ='função de iteração para metodo do ponto fixo') #cria label e indica o que nele deve estar escrito
 fILabel.pack() #insere label na janela
 fIEntry = Entry(
     window,
@@ -92,7 +92,7 @@ fIEntry = Entry(
 fIEntry.pack()
 
 chuteILabel = Label( window,
-                text ='chute inicial para metodo de newton e ponto fixo') #cria label e indica o que nele deve estar escrito
+                text ='chute inicial para metodo do ponto fixo') #cria label e indica o que nele deve estar escrito
 chuteILabel.pack() #insere label na janela
 chuteIEntry = Entry(
     window,
