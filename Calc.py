@@ -28,11 +28,18 @@ class CalcZeroF():
         
     #função para gráfico
     def grafico(self, a,b,f):
-        self.f = expand(f)
-        self.a = float(a)
-        self.b = float(b)
-        self.gr = plot(self.f,(xS,self.a,self.b))
-
+        try: 
+            f = expand(f)
+            try:
+                self.a = float(a)
+                self.b = float(b)
+                self.gr = plot(f,(xS,self.a,self.b))
+            except:
+                self.gr = plot(f,(xS, -30, 30))
+            self.gr.save('gráfico.png')
+        except:
+            print("verifique se preencheu a função corretamente")
+        
 
     #função para calculo geral
     def calc(self, x):
@@ -72,6 +79,7 @@ class CalcZeroF():
 
     #método da bissecção, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def Bis(self):
+        self.i = 1
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método da bissecção \n \n"
             x = (self.a + self.b)/2
@@ -79,6 +87,7 @@ class CalcZeroF():
 
     #método da falsa posição, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def FalsaPos(self):
+        self.i = 1
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método da falsa posição \n \n"
             x = ((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa)
