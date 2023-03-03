@@ -40,7 +40,7 @@ class CalcZeroF():
 
     #função para calculo geral
     def calc(self, x):
-        self.x = x
+        self.x = float(x)
         self.fx = float(self.f.subs(xS, self.x))
         self.outputtxt()
         self.i  += 1
@@ -78,14 +78,14 @@ class CalcZeroF():
     def Bis(self):
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método da bissecção \n \n"
-            x = float((self.a + self.b))/2
+            x = (self.a + self.b)/2
             self.cond = self.calc(x)
 
     #método da falsa posição, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def FalsaPos(self):
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método da falsa posição \n \n"
-            x = float(((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa))
+            x = ((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa)
             self.cond = self.calc(x)
 
     #método do ponto fixo, com seu respectivo x
@@ -115,10 +115,10 @@ class CalcZeroF():
     def Secante(self):
         x = []
         fx = []
-        x.append(float(self.a))
-        fx.append(float(self.fa))
-        x.append(float(self.b))
-        fx.append(float(self.fb))
+        x.append(self.a)
+        fx.append(self.fa)
+        x.append(self.b)
+        fx.append(self.fb)
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método da secante \n \n"
             if self.i >= 2:
@@ -127,8 +127,8 @@ class CalcZeroF():
                 self.cond = self.calc(x[self.i])
                 fx.append(self.fx)
             else:
-                self.fx = fx[self.i]
-                self.x = x[self.i]
+                self.fx = float(fx[self.i])
+                self.x = float(x[self.i])
                 self.outputtxt()
                 self.i += 1
             
@@ -145,10 +145,11 @@ class CalcZeroF():
     def outputtxt(self):
         self.file = open('resolução.txt', 'a')
         if self.resultado == '':
+            self.linha += str(self.f) + '\n\n'
             self.linha += 'iteração: ' + str(self.i) + '\n' 
             self.linha += "a: "+ str(self.a) + "    fa: "+ str(self.fa) + "\n"
             self.linha += "b: " + str(self.b) + "   fb: " + str(self.fb) + "\n"
-            self.linha += "x: "+ str(self.x) + "    fx: " + str(self.fx) + "\n"
+            self.linha += "x: "+ str(self.x) + "    fx: " + str(self.fx) + "\n\n"
         else:
             self.linha = self.resultado
         self.file.write(self.linha)
