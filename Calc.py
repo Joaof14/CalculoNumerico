@@ -106,7 +106,7 @@ class CalcZeroF():
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método de Newton \n \n"
             if self.i != 0:
-                x = x - (self.f.subs(xS,x)/flinha.subs(xS,x))
+                x = float(x - (self.f.subs(xS,x)/flinha.subs(xS,x)))
             self.cond = self.calc(x)
         
 
