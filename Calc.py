@@ -96,11 +96,21 @@ class CalcZeroF():
     def PontoFixo(self, ChuteI, fIter):
         x = float(ChuteI)
         fIter = expand(fIter)
+        aI = self.a
+        bI = self.b
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método do ponto fixo\n \n"
             if self.i != 0:
                 x = fIter.subs(xS,x)
             self.cond = self.calc(x)
+            if (bI > aI):
+                if self.x > bI + 1 or self.x < aI - 1:
+                    self.resultado = "x se afastou demais do intervalo"
+                    self.cond = False
+            else:
+                if self.x > aI + 1 or self.x < bI - 1:
+                    self.resultado = "x se afastou demais do intervalo"
+                    self.cond = False
 
 
  #método de newton, com seu respectivo x
@@ -142,7 +152,7 @@ class CalcZeroF():
     def verificaResultado(self, a, b):
         a = float(a) 
         b = float(b)
-        if not ((self.x <= a and self.x >= b) or (self.x >= a and self.x <= b)):
+        if self.fx < self.p and not ((self.x <= a and self.x >= b) or (self.x >= a and self.x <= b)):
             self.resultado = "raíz encontrada mas não está no intervalo"
         self.outputtxt()
 
