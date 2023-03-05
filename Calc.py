@@ -13,21 +13,23 @@ class CalcZeroF():
     
     #função para verificar metodo chamado
     def Atribui(self, f,a,b,p):
-        self.i = 0
-        self.f = expand(f)
-        self.a = float(a)
-        self.b = float(b)
-        self.p = float(p)
-        self.cond = True
-        self.fa = self.f.subs(xS, self.a)
-        self.fb = self.f.subs(xS, self.b)
-        self.file = open("resolução.txt","w")
-        self.linha = ""
-        self.resultado = ''
-        self.file.close()
-        self.aI = self.a
-        self.bI = self.b
-
+        try:
+            self.i = 0
+            self.f = expand(f)
+            self.a = float(a)
+            self.b = float(b)
+            self.p = float(p)
+            self.cond = True
+            self.fa = self.f.subs(xS, self.a)
+            self.fb = self.f.subs(xS, self.b)
+            self.file = open("resolução.txt","w")
+            self.linha = ""
+            self.resultado = ''
+            self.file.close()
+            self.aI = self.a
+            self.bI = self.b
+        except: 
+            print("verifique se preencheu tudo corretamente!")
 
 
     #função para gráfico
@@ -102,27 +104,38 @@ class CalcZeroF():
 
     #método do ponto fixo, com seu respectivo x
     def PontoFixo(self, ChuteI, fIter):
-        x = float(ChuteI)
-        fIter = expand(fIter)
+        try:
+            x = float(ChuteI)
+            fIter = expand(fIter)
+        except:
+            print("cuidado ao inserir os valores!")
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método do ponto fixo\n \n"
             self.linha += "função de iteração: " + str(fIter) + "\n"
-            if self.i != 0:
+            if self.i != 0:   
                 x = fIter.subs(xS,x)
-            self.cond = self.calc(x)
+            try:
+                self.cond = self.calc(x)
+            except:
+                self.resultado = "método não convergiu"
+                self.cond = False
             self.verificaConvergencia()
         self.verificaResultado()
 
  #método de newton, com seu respectivo x
-    def Newton(self, ChuteI,fIter):
+    def Newton(self, ChuteI):
         x = float(ChuteI)
         flinha = diff(self.f, xS)
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método de Newton \n \n"
             if self.i != 0:
                 x = float(x - (self.f.subs(xS,x)/flinha.subs(xS,x)))
-            self.cond = self.calc(x)
-            self.verificaConvergencia()
+            try:
+                self.cond = self.calc(x)
+                self.verificaConvergencia()
+            except:
+                self.resultado = "método não convergiu"
+                self.cond = False
         self.verificaResultado()
 
     #método da secante, com seu respectivo x
@@ -137,9 +150,13 @@ class CalcZeroF():
             self.linha = self.linha + "método da secante \n \n"
             if self.i >= 2:
                 xk = float(x[self.i-1]-((self.fx* (x[self.i-1]-x[self.i-2]))/(fx[self.i-1]-fx[self.i - 2])))
-                x.append(xk)
-                self.cond = self.calc(x[self.i])
-                fx.append(self.fx)
+                try:
+                    x.append(xk)
+                    self.cond = self.calc(x[self.i])
+                    fx.append(self.fx)
+                except:
+                    self.resultado = "método não convergiu"
+                    self.cond = False
             else:
                 self.fx = float(fx[self.i])
                 self.x = float(x[self.i])
