@@ -1,0 +1,50 @@
+método de Newton 
+ 
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 0
+a: 0.0    fa: -15
+b: 3.0   fb: 252.000000000000
+x: 1.5    fx: 0.375
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 1
+a: 0.0    fa: -15
+b: 1.5   fb: 0.375
+x: 1.4929245283018868    fx: 0.002397327970346197
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 2
+a: 0.0    fa: -15
+b: 1.4929245283018868   fb: 0.002397327970346197
+x: 1.4928787105759462    fx: 1.0005144446267877e-07
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 3
+a: 0.0    fa: -15
+b: 1.4928787105759462   fb: 1.0005144446267877e-07
+x: 1.4928787086636037    fx: 1.7763568394002505e-15
+
+ 
+a raíz da função é: 1.4928787086636037

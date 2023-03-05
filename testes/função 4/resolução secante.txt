@@ -1,0 +1,107 @@
+método da secante 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 0
+a: 1.0    fa: 4.84147098480790
+b: 5.0   fb: -0.794621373315692
+x: 1.0    fx: 4.841470984807897
+
+método da secante 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 1
+a: 1.0    fa: 4.84147098480790
+b: 5.0   fb: -0.794621373315692
+x: 5.0    fx: -0.7946213733156924
+
+método da secante 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 2
+a: 1.0    fa: 4.84147098480790
+b: 5.0   fb: -0.794621373315692
+x: 4.4360480114060845    fx: -0.2677452211081093
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 3
+a: 1.0    fa: 4.84147098480790
+b: 4.4360480114060845   fb: -0.2677452211081093
+x: 4.1494617818950825    fx: 0.4908142960210493
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 4
+a: 4.1494617818950825    fa: 0.4908142960210493
+b: 4.4360480114060845   fb: -0.2677452211081093
+x: 4.3348930042454565    fx: -0.029675428465207432
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 5
+a: 4.1494617818950825    fa: 0.4908142960210493
+b: 4.3348930042454565   fb: -0.029675428465207432
+x: 4.324320747551041    fx: -0.0027719071160836606
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 6
+a: 4.1494617818950825    fa: 0.4908142960210493
+b: 4.324320747551041   fb: -0.0027719071160836606
+x: 4.32323147328155    fx: 2.070460582537237e-05
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 7
+a: 4.32323147328155    fa: 2.070460582537237e-05
+b: 4.324320747551041   fb: -0.0027719071160836606
+x: 4.323239549232176    fx: -1.4157481409426964e-08
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 8
+a: 4.32323147328155    fa: 2.070460582537237e-05
+b: 4.323239549232176   fb: -1.4157481409426964e-08
+x: 4.3232395437137425    fx: -7.194245199571014e-14
+
+ 
+a raíz da função é: 4.3232395437137425

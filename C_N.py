@@ -22,7 +22,6 @@ def Controle():
         FunCalc.Newton(ChuteI=chuteIEntry.get(), fIter=fIEntry.get())
     else:
         print("método não selecionado")
-    FunCalc.verificaResultado(a=aEntry.get(), b=bEntry.get())
 
 def grafico():
     #chama grafico

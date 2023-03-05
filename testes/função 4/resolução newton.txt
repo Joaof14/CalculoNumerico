@@ -1,0 +1,76 @@
+método de Newton 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 0
+a: 1.0    fa: 4.84147098480790
+b: 5.0   fb: -0.794621373315692
+x: 3.0    fx: 4.423360024179601
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 1
+a: 3.0    fa: 4.423360024179601
+b: 5.0   fb: -0.794621373315692
+x: 4.563656017572346    fx: -0.5132715569030442
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 2
+a: 3.0    fa: 4.423360024179601
+b: 4.563656017572346   fb: -0.5132715569030442
+x: 4.255426635501433    fx: 0.1811932329548851
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 3
+a: 4.255426635501433    fa: 0.1811932329548851
+b: 4.563656017572346   fb: -0.5132715569030442
+x: 4.320721635771725    fx: 0.006469895086548938
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 4
+a: 4.320721635771725    fa: 0.006469895086548938
+b: 4.563656017572346   fb: -0.5132715569030442
+x: 4.3232355606682    fx: 1.0218433504682878e-05
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 5
+a: 4.3232355606682    fa: 1.0218433504682878e-05
+b: 4.563656017572346   fb: -0.5132715569030442
+x: 4.323239543703693    fx: 2.5710544804269375e-11
+
+ 
+a raíz da função é: 4.323239543703693

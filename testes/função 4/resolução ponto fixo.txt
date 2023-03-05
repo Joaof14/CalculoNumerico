@@ -1,0 +1,25 @@
+método do ponto fixo
+ 
+função de iteração: -4/sin(x)
+função estudada: x*sin(x) + 4
+
+iteração: 0
+a: 1.0    fa: 4.84147098480790
+b: 5.0   fb: -0.794621373315692
+x: 3.0    fx: 4.423360024179601
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -4/sin(x)
+função estudada: x*sin(x) + 4
+
+iteração: 1
+a: 3.0    fa: 4.423360024179601
+b: 5.0   fb: -0.794621373315692
+x: -28.344669582948747    fx: 2.0080011937031337
+
+x se afastou demais do intervalo

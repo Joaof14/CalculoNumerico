@@ -1,0 +1,67 @@
+método do ponto fixo
+ 
+função de iteração: x**4/5 + 2*x**3/5 + 3*x**2/10 - 3/2
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 0
+a: 0.0    fa: -15
+b: 3.0   fb: 252.000000000000
+x: 1.5    fx: 0.375
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: x**4/5 + 2*x**3/5 + 3*x**2/10 - 3/2
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 1
+a: 0.0    fa: -15
+b: 1.5   fb: 0.375
+x: 1.5375    fx: 2.4308477050781345
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: x**4/5 + 2*x**3/5 + 3*x**2/10 - 3/2
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 2
+a: 0.0    fa: -15
+b: 1.5375   fb: 2.4308477050781345
+x: 1.7805847705078133    fx: 19.390761226767196
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: x**4/5 + 2*x**3/5 + 3*x**2/10 - 3/2
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 3
+a: 0.0    fa: -15
+b: 1.7805847705078133   fb: 19.390761226767196
+x: 3.7196608931845336    fx: 578.0331009221704
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: x**4/5 + 2*x**3/5 + 3*x**2/10 - 3/2
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 4
+a: 0.0    fa: -15
+b: 3.7196608931845336   fb: 578.0331009221704
+x: 61.52297098540158    fx: 29595801.500587143
+
+x se afastou demais do intervalo

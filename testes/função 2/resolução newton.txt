@@ -1,0 +1,271 @@
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 0
+a: 0.0    fa: -24.0000000000000
+b: 5.0   fb: 1296.00000000000
+x: 2.5    fx: 2.40625
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 1
+a: 0.0    fa: -24.0000000000000
+b: 2.5   fb: 2.40625
+x: 2.3453815261044175    fx: 0.7367525965792083
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 2
+a: 0.0    fa: -24.0000000000000
+b: 2.3453815261044175   fb: 0.7367525965792083
+x: 2.2363545678448906    fx: 0.22375726347431169
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 3
+a: 0.0    fa: -24.0000000000000
+b: 2.2363545678448906   fb: 0.22375726347431169
+x: 2.1605553993445503    fx: 0.06750479102568363
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 4
+a: 0.0    fa: -24.0000000000000
+b: 2.1605553993445503   fb: 0.06750479102568363
+x: 2.1084593593665097    fx: 0.0202598507174514
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 5
+a: 0.0    fa: -24.0000000000000
+b: 2.1084593593665097   fb: 0.0202598507174514
+x: 2.0729701597129897    fx: 0.006056985600253029
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 6
+a: 0.0    fa: -24.0000000000000
+b: 2.0729701597129897   fb: 0.006056985600253029
+x: 2.0489520427511896    fx: 0.0018057777492543892
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 7
+a: 0.0    fa: -24.0000000000000
+b: 2.0489520427511896   fb: 0.0018057777492543892
+x: 2.032773565031416    fx: 0.0005373019706240711
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 8
+a: 0.0    fa: -24.0000000000000
+b: 2.032773565031416   fb: 0.0005373019706240711
+x: 2.0219117468018695    fx: 0.00015965475429879916
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 9
+a: 0.0    fa: -24.0000000000000
+b: 2.0219117468018695   fb: 0.00015965475429879916
+x: 2.014635998492326    fx: 4.739596424485626e-05
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 10
+a: 0.0    fa: -24.0000000000000
+b: 2.014635998492326   fb: 4.739596424485626e-05
+x: 2.009769941314002    fx: 1.4061347712868155e-05
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 11
+a: 0.0    fa: -24.0000000000000
+b: 2.009769941314002   fb: 1.4061347712868155e-05
+x: 2.006518925247689    fx: 4.169920799768079e-06
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 12
+a: 0.0    fa: -24.0000000000000
+b: 2.006518925247689   fb: 4.169920799768079e-06
+x: 2.004348460926896    fx: 1.2362450405589698e-06
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 13
+a: 0.0    fa: -24.0000000000000
+b: 2.004348460926896   fb: 1.2362450405589698e-06
+x: 2.002900092248023    fx: 3.664360122002108e-07
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 14
+a: 0.0    fa: -24.0000000000000
+b: 2.002900092248023   fb: 3.664360122002108e-07
+x: 2.0019338925740633    fx: 1.0860156862690928e-07
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 15
+a: 0.0    fa: -24.0000000000000
+b: 2.0019338925740633   fb: 1.0860156862690928e-07
+x: 2.001289483160852    fx: 3.2183777420868864e-08
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 16
+a: 0.0    fa: -24.0000000000000
+b: 2.001289483160852   fb: 3.2183777420868864e-08
+x: 2.0008597538062753    fx: 9.537018286209786e-09
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 17
+a: 0.0    fa: -24.0000000000000
+b: 2.0008597538062753   fb: 9.537018286209786e-09
+x: 2.0005732130429634    fx: 2.825998990374501e-09
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 18
+a: 0.0    fa: -24.0000000000000
+b: 2.0005732130429634   fb: 2.825998990374501e-09
+x: 2.0003821615857125    fx: 8.373461923838477e-10
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 19
+a: 0.0    fa: -24.0000000000000
+b: 2.0003821615857125   fb: 8.373461923838477e-10
+x: 2.000254787681403    fx: 2.48121523327427e-10
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método de Newton 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 20
+a: 0.0    fa: -24.0000000000000
+b: 2.000254787681403   fb: 2.48121523327427e-10
+x: 2.000169866429279    fx: 7.352696229645517e-11
+
+ 
+a raíz da função é: 2.000169866429279

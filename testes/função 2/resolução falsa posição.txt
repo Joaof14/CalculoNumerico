@@ -1,0 +1,647 @@
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 1
+a: 0.0    fa: -24.0000000000000
+b: 5.0   fb: 1296.00000000000
+x: 0.09090909090909091    fx: -23.46143768123141
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 2
+a: 0.09090909090909091    fa: -23.46143768123141
+b: 5.0   fb: 1296.00000000000
+x: 0.1781979855641244    fx: -22.641372912676662
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 3
+a: 0.1781979855641244    fa: -22.641372912676662
+b: 5.0   fb: 1296.00000000000
+x: 0.2609894251189091    fx: -21.62556703849953
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 4
+a: 0.2609894251189091    fa: -21.62556703849953
+b: 5.0   fb: 1296.00000000000
+x: 0.33876857076313954    fx: -20.49190066575767
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 5
+a: 0.33876857076313954    fa: -20.49190066575767
+b: 5.0   fb: 1296.00000000000
+x: 0.41132313139486515    fx: -19.304387884611334
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 6
+a: 0.41132313139486515    fa: -19.304387884611334
+b: 5.0   fb: 1296.00000000000
+x: 0.4786699744257487    fx: -18.111515555723013
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 7
+a: 0.4786699744257487    fa: -18.111515555723013
+b: 5.0   fb: 1296.00000000000
+x: 0.5409844265261978    fx: -16.94735977069112
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 8
+a: 0.5409844265261978    fa: -16.94735977069112
+b: 5.0   fb: 1296.00000000000
+x: 0.5985408400293054    fx: -15.834031753633994
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 9
+a: 0.5985408400293054    fa: -15.834031753633994
+b: 5.0   fb: 1296.00000000000
+x: 0.6516671063208843    fx: -14.78444711173416
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 10
+a: 0.6516671063208843    fa: -14.78444711173416
+b: 5.0   fb: 1296.00000000000
+x: 0.7007123157239012    fx: -13.804864482854825
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 11
+a: 0.7007123157239012    fa: -13.804864482854825
+b: 5.0   fb: 1296.00000000000
+x: 0.746025236345609    fx: -12.896967471309893
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 12
+a: 0.746025236345609    fa: -12.896967471309893
+b: 5.0   fb: 1296.00000000000
+x: 0.7879409680755218    fx: -12.05945536545917
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 13
+a: 0.7879409680755218    fa: -12.05945536545917
+b: 5.0   fb: 1296.00000000000
+x: 0.8267734062218298    fx: -11.28919887544131
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 14
+a: 0.8267734062218298    fa: -11.28919887544131
+b: 5.0   fb: 1296.00000000000
+x: 0.8628116332721024    fx: -10.582047263227778
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 15
+a: 0.8628116332721024    fa: -10.582047263227778
+b: 5.0   fb: 1296.00000000000
+x: 0.8963188461756414    fx: -9.933372699836546
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 16
+a: 0.8963188461756414    fa: -9.933372699836546
+b: 5.0   fb: 1296.00000000000
+x: 0.9275328385541038    fx: -9.338424672770518
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 17
+a: 0.9275328385541038    fa: -9.338424672770518
+b: 5.0   fb: 1296.00000000000
+x: 0.9566673734001363    fx: -8.792551305094594
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 18
+a: 0.9566673734001363    fa: -8.792551305094594
+b: 5.0   fb: 1296.00000000000
+x: 0.9839140108271991    fx: -8.29132978188574
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 19
+a: 0.9839140108271991    fa: -8.29132978188574
+b: 5.0   fb: 1296.00000000000
+x: 1.0094441148831779    fx: -7.830636143634468
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 20
+a: 1.0094441148831779    fa: -7.830636143634468
+b: 5.0   fb: 1296.00000000000
+x: 1.0334108712094547    fx: -7.406675615204225
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 21
+a: 1.0334108712094547    fa: -7.406675615204225
+b: 5.0   fb: 1296.00000000000
+x: 1.055951218382282    fx: -7.015987994066098
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 22
+a: 1.055951218382282    fa: -7.015987994066098
+b: 5.0   fb: 1296.00000000000
+x: 1.077187641538102    fx: -6.655437896610174
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 23
+a: 1.077187641538102    fa: -6.655437896610174
+b: 5.0   fb: 1296.00000000000
+x: 1.0972298056225316    fx: -6.322196367031637
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 24
+a: 1.0972298056225316    fa: -6.322196367031637
+b: 5.0   fb: 1296.00000000000
+x: 1.116176023089364    fx: -6.013718090570336
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 25
+a: 1.116176023089364    fa: -6.013718090570336
+b: 5.0   fb: 1296.00000000000
+x: 1.1341145610525358    fx: -5.727716917819997
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 26
+a: 1.1341145610525358    fa: -5.727716917819997
+b: 5.0   fb: 1296.00000000000
+x: 1.1511247984034327    fx: -5.462141377119696
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 27
+a: 1.1511247984034327    fa: -5.462141377119696
+b: 5.0   fb: 1296.00000000000
+x: 1.1672782459956654    fx: -5.215151169273632
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 28
+a: 1.1672782459956654    fa: -5.215151169273632
+b: 5.0   fb: 1296.00000000000
+x: 1.182639443810596    fx: -4.985095192063582
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 29
+a: 1.182639443810596    fa: -4.985095192063582
+b: 5.0   fb: 1296.00000000000
+x: 1.1972667487853879    fx: -4.770491354471332
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 30
+a: 1.1972667487853879    fa: -4.770491354471332
+b: 5.0   fb: 1296.00000000000
+x: 1.211213026179327    fx: -4.570008259584277
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 31
+a: 1.211213026179327    fa: -4.570008259584277
+b: 5.0   fb: 1296.00000000000
+x: 1.224526256266292    fx: -4.382448724982311
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 32
+a: 1.224526256266292    fa: -4.382448724982311
+b: 5.0   fb: 1296.00000000000
+x: 1.2372500669503357    fx: -4.206735045733836
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 33
+a: 1.2372500669503357    fa: -4.206735045733836
+b: 5.0   fb: 1296.00000000000
+x: 1.24942420171294    fx: -4.041895871624561
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 34
+a: 1.24942420171294    fa: -4.041895871624561
+b: 5.0   fb: 1296.00000000000
+x: 1.2610849311736223    fx: -3.887054555961612
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 35
+a: 1.2610849311736223    fa: -3.887054555961612
+b: 5.0   fb: 1296.00000000000
+x: 1.272265415510086    fx: -3.7414188309568885
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 36
+a: 1.272265415510086    fa: -3.7414188309568885
+b: 5.0   fb: 1296.00000000000
+x: 1.2829960240520255    fx: -3.6042716694884405
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 37
+a: 1.2829960240520255    fa: -3.6042716694884405
+b: 5.0   fb: 1296.00000000000
+x: 1.2933046175353904    fx: -3.474963201828139
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 38
+a: 1.2933046175353904    fa: -3.474963201828139
+b: 5.0   fb: 1296.00000000000
+x: 1.3032167977767963    fx: -3.352903566683736
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 39
+a: 1.3032167977767963    fa: -3.352903566683736
+b: 5.0   fb: 1296.00000000000
+x: 1.3127561288930518    fx: -3.2375565873575383
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 40
+a: 1.3127561288930518    fa: -3.2375565873575383
+b: 5.0   fb: 1296.00000000000
+x: 1.32194433363942    fx: -3.128434175189966
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 41
+a: 1.32194433363942    fa: -3.128434175189966
+b: 5.0   fb: 1296.00000000000
+x: 1.330801467962863    fx: -3.025091373279203
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 42
+a: 1.330801467962863    fa: -3.025091373279203
+b: 5.0   fb: 1296.00000000000
+x: 1.339346076454128    fx: -2.927121963501328
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 43
+a: 1.339346076454128    fa: -2.927121963501328
+b: 5.0   fb: 1296.00000000000
+x: 1.3475953310267719    fx: -2.8341545689915506
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 44
+a: 1.3475953310267719    fa: -2.8341545689915506
+b: 5.0   fb: 1296.00000000000
+x: 1.3555651548445107    fx: -2.745849192459694
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 45
+a: 1.3555651548445107    fa: -2.745849192459694
+b: 5.0   fb: 1296.00000000000
+x: 1.3632703332539466    fx: -2.661894138029176
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 46
+a: 1.3632703332539466    fa: -2.661894138029176
+b: 5.0   fb: 1296.00000000000
+x: 1.3707246132518467    fx: -2.5820032707616747
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 47
+a: 1.3707246132518467    fa: -2.5820032707616747
+b: 5.0   fb: 1296.00000000000
+x: 1.3779407928196188    fx: -2.505913573730183
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 48
+a: 1.3779407928196188    fa: -2.505913573730183
+b: 5.0   fb: 1296.00000000000
+x: 1.3849308012880035    fx: -2.4333829675040306
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 49
+a: 1.3849308012880035    fa: -2.4333829675040306
+b: 5.0   fb: 1296.00000000000
+x: 1.3917057717484744    fx: -2.3641883612869847
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
+
+iteração: 50
+a: 1.3917057717484744    fa: -2.3641883612869847
+b: 5.0   fb: 1296.00000000000
+x: 1.39827610640111    fx: -2.2981239087731637
+
+a calculadora alcançou seu limite de iterações e não encontrou raíz

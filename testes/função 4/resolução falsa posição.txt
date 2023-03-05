@@ -1,0 +1,115 @@
+método da falsa posição 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 1
+a: 1.0    fa: 4.84147098480790
+b: 5.0   fb: -0.794621373315692
+x: 4.4360480114060845    fx: -0.2677452211081093
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 2
+a: 1.0    fa: 4.84147098480790
+b: 4.4360480114060845   fb: -0.2677452211081093
+x: 4.255984103856676    fx: 0.17964671802206444
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 3
+a: 4.255984103856676    fa: 0.17964671802206444
+b: 4.4360480114060845   fb: -0.2677452211081093
+x: 4.328287351180199    fx: -0.012908641033827273
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 4
+a: 4.255984103856676    fa: 0.17964671802206444
+b: 4.328287351180199   fb: -0.012908641033827273
+x: 4.323440242951918    fx: -0.0005148238009606843
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 5
+a: 4.255984103856676    fa: 0.17964671802206444
+b: 4.323440242951918   fb: -0.0005148238009606843
+x: 4.3232474824683225    fx: -2.0366582520914278e-05
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 6
+a: 4.255984103856676    fa: 0.17964671802206444
+b: 4.3232474824683225   fb: -2.0366582520914278e-05
+x: 4.323239857670747    fx: -8.05449080765186e-07
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 7
+a: 4.255984103856676    fa: 0.17964671802206444
+b: 4.323239857670747   fb: -8.05449080765186e-07
+x: 4.323239556129796    fx: -3.185315833320601e-08
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 8
+a: 4.255984103856676    fa: 0.17964671802206444
+b: 4.323239556129796   fb: -3.185315833320601e-08
+x: 4.323239544204734    fx: -1.2596981235901694e-09
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
+função estudada: x*sin(x) + 4
+
+iteração: 9
+a: 4.255984103856676    fa: 0.17964671802206444
+b: 4.323239544204734   fb: -1.2596981235901694e-09
+x: 4.323239543733132    fx: -4.9816151204140624e-11
+
+ 
+a raíz da função é: 4.323239543733132

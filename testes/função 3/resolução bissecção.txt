@@ -1,0 +1,544 @@
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 1
+a: -5.0    fa: -22026.4657948067*E - 579.716337814537
+b: 5.0   fb: 670.283662185463 - 4.53999297624849e-5*E
+x: 0.0    fx: 18.281718171540955
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 2
+a: -5.0    fa: -22026.4657948067*E - 579.716337814537
+b: 0.0   fb: 18.281718171540955
+x: -2.5    fx: -456.10493710828206
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 3
+a: -2.5    fa: -456.10493710828206
+b: 0.0   fb: 18.281718171540955
+x: -1.25    fx: -21.003254596297044
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 4
+a: -1.25    fa: -21.003254596297044
+b: 0.0   fb: 18.281718171540955
+x: -0.625    fx: 10.493149158146691
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 5
+a: -1.25    fa: -21.003254596297044
+b: -0.625   fb: 10.493149158146691
+x: -0.9375    fx: -0.374585843244164
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 6
+a: -0.9375    fa: -0.374585843244164
+b: -0.625   fb: 10.493149158146691
+x: -0.78125    fx: 5.968002338081321
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 7
+a: -0.9375    fa: -0.374585843244164
+b: -0.78125   fb: 5.968002338081321
+x: -0.859375    fx: 3.056726398254546
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 8
+a: -0.9375    fa: -0.374585843244164
+b: -0.859375   fb: 3.056726398254546
+x: -0.8984375    fx: 1.410637071275529
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 9
+a: -0.9375    fa: -0.374585843244164
+b: -0.8984375   fb: 1.410637071275529
+x: -0.91796875    fx: 0.536019663848087
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 10
+a: -0.9375    fa: -0.374585843244164
+b: -0.91796875   fb: 0.536019663848087
+x: -0.927734375    fx: 0.08529284084851721
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 11
+a: -0.9375    fa: -0.374585843244164
+b: -0.927734375   fb: 0.08529284084851721
+x: -0.9326171875    fx: -0.14349270460398192
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 12
+a: -0.9326171875    fa: -0.14349270460398192
+b: -0.927734375   fb: 0.08529284084851721
+x: -0.93017578125    fx: -0.02881271565437466
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 13
+a: -0.93017578125    fa: -0.02881271565437466
+b: -0.927734375   fb: 0.08529284084851721
+x: -0.928955078125    fx: 0.028311713080449278
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 14
+a: -0.93017578125    fa: -0.02881271565437466
+b: -0.928955078125   fb: 0.028311713080449278
+x: -0.9295654296875    fx: -0.0002325694937332681
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 15
+a: -0.9295654296875    fa: -0.0002325694937332681
+b: -0.928955078125   fb: 0.028311713080449278
+x: -0.92926025390625    fx: 0.014044052343605996
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 16
+a: -0.9295654296875    fa: -0.0002325694937332681
+b: -0.92926025390625   fb: 0.014044052343605996
+x: -0.929412841796875    fx: 0.006906861862165101
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 17
+a: -0.9295654296875    fa: -0.0002325694937332681
+b: -0.929412841796875   fb: 0.006906861862165101
+x: -0.9294891357421875    fx: 0.0033374263309894773
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 18
+a: -0.9295654296875    fa: -0.0002325694937332681
+b: -0.9294891357421875   fb: 0.0033374263309894773
+x: -0.9295272827148438    fx: 0.0015524984600020035
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 19
+a: -0.9295654296875    fa: -0.0002325694937332681
+b: -0.9295272827148438   fb: 0.0015524984600020035
+x: -0.9295463562011719    fx: 0.000659981994067641
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 20
+a: -0.9295654296875    fa: -0.0002325694937332681
+b: -0.9295463562011719   fb: 0.000659981994067641
+x: -0.9295558929443359    fx: 0.00021371062797105966
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 21
+a: -0.9295654296875    fa: -0.0002325694937332681
+b: -0.9295558929443359   fb: 0.00021371062797105966
+x: -0.929560661315918    fx: -9.428338420513022e-06
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 22
+a: -0.929560661315918    fa: -9.428338420513022e-06
+b: -0.9295558929443359   fb: 0.00021371062797105966
+x: -0.929558277130127    fx: 0.00010214141838834297
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 23
+a: -0.929560661315918    fa: -9.428338420513022e-06
+b: -0.929558277130127   fb: 0.00010214141838834297
+x: -0.9295594692230225    fx: 4.635660838615191e-05
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 24
+a: -0.929560661315918    fa: -9.428338420513022e-06
+b: -0.9295594692230225   fb: 4.635660838615191e-05
+x: -0.9295600652694702    fx: 1.846415208947082e-05
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 25
+a: -0.929560661315918    fa: -9.428338420513022e-06
+b: -0.9295600652694702   fb: 1.846415208947082e-05
+x: -0.9295603632926941    fx: 4.517911108636697e-06
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 26
+a: -0.929560661315918    fa: -9.428338420513022e-06
+b: -0.9295603632926941   fb: 4.517911108636697e-06
+x: -0.929560512304306    fx: -2.4552125872736046e-06
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 27
+a: -0.929560512304306    fa: -2.4552125872736046e-06
+b: -0.9295603632926941   fb: 4.517911108636697e-06
+x: -0.9295604377985001    fx: 1.0313495278648771e-06
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 28
+a: -0.929560512304306    fa: -2.4552125872736046e-06
+b: -0.9295604377985001   fb: 1.0313495278648771e-06
+x: -0.929560475051403    fx: -7.119314606708936e-07
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 29
+a: -0.929560475051403    fa: -7.119314606708936e-07
+b: -0.9295604377985001   fb: 1.0313495278648771e-06
+x: -0.9295604564249516    fx: 1.5970904922130177e-07
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 30
+a: -0.929560475051403    fa: -7.119314606708936e-07
+b: -0.9295604564249516   fb: 1.5970904922130177e-07
+x: -0.9295604657381773    fx: -2.76111199757763e-07
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 31
+a: -0.9295604657381773    fa: -2.76111199757763e-07
+b: -0.9295604564249516   fb: 1.5970904922130177e-07
+x: -0.9295604610815644    fx: -5.820107228471414e-08
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 32
+a: -0.9295604610815644    fa: -5.820107228471414e-08
+b: -0.9295604564249516   fb: 1.5970904922130177e-07
+x: -0.929560458753258    fx: 5.075398548477734e-08
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 33
+a: -0.9295604610815644    fa: -5.820107228471414e-08
+b: -0.929560458753258   fb: 5.075398548477734e-08
+x: -0.9295604599174112    fx: -3.723546383484867e-09
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 34
+a: -0.9295604599174112    fa: -3.723546383484867e-09
+b: -0.929560458753258   fb: 5.075398548477734e-08
+x: -0.9295604593353346    fx: 2.3515224879716757e-08
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 35
+a: -0.9295604599174112    fa: -3.723546383484867e-09
+b: -0.9295604593353346   fb: 2.3515224879716757e-08
+x: -0.9295604596263729    fx: 9.895841024472784e-09
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 36
+a: -0.9295604599174112    fa: -3.723546383484867e-09
+b: -0.9295604596263729   fb: 9.895841024472784e-09
+x: -0.9295604597718921    fx: 3.0861449749399092e-09
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 37
+a: -0.9295604599174112    fa: -3.723546383484867e-09
+b: -0.9295604597718921   fb: 3.0861449749399092e-09
+x: -0.9295604598446516    fx: -3.186994971128494e-10
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 38
+a: -0.9295604598446516    fa: -3.186994971128494e-10
+b: -0.9295604597718921   fb: 3.0861449749399092e-09
+x: -0.9295604598082718    fx: 1.3837245152703694e-09
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 39
+a: -0.9295604598446516    fa: -3.186994971128494e-10
+b: -0.9295604598082718   fb: 1.3837245152703694e-09
+x: -0.9295604598264617    fx: 5.325160617924387e-10
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 40
+a: -0.9295604598446516    fa: -3.186994971128494e-10
+b: -0.9295604598264617   fb: 5.325160617924387e-10
+x: -0.9295604598355567    fx: 1.0690885153700471e-10
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 41
+a: -0.9295604598446516    fa: -3.186994971128494e-10
+b: -0.9295604598355567   fb: 1.0690885153700471e-10
+x: -0.9295604598401042    fx: -1.0589532278792237e-10
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da bissecção 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 42
+a: -0.9295604598401042    fa: -1.0589532278792237e-10
+b: -0.9295604598355567   fb: 1.0690885153700471e-10
+x: -0.9295604598378304    fx: 5.09747891009927e-13
+
+ 
+a raíz da função é: -0.9295604598378304

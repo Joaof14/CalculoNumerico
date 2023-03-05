@@ -25,6 +25,11 @@ class CalcZeroF():
         self.linha = ""
         self.resultado = ''
         self.file.close()
+        self.aI = self.a
+        self.bI = self.b
+
+
+
     #função para gráfico
     def grafico(self, a,b,f):
         try: 
@@ -47,6 +52,7 @@ class CalcZeroF():
         self.outputtxt()
         self.i  += 1
         
+        #verificações na função
         if self.fa*self.fb <= 0:
             if abs(self.fx) < self.p:
                 self.resultado = " \na raíz da função é: " + str(self.x)
@@ -83,6 +89,7 @@ class CalcZeroF():
             self.linha = self.linha + "método da bissecção \n \n"
             x = (self.a + self.b)/2
             self.cond = self.calc(x)
+        self.outputtxt()
 
     #método da falsa posição, com seu respectivo x, chamando o cálculo geral enquanto resultado for válido
     def FalsaPos(self):
@@ -91,27 +98,20 @@ class CalcZeroF():
             self.linha = self.linha + "método da falsa posição \n \n"
             x = ((self.a*self.fb)-(self.b*self.fa))/(self.fb-self.fa)
             self.cond = self.calc(x)
+        self.outputtxt()
 
     #método do ponto fixo, com seu respectivo x
     def PontoFixo(self, ChuteI, fIter):
         x = float(ChuteI)
         fIter = expand(fIter)
-        aI = self.a
-        bI = self.b
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método do ponto fixo\n \n"
+            self.linha += "função de iteração: " + str(fIter) + "\n"
             if self.i != 0:
                 x = fIter.subs(xS,x)
             self.cond = self.calc(x)
-            if (bI > aI):
-                if self.x > bI + 1 or self.x < aI - 1:
-                    self.resultado = "x se afastou demais do intervalo"
-                    self.cond = False
-            else:
-                if self.x > aI + 1 or self.x < bI - 1:
-                    self.resultado = "x se afastou demais do intervalo"
-                    self.cond = False
-
+            self.verificaConvergencia()
+        self.verificaResultado()
 
  #método de newton, com seu respectivo x
     def Newton(self, ChuteI,fIter):
@@ -122,8 +122,8 @@ class CalcZeroF():
             if self.i != 0:
                 x = float(x - (self.f.subs(xS,x)/flinha.subs(xS,x)))
             self.cond = self.calc(x)
-        
-
+            self.verificaConvergencia()
+        self.verificaResultado()
 
     #método da secante, com seu respectivo x
     def Secante(self):
@@ -145,25 +145,38 @@ class CalcZeroF():
                 self.x = float(x[self.i])
                 self.outputtxt()
                 self.i += 1
-            
-    
+            self.verificaConvergencia()
+        self.verificaResultado()
 
 
-    def verificaResultado(self, a, b):
-        a = float(a) 
-        b = float(b)
-        if self.fx < self.p and not ((self.x <= a and self.x >= b) or (self.x >= a and self.x <= b)):
-            self.resultado = "raíz encontrada mas não está no intervalo"
+
+
+    def verificaConvergencia(self):
+        if (self.bI > self.aI) and (self.x > self.bI + 1 or self.x < self.aI - 1):
+            self.resultado = "x se afastou demais do intervalo"
+            self.cond = False
+        elif (self.bI < self.aI) and (self.x > self.aI + 1 or self.x < self.bI - 1):
+            self.resultado = "x se afastou demais do intervalo"
+            self.cond = False
+
+    def verificaResultado(self):
+        if self.fx < self.p and not (
+            (self.x <= self.aI and self.x >= self.bI) or (self.x >= self.aI and self.x <= self.bI)):
+            self.resultado = "x = " + str(self.x)
+            self.resultado += "\nraíz encontrada mas não está no intervalo"
         self.outputtxt()
 
     def outputtxt(self):
         self.file = open('resolução.txt', 'a')
-        if self.resultado == '':
-            self.linha += str(self.f) + '\n\n'
+        if self.resultado == '' and self.i < 51:
+            self.linha += "função estudada: " + str(self.f) + '\n\n'
             self.linha += 'iteração: ' + str(self.i) + '\n' 
             self.linha += "a: "+ str(self.a) + "    fa: "+ str(self.fa) + "\n"
             self.linha += "b: " + str(self.b) + "   fb: " + str(self.fb) + "\n"
             self.linha += "x: "+ str(self.x) + "    fx: " + str(self.fx) + "\n\n"
+        elif self.resultado == '' and self.i > 50:
+            self.resultado = "a calculadora alcançou seu limite de iterações e não encontrou raíz"
+            self.linha = self.resultado
         else:
             self.linha = self.resultado
         self.file.write(self.linha)

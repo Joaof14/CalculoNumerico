@@ -1,0 +1,302 @@
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 0
+a: -5.0    fa: -22026.4657948067*E - 579.716337814537
+b: 5.0   fb: 670.283662185463 - 4.53999297624849e-5*E
+x: -5.0    fx: -60453.85805301236
+
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 1
+a: -5.0    fa: -22026.4657948067*E - 579.716337814537
+b: 5.0   fb: 670.283662185463 - 4.53999297624849e-5*E
+x: 5.0    fx: 670.283538775659
+
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 2
+a: -5.0    fa: -22026.4657948067*E - 579.716337814537
+b: 5.0   fb: 670.283662185463 - 4.53999297624849e-5*E
+x: 4.890340621345313    fx: 628.8653197390955
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 3
+a: -5.0    fa: -22026.4657948067*E - 579.716337814537
+b: 4.890340621345313   fb: 628.8653197390955
+x: 3.2253491797965546    fx: 197.1666488992771
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 4
+a: -5.0    fa: -22026.4657948067*E - 579.716337814537
+b: 3.2253491797965546   fb: 197.1666488992771
+x: 2.464909537169177    fx: 100.15770606850795
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 5
+a: -5.0    fa: -22026.4657948067*E - 579.716337814537
+b: 2.464909537169177   fb: 100.15770606850795
+x: 1.6797871764196017    fx: 46.317600384930834
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 6
+a: -5.0    fa: -22026.4657948067*E - 579.716337814537
+b: 1.6797871764196017   fb: 46.317600384930834
+x: 1.0043616122093    fx: 26.246394906668005
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 7
+a: -5.0    fa: -22026.4657948067*E - 579.716337814537
+b: 1.0043616122093   fb: 26.246394906668005
+x: 0.12113184768312124    fx: 18.882790931784903
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 8
+a: -5.0    fa: -22026.4657948067*E - 579.716337814537
+b: 0.12113184768312124   fb: 18.882790931784903
+x: -2.1437703720946892    fx: -223.06380811577807
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 9
+a: -2.1437703720946892    fa: -223.06380811577807
+b: 0.12113184768312124   fb: 18.882790931784903
+x: -0.05563308832076341    fx: 17.962484124511096
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 10
+a: -2.1437703720946892    fa: -223.06380811577807
+b: -0.05563308832076341   fb: 17.962484124511096
+x: -0.21125151675426992    fx: 16.82776987710578
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 11
+a: -2.1437703720946892    fa: -223.06380811577807
+b: -0.21125151675426992   fb: 16.82776987710578
+x: -2.5190669939142274    fx: -473.50314827102727
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 12
+a: -2.5190669939142274    fa: -473.50314827102727
+b: -0.21125151675426992   fb: 16.82776987710578
+x: -0.2904539213571513    fx: 16.06059359007329
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 13
+a: -2.5190669939142274    fa: -473.50314827102727
+b: -0.2904539213571513   fb: 16.06059359007329
+x: -0.36356564464735136    fx: 15.202038583788056
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 14
+a: -2.5190669939142274    fa: -473.50314827102727
+b: -0.36356564464735136   fb: 15.202038583788056
+x: -1.6581212994956411    fx: -75.03840599031743
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 15
+a: -1.6581212994956411    fa: -75.03840599031743
+b: -0.36356564464735136   fb: 15.202038583788056
+x: -0.5816484024035322    fx: 11.490199631543222
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 16
+a: -1.6581212994956411    fa: -75.03840599031743
+b: -0.5816484024035322   fb: 11.490199631543222
+x: -0.7245940606242066    fx: 7.792671062375926
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 17
+a: -1.6581212994956411    fa: -75.03840599031743
+b: -0.7245940606242066   fb: 7.792671062375926
+x: -1.0258570457427751    fx: -4.978791173298548
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 18
+a: -1.0258570457427751    fa: -4.978791173298548
+b: -0.7245940606242066   fb: 7.792671062375926
+x: -0.9084135249092589    fx: 0.9683267785006539
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 19
+a: -1.0258570457427751    fa: -4.978791173298548
+b: -0.9084135249092589   fb: 0.9683267785006539
+x: -0.9275360153502107    fx: 0.09453854501499767
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 20
+a: -1.0258570457427751    fa: -4.978791173298548
+b: -0.9275360153502107   fb: 0.09453854501499767
+x: -0.9296049519118066    fx: -0.002082139399752204
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 21
+a: -0.9296049519118066    fa: -0.002082139399752204
+b: -0.9275360153502107   fb: 0.09453854501499767
+x: -0.9295603671072528    fx: 4.339405652393175e-06
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 22
+a: -0.9296049519118066    fa: -0.002082139399752204
+b: -0.9295603671072528   fb: 4.339405652393175e-06
+x: -0.9295604598335975    fx: 1.985938666484296e-10
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+
+iteração: 23
+a: -0.9296049519118066    fa: -0.002082139399752204
+b: -0.9295604598335975   fb: 1.985938666484296e-10
+x: -0.9295604598378413    fx: -6.717671659142846e-15
+
+ 
+a raíz da função é: -0.9295604598378413
