@@ -94,7 +94,7 @@ fIEntry = Entry(
 fIEntry.pack()
 
 chuteILabel = Label( window,
-                text ='chute inicial para metodo do ponto fixo') #cria label e indica o que nele deve estar escrito
+                text ='chute inicial para metodo do ponto fixo ou Newton') #cria label e indica o que nele deve estar escrito
 chuteILabel.pack() #insere label na janela
 chuteIEntry = Entry(
     window,
