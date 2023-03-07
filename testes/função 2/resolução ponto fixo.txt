@@ -3,7 +3,7 @@ método do ponto fixo
 função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
-iteração: 0
+iteração: 1
 a: 0.0    fa: -24.0000000000000
 b: 5.0   fb: 1296.00000000000
 x: 2.5    fx: 2.40625
@@ -17,24 +17,10 @@ método do ponto fixo
 função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
-iteração: 1
+iteração: 2
 a: 0.0    fa: -24.0000000000000
 b: 2.5   fb: 2.40625
-x: 1.8984375    fx: -0.01487379046739079
-
-Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
-sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
-portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
- 
-método do ponto fixo
- 
-função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
-função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
-
-iteração: 2
-a: 1.8984375    fa: -0.01487379046739079
-b: 2.5   fb: 2.40625
-x: 1.9021559476168477    fx: -0.013326348393192688
+x: 1.89843750000000    fx: -0.01487379046739079
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -46,9 +32,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 3
-a: 1.9021559476168477    fa: -0.013326348393192688
+a: 1.89843750000000    fa: -0.01487379046739079
 b: 2.5   fb: 2.40625
-x: 1.9054875347151476    fx: -0.012032849024478764
+x: 1.90215594761685    fx: -0.013326348393192688
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -60,9 +46,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 4
-a: 1.9054875347151476    fa: -0.012032849024478764
+a: 1.90215594761685    fa: -0.013326348393192688
 b: 2.5   fb: 2.40625
-x: 1.9084957469712656    fx: -0.010938069850951138
+x: 1.90548753471515    fx: -0.012032849024478764
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -74,9 +60,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 5
-a: 1.9084957469712656    fa: -0.010938069850951138
+a: 1.90548753471515    fa: -0.012032849024478764
 b: 2.5   fb: 2.40625
-x: 1.9112302644340033    fx: -0.010001419243053533
+x: 1.90849574697127    fx: -0.010938069850951138
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -88,9 +74,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 6
-a: 1.9112302644340033    fa: -0.010001419243053533
+a: 1.90849574697127    fa: -0.010938069850951138
 b: 2.5   fb: 2.40625
-x: 1.9137306192447667    fx: -0.009192439573283195
+x: 1.91123026443400    fx: -0.010001419243053533
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -102,9 +88,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 7
-a: 1.9137306192447667    fa: -0.009192439573283195
+a: 1.91123026443400    fa: -0.010001419243053533
 b: 2.5   fb: 2.40625
-x: 1.9160287291380858    fx: -0.008487863540722174
+x: 1.91373061924477    fx: -0.009192439573283195
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -116,9 +102,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 8
-a: 1.9160287291380858    fa: -0.008487863540722174
+a: 1.91373061924477    fa: -0.009192439573283195
 b: 2.5   fb: 2.40625
-x: 1.9181506950232663    fx: -0.007869634002716452
+x: 1.91602872913809    fx: -0.008487863540722174
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -130,9 +116,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 9
-a: 1.9181506950232663    fa: -0.007869634002716452
+a: 1.91602872913809    fa: -0.008487863540722174
 b: 2.5   fb: 2.40625
-x: 1.9201181035239419    fx: -0.007323539785900834
+x: 1.91815069502327    fx: -0.007869634002716452
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -144,9 +130,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 10
-a: 1.9201181035239419    fa: -0.007323539785900834
+a: 1.91815069502327    fa: -0.007869634002716452
 b: 2.5   fb: 2.40625
-x: 1.9219489884704153    fx: -0.006838255847696928
+x: 1.92011810352394    fx: -0.007323539785900834
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -158,9 +144,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 11
-a: 1.9219489884704153    fa: -0.006838255847696928
+a: 1.92011810352394    fa: -0.007323539785900834
 b: 2.5   fb: 2.40625
-x: 1.9236585524323395    fx: -0.00640465514970856
+x: 1.92194898847042    fx: -0.006838255847696928
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -172,9 +158,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 12
-a: 1.9236585524323395    fa: -0.00640465514970856
+a: 1.92194898847042    fa: -0.006838255847696928
 b: 2.5   fb: 2.40625
-x: 1.9252597162197667    fx: -0.0060153069626665
+x: 1.92365855243234    fx: -0.00640465514970856
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -186,9 +172,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 13
-a: 1.9252597162197667    fa: -0.0060153069626665
+a: 1.92365855243234    fa: -0.00640465514970856
 b: 2.5   fb: 2.40625
-x: 1.9267635429604333    fx: -0.005664105507406703
+x: 1.92525971621977    fx: -0.0060153069626665
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -200,9 +186,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 14
-a: 1.9267635429604333    fa: -0.005664105507406703
+a: 1.92525971621977    fa: -0.0060153069626665
 b: 2.5   fb: 2.40625
-x: 1.928179569337285    fx: -0.0053459912678732735
+x: 1.92676354296043    fx: -0.005664105507406703
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -214,9 +200,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 15
-a: 1.928179569337285    fa: -0.0053459912678732735
+a: 1.92676354296043    fa: -0.005664105507406703
 b: 2.5   fb: 2.40625
-x: 1.929516067154255    fx: -0.005056739216172446
+x: 1.92817956933728    fx: -0.0053459912678732735
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -228,9 +214,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 16
-a: 1.929516067154255    fa: -0.005056739216172446
+a: 1.92817956933728    fa: -0.0053459912678732735
 b: 2.5   fb: 2.40625
-x: 1.9307802519582964    fx: -0.0047927960305003126
+x: 1.92951606715426    fx: -0.005056739216172446
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -242,9 +228,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 17
-a: 1.9307802519582964    fa: -0.0047927960305003126
+a: 1.92951606715426    fa: -0.005056739216172446
 b: 2.5   fb: 2.40625
-x: 1.9319784509659215    fx: -0.004551153649202888
+x: 1.93078025195830    fx: -0.0047927960305003126
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -256,9 +242,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 18
-a: 1.9319784509659215    fa: -0.004551153649202888
+a: 1.93078025195830    fa: -0.0047927960305003126
 b: 2.5   fb: 2.40625
-x: 1.9331162393782204    fx: -0.004329250092325765
+x: 1.93197845096592    fx: -0.004551153649202888
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -270,9 +256,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 19
-a: 1.9331162393782204    fa: -0.004329250092325765
+a: 1.93197845096592    fa: -0.004551153649202888
 b: 2.5   fb: 2.40625
-x: 1.9341985519013036    fx: -0.004124890970757633
+x: 1.93311623937822    fx: -0.004329250092325765
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -284,9 +270,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 20
-a: 1.9341985519013036    fa: -0.004124890970757633
+a: 1.93311623937822    fa: -0.004329250092325765
 b: 2.5   fb: 2.40625
-x: 1.9352297746439895    fx: -0.003936186847951717
+x: 1.93419855190130    fx: -0.004124890970757633
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -298,9 +284,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 21
-a: 1.9352297746439895    fa: -0.003936186847951717
+a: 1.93419855190130    fa: -0.004124890970757633
 b: 2.5   fb: 2.40625
-x: 1.9362138213559774    fx: -0.0037615028647621784
+x: 1.93522977464399    fx: -0.003936186847951717
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -312,9 +298,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 22
-a: 1.9362138213559774    fa: -0.0037615028647621784
+a: 1.93522977464399    fa: -0.003936186847951717
 b: 2.5   fb: 2.40625
-x: 1.9371541970721662    fx: -0.003599417932619531
+x: 1.93621382135598    fx: -0.0037615028647621784
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -326,9 +312,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 23
-a: 1.9371541970721662    fa: -0.003599417932619531
+a: 1.93621382135598    fa: -0.0037615028647621784
 b: 2.5   fb: 2.40625
-x: 1.9380540515553246    fx: -0.003448691454352115
+x: 1.93715419707217    fx: -0.003599417932619531
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -340,9 +326,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 24
-a: 1.9380540515553246    fa: -0.003448691454352115
+a: 1.93715419707217    fa: -0.003599417932619531
 b: 2.5   fb: 2.40625
-x: 1.9389162244189162    fx: -0.0033082360107528075
+x: 1.93805405155532    fx: -0.003448691454352115
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -354,9 +340,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 25
-a: 1.9389162244189162    fa: -0.0033082360107528075
+a: 1.93805405155532    fa: -0.003448691454352115
 b: 2.5   fb: 2.40625
-x: 1.9397432834216097    fx: -0.0031770948112495034
+x: 1.93891622441892    fx: -0.0033082360107528075
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -368,9 +354,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 26
-a: 1.9397432834216097    fa: -0.0031770948112495034
+a: 1.93891622441892    fa: -0.0033082360107528075
 b: 2.5   fb: 2.40625
-x: 1.9405375571244203    fx: -0.0030544229722124783
+x: 1.93974328342161    fx: -0.0031770948112495034
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -382,9 +368,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 27
-a: 1.9405375571244203    fa: -0.0030544229722124783
+a: 1.93974328342161    fa: -0.0031770948112495034
 b: 2.5   fb: 2.40625
-x: 1.9413011628674717    fx: -0.002939471891764356
+x: 1.94053755712442    fx: -0.0030544229722124783
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -396,9 +382,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 28
-a: 1.9413011628674717    fa: -0.002939471891764356
+a: 1.94053755712442    fa: -0.0030544229722124783
 b: 2.5   fb: 2.40625
-x: 1.9420360308404128    fx: -0.0028315761436630282
+x: 1.94130116286747    fx: -0.002939471891764356
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -410,9 +396,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 29
-a: 1.9420360308404128    fa: -0.0028315761436630282
+a: 1.94130116286747    fa: -0.002939471891764356
 b: 2.5   fb: 2.40625
-x: 1.9427439248763267    fx: -0.0027301424321706236
+x: 1.94203603084041    fx: -0.0028315761436630282
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -424,9 +410,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 30
-a: 1.9427439248763267    fa: -0.0027301424321706236
+a: 1.94203603084041    fa: -0.0028315761436630282
 b: 2.5   fb: 2.40625
-x: 1.9434264604843676    fx: -0.0026346402423911286
+x: 1.94274392487633    fx: -0.0027301424321706236
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -438,9 +424,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 31
-a: 1.9434264604843676    fa: -0.0026346402423911286
+a: 1.94274392487633    fa: -0.0027301424321706236
 b: 2.5   fb: 2.40625
-x: 1.9440851205449654    fx: -0.0025445938924093525
+x: 1.94342646048437    fx: -0.0026346402423911286
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -452,9 +438,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 32
-a: 1.9440851205449654    fa: -0.0025445938924093525
+a: 1.94342646048437    fa: -0.0026346402423911286
 b: 2.5   fb: 2.40625
-x: 1.9447212690180677    fx: -0.002459575749341525
+x: 1.94408512054497    fx: -0.0025445938924093525
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -466,9 +452,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 33
-a: 1.9447212690180677    fa: -0.002459575749341525
+a: 1.94408512054497    fa: -0.0025445938924093525
 b: 2.5   fb: 2.40625
-x: 1.9453361629554031    fx: -0.0023792004172520365
+x: 1.94472126901807    fx: -0.002459575749341525
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -480,9 +466,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 34
-a: 1.9453361629554031    fa: -0.0023792004172520365
+a: 1.94472126901807    fa: -0.002459575749341525
 b: 2.5   fb: 2.40625
-x: 1.9459309630597161    fx: -0.0023031197392242575
+x: 1.94533616295540    fx: -0.0023792004172520365
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -494,9 +480,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 35
-a: 1.9459309630597161    fa: -0.0023031197392242575
+a: 1.94533616295540    fa: -0.0023792004172520365
 b: 2.5   fb: 2.40625
-x: 1.9465067429945222    fx: -0.0022310184846929815
+x: 1.94593096305972    fx: -0.0023031197392242575
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -508,9 +494,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 36
-a: 1.9465067429945222    fa: -0.0022310184846929815
+a: 1.94593096305972    fa: -0.0023031197392242575
 b: 2.5   fb: 2.40625
-x: 1.9470644976156954    fx: -0.0021626106157555114
+x: 1.94650674299452    fx: -0.0022310184846929815
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -522,9 +508,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 37
-a: 1.9470644976156954    fa: -0.0021626106157555114
+a: 1.94650674299452    fa: -0.0022310184846929815
 b: 2.5   fb: 2.40625
-x: 1.9476051502696343    fx: -0.0020976360442119812
+x: 1.94706449761570    fx: -0.0021626106157555114
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -536,9 +522,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 38
-a: 1.9476051502696343    fa: -0.0020976360442119812
+a: 1.94706449761570    fa: -0.0021626106157555114
 b: 2.5   fb: 2.40625
-x: 1.9481295592806873    fx: -0.0020358578068311317
+x: 1.94760515026963    fx: -0.0020976360442119812
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -550,9 +536,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 39
-a: 1.9481295592806873    fa: -0.0020358578068311317
+a: 1.94760515026963    fa: -0.0020976360442119812
 b: 2.5   fb: 2.40625
-x: 1.948638523732395    fx: -0.0019770595971948524
+x: 1.94812955928069    fx: -0.0020358578068311317
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -564,9 +550,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 40
-a: 1.948638523732395    fa: -0.0019770595971948524
+a: 1.94812955928069    fa: -0.0020358578068311317
 b: 2.5   fb: 2.40625
-x: 1.9491327886316938    fx: -0.0019210436035166367
+x: 1.94863852373240    fx: -0.0019770595971948524
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -578,9 +564,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 41
-a: 1.9491327886316938    fa: -0.0019210436035166367
+a: 1.94863852373240    fa: -0.0019770595971948524
 b: 2.5   fb: 2.40625
-x: 1.9496130495325712    fx: -0.001867628609034
+x: 1.94913278863169    fx: -0.0019210436035166367
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -592,9 +578,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 42
-a: 1.9496130495325712    fa: -0.001867628609034
+a: 1.94913278863169    fa: -0.0019210436035166367
 b: 2.5   fb: 2.40625
-x: 1.950079956684835    fx: -0.0018166483194193006
+x: 1.94961304953257    fx: -0.001867628609034
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -606,9 +592,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 43
-a: 1.950079956684835    fa: -0.0018166483194193006
+a: 1.94961304953257    fa: -0.001867628609034
 b: 2.5   fb: 2.40625
-x: 1.9505341187646899    fx: -0.0017679498856324471
+x: 1.95007995668484    fx: -0.0018166483194193006
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -620,9 +606,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 44
-a: 1.9505341187646899    fa: -0.0017679498856324471
+a: 1.95007995668484    fa: -0.0018166483194193006
 b: 2.5   fb: 2.40625
-x: 1.950976106236098    fx: -0.0017213925971191202
+x: 1.95053411876469    fx: -0.0017679498856324471
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -634,9 +620,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 45
-a: 1.950976106236098    fa: -0.0017213925971191202
+a: 1.95053411876469    fa: -0.0017679498856324471
 b: 2.5   fb: 2.40625
-x: 1.9514064543853795    fx: -0.0016768467224324013
+x: 1.95097610623610    fx: -0.0017213925971191202
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -648,9 +634,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 46
-a: 1.9514064543853795    fa: -0.0016768467224324013
+a: 1.95097610623610    fa: -0.0017213925971191202
 b: 2.5   fb: 2.40625
-x: 1.9518256660659858    fx: -0.0016341924787326434
+x: 1.95140645438538    fx: -0.0016768467224324013
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -662,9 +648,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 47
-a: 1.9518256660659858    fa: -0.0016341924787326434
+a: 1.95140645438538    fa: -0.0016768467224324013
 b: 2.5   fb: 2.40625
-x: 1.952234214185669    fx: -0.0015933191138230995
+x: 1.95182566606599    fx: -0.0016341924787326434
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -676,9 +662,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 48
-a: 1.952234214185669    fa: -0.0015933191138230995
+a: 1.95182566606599    fa: -0.0016341924787326434
 b: 2.5   fb: 2.40625
-x: 1.952632543964123    fx: -0.0015541240867094075
+x: 1.95223421418567    fx: -0.0015933191138230995
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -690,9 +676,9 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 49
-a: 1.952632543964123    fa: -0.0015541240867094075
+a: 1.95223421418567    fa: -0.0015933191138230995
 b: 2.5   fb: 2.40625
-x: 1.9530210749857986    fx: -0.001516512334660547
+x: 1.95263254396412    fx: -0.0015541240867094075
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -704,8 +690,15 @@ função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24
 
 iteração: 50
-a: 1.9530210749857986    fa: -0.001516512334660547
+a: 1.95263254396412    fa: -0.0015541240867094075
 b: 2.5   fb: 2.40625
-x: 1.9534002030694637    fx: -0.0014803956165962973
+x: 1.95302107498580    fx: -0.001516512334660547
 
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 a calculadora alcançou seu limite de iterações e não encontrou raíz

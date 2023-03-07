@@ -51,4 +51,96 @@ a: 0.34332545697230255    fa: -17.889975330207044
 b: 3.0   fb: 252.000000000000
 x: -2.0426122669122284    fx: 18.66922798678702
 
-x se afastou demais do intervalo
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 5
+a: 0.34332545697230255    fa: -17.889975330207044
+b: -2.0426122669122284   fb: 18.66922798678702
+x: -0.8242154943334754    fx: -6.036530947123238
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 6
+a: -0.8242154943334754    fa: -6.036530947123238
+b: -2.0426122669122284   fb: 18.66922798678702
+x: -1.12191490292973    fx: -2.484741398574533
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 7
+a: -1.12191490292973    fa: -2.484741398574533
+b: -2.0426122669122284   fb: 18.66922798678702
+x: -1.3301778179362005    fx: 0.4569360705995855
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 8
+a: -1.12191490292973    fa: -2.484741398574533
+b: -1.3301778179362005   fb: 0.4569360705995855
+x: -1.2978279634630692    fx: -0.03855289683442109
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 9
+a: -1.2978279634630692    fa: -0.03855289683442109
+b: -1.3301778179362005   fb: 0.4569360705995855
+x: -1.3003450338401756    fx: -0.0005904545944623862
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 10
+a: -1.3003450338401756    fa: -0.0005904545944623862
+b: -1.3301778179362005   fb: 0.4569360705995855
+x: -1.3003841834754746    fx: 7.676532352007825e-07
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da secante 
+ 
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 11
+a: -1.3003450338401756    fa: -0.0005904545944623862
+b: -1.3003841834754746   fb: 7.676532352007825e-07
+x: -1.3003841326429082    fx: -1.5274892462002754e-11
+
+x = -1.3003841326429082
+raíz encontrada mas não está no intervalo

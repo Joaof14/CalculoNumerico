@@ -23,6 +23,7 @@ def Controle():
     else:
         print("método não selecionado")
 
+    print(FunCalc.resultado)
 def grafico():
     #chama grafico
     FunCalc.grafico(a=aEntry.get(), b=bEntry.get(),f=fEntry.get())

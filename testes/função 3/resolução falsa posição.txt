@@ -644,4 +644,10 @@ a: -5.0    fa: -22026.4657948067*E - 579.716337814537
 b: 2.8728873394983756   fb: 145.83729283202493
 x: 2.8539407000835832    fx: 143.4034552039746
 
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método da falsa posição 
+ 
 a calculadora alcançou seu limite de iterações e não encontrou raíz

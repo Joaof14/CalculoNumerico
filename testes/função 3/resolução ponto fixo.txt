@@ -3,7 +3,7 @@ método do ponto fixo
 função de iteração: -1/5 - cos(x)/(5*x**2) - 4/x**2 + E*exp(-2*x)/(5*x**2)
 função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
 
-iteração: 0
+iteração: 1
 a: -5.0    fa: -22026.4657948067*E - 579.716337814537
 b: 5.0   fb: 670.283662185463 - 4.53999297624849e-5*E
 x: 0.0    fx: 18.281718171540955
@@ -17,7 +17,7 @@ método do ponto fixo
 função de iteração: -1/5 - cos(x)/(5*x**2) - 4/x**2 + E*exp(-2*x)/(5*x**2)
 função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
 
-iteração: 1
+iteração: 2
 a: -5.0    fa: -22026.4657948067*E - 579.716337814537
 b: 0.0   fb: 18.281718171540955
 x: nan    fx: nan
