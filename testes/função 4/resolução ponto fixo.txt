@@ -3,7 +3,7 @@ método do ponto fixo
 função de iteração: -4/sin(x)
 função estudada: x*sin(x) + 4
 
-iteração: 1
+iteração: 0
 a: 1.0    fa: 4.84147098480790
 b: 5.0   fb: -0.794621373315692
 x: 3.0    fx: 4.423360024179601
@@ -17,7 +17,7 @@ método do ponto fixo
 função de iteração: -4/sin(x)
 função estudada: x*sin(x) + 4
 
-iteração: 2
+iteração: 1
 a: 3.0    fa: 4.423360024179601
 b: 5.0   fb: -0.794621373315692
 x: -28.3446695829487    fx: 2.0080011937031337

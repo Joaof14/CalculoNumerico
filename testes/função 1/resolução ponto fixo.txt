@@ -1,9 +1,9 @@
 método do ponto fixo
  
-função de iteração: x**4/5 + 2*x**3/5 + 3*x**2/10 - 3/2
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
 
-iteração: 1
+iteração: 0
 a: 0.0    fa: -15
 b: 3.0   fb: 252.000000000000
 x: 1.5    fx: 0.375
@@ -14,13 +14,27 @@ portanto existe pelo menos uma raíz entre eles, com isso a recebe x
  
 método do ponto fixo
  
-função de iteração: x**4/5 + 2*x**3/5 + 3*x**2/10 - 3/2
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 1
+a: 0.0    fa: -15
+b: 1.5   fb: 0.375
+x: 1.85156250000000    fx: 25.666210301220417
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
 
 iteração: 2
 a: 0.0    fa: -15
-b: 1.5   fb: 0.375
-x: 1.53750000000000    fx: 2.4308477050781345
+b: 1.85156250000000   fb: 25.666210301220417
+x: 1.86287439663283    fx: 26.727077049899904
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -28,13 +42,13 @@ portanto existe pelo menos uma raíz entre eles, com isso a recebe x
  
 método do ponto fixo
  
-função de iteração: x**4/5 + 2*x**3/5 + 3*x**2/10 - 3/2
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
 
 iteração: 3
 a: 0.0    fa: -15
-b: 1.53750000000000   fb: 2.4308477050781345
-x: 1.78058477050781    fx: 19.390761226767196
+b: 1.86287439663283   fb: 26.727077049899904
+x: 1.87184849881248    fx: 27.58088667799269
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -42,13 +56,13 @@ portanto existe pelo menos uma raíz entre eles, com isso a recebe x
  
 método do ponto fixo
  
-função de iteração: x**4/5 + 2*x**3/5 + 3*x**2/10 - 3/2
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
 
 iteração: 4
 a: 0.0    fa: -15
-b: 1.78058477050781   fb: 19.390761226767196
-x: 3.71966089318453    fx: 578.0331009221704
+b: 1.87184849881248   fb: 27.58088667799269
+x: 1.87921000027022    fx: 28.289385519539806
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -56,12 +70,649 @@ portanto existe pelo menos uma raíz entre eles, com isso a recebe x
  
 método do ponto fixo
  
-função de iteração: x**4/5 + 2*x**3/5 + 3*x**2/10 - 3/2
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
 função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
 
 iteração: 5
 a: 0.0    fa: -15
-b: 3.71966089318453   fb: 578.0331009221704
-x: 61.5229709854016    fx: 29595801.500587143
+b: 1.87921000027022   fb: 28.289385519539806
+x: 1.88539950361685    fx: 28.890782317058747
 
-x se afastou demais do intervalo
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 6
+a: 0.0    fa: -15
+b: 1.88539950361685   fb: 28.890782317058747
+x: 1.89070352836282    fx: 29.410304039049144
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 7
+a: 0.0    fa: -15
+b: 1.89070352836282   fb: 29.410304039049144
+x: 1.89531812052779    fx: 29.865435400211865
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 8
+a: 0.0    fa: -15
+b: 1.89531812052779   fb: 29.865435400211865
+x: 1.89938285097723    fx: 30.268763215947953
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 9
+a: 0.0    fa: -15
+b: 1.89938285097723   fb: 30.268763215947953
+x: 1.90300030462222    fx: 30.629629062995598
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 10
+a: 0.0    fa: -15
+b: 1.90300030462222   fb: 30.629629062995598
+x: 1.90624788659119    fx: 30.955142381507045
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 11
+a: 0.0    fa: -15
+b: 1.90624788659119   fb: 30.955142381507045
+x: 1.90918530187276    fx: 31.250829116151245
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 12
+a: 0.0    fa: -15
+b: 1.90918530187276   fb: 31.250829116151245
+x: 1.91185947333362    fx: 31.521062261505094
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 13
+a: 0.0    fa: -15
+b: 1.91185947333362   fb: 31.521062261505094
+x: 1.91430787844613    fx: 31.769356479101152
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 14
+a: 0.0    fa: -15
+b: 1.91430787844613   fb: 31.769356479101152
+x: 1.91656087478410    fx: 31.998575027966695
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 15
+a: 0.0    fa: -15
+b: 1.91656087478410   fb: 31.998575027966695
+x: 1.91864335892017    fx: 32.21107843084647
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 16
+a: 0.0    fa: -15
+b: 1.91864335892017   fb: 32.21107843084647
+x: 1.92057597416968    fx: 32.408833417962384
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 17
+a: 0.0    fa: -15
+b: 1.92057597416968   fb: 32.408833417962384
+x: 1.92237600585041    fx: 32.59349417153195
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 18
+a: 0.0    fa: -15
+b: 1.92237600585041   fb: 32.59349417153195
+x: 1.92405805562896    fx: 32.76646386541396
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 19
+a: 0.0    fa: -15
+b: 1.92405805562896   fb: 32.76646386541396
+x: 1.92563455681388    fx: 32.928941935004524
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 20
+a: 0.0    fa: -15
+b: 1.92563455681388   fb: 32.928941935004524
+x: 1.92711617324182    fx: 33.081960846733374
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 21
+a: 0.0    fa: -15
+b: 1.92711617324182   fb: 33.081960846733374
+x: 1.92851211169854    fx: 33.226415028413456
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 22
+a: 0.0    fa: -15
+b: 1.92851211169854   fb: 33.226415028413456
+x: 1.92983036924730    fx: 33.363083869958885
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 23
+a: 0.0    fa: -15
+b: 1.92983036924730   fb: 33.363083869958885
+x: 1.93107793095014    fx: 33.492650184876766
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 24
+a: 0.0    fa: -15
+b: 1.93107793095014   fb: 33.492650184876766
+x: 1.93226092935778    fx: 33.61571515862401
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 25
+a: 0.0    fa: -15
+b: 1.93226092935778   fb: 33.61571515862401
+x: 1.93338477422937    fx: 33.732810550427416
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 26
+a: 0.0    fa: -15
+b: 1.93338477422937   fb: 33.732810550427416
+x: 1.93445425884979    fx: 33.844408727840985
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 27
+a: 0.0    fa: -15
+b: 1.93445425884979   fb: 33.844408727840985
+x: 1.93547364778701    fx: 33.95093097633205
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 28
+a: 0.0    fa: -15
+b: 1.93547364778701   fb: 33.95093097633205
+x: 1.93644674980953    fx: 34.05275442492251
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 29
+a: 0.0    fa: -15
+b: 1.93644674980953   fb: 34.05275442492251
+x: 1.93737697884756    fx: 34.150217853181935
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 30
+a: 0.0    fa: -15
+b: 1.93737697884756   fb: 34.150217853181935
+x: 1.93826740525263    fx: 34.243626587717
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 31
+a: 0.0    fa: -15
+b: 1.93826740525263   fb: 34.243626587717
+x: 1.93912079913279    fx: 34.333256652726625
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 32
+a: 0.0    fa: -15
+b: 1.93912079913279   fb: 34.333256652726625
+x: 1.93993966717432    fx: 34.419358305720536
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 33
+a: 0.0    fa: -15
+b: 1.93993966717432   fb: 34.419358305720536
+x: 1.94072628407849    fx: 34.50215906353359
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 34
+a: 0.0    fa: -15
+b: 1.94072628407849   fb: 34.50215906353359
+x: 1.94148271952177    fx: 34.581866303518424
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 35
+a: 0.0    fa: -15
+b: 1.94148271952177   fb: 34.581866303518424
+x: 1.94221086137498    fx: 34.65866950884258
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 36
+a: 0.0    fa: -15
+b: 1.94221086137498   fb: 34.65866950884258
+x: 1.94291243578108    fx: 34.73274221420325
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 37
+a: 0.0    fa: -15
+b: 1.94291243578108   fb: 34.73274221420325
+x: 1.94358902458252    fx: 34.804243698214464
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 38
+a: 0.0    fa: -15
+b: 1.94358902458252   fb: 34.804243698214464
+x: 1.94424208050277    fx: 34.873320460645516
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 39
+a: 0.0    fa: -15
+b: 1.94424208050277   fb: 34.873320460645516
+x: 1.94487294041662    fx: 34.940107516189634
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 40
+a: 0.0    fa: -15
+b: 1.94487294041662   fb: 34.940107516189634
+x: 1.94548283698787    fx: 35.00472953117163
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 41
+a: 0.0    fa: -15
+b: 1.94548283698787   fb: 35.00472953117163
+x: 1.94607290890682    fx: 35.06730182529149
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 42
+a: 0.0    fa: -15
+b: 1.94607290890682   fb: 35.06730182529149
+x: 1.94664420992277    fx: 35.127931256997066
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 43
+a: 0.0    fa: -15
+b: 1.94664420992277   fb: 35.127931256997066
+x: 1.94719771683580    fx: 35.18671700816309
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 44
+a: 0.0    fa: -15
+b: 1.94719771683580   fb: 35.18671700816309
+x: 1.94773433658698    fx: 35.24375128137346
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 45
+a: 0.0    fa: -15
+b: 1.94773433658698   fb: 35.24375128137346
+x: 1.94825491256476    fx: 35.29911992110761
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 46
+a: 0.0    fa: -15
+b: 1.94825491256476   fb: 35.29911992110761
+x: 1.94876023022830    fx: 35.35290296847866
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 47
+a: 0.0    fa: -15
+b: 1.94876023022830   fb: 35.35290296847866
+x: 1.94925102213334    fx: 35.40517515777759
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 48
+a: 0.0    fa: -15
+b: 1.94925102213334   fb: 35.40517515777759
+x: 1.94972797243457    fx: 35.45600636192739
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 49
+a: 0.0    fa: -15
+b: 1.94972797243457   fb: 35.45600636192739
+x: 1.95019172092764    fx: 35.50546199295029
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+função estudada: 2*x**4 + 4*x**3 + 3*x**2 - 10*x - 15
+
+iteração: 50
+a: 0.0    fa: -15
+b: 1.95019172092764   fb: 35.50546199295029
+x: 1.95064286668554    fx: 35.55360336273796
+
+Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
+sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
+portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
+ 
+método do ponto fixo
+ 
+função de iteração: -x**5/4 + x**4/2 + 9*x**3/4 - 11*x**2/2 + 6
+a calculadora alcançou seu limite de iterações e não encontrou raíz

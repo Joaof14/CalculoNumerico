@@ -108,10 +108,11 @@ class CalcZeroF():
             fIter = expand(fIter)
         except:
             print("cuidado ao inserir os valores!")
+        self.i = -1
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método do ponto fixo\n \n"
             self.linha += "função de iteração: " + str(fIter) + "\n"
-            if self.i != 0:   
+            if self.i >= 0:   
                 self.x = fIter.subs(xS,self.x)
             try:
                 self.cond = self.calc()
