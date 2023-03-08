@@ -10,7 +10,7 @@ class CalcZeroF():
 
     #declarando variáveis
     nomes = ("Bissecção", "Falsa Posição", "Ponto Fixo", "Secante", "Newton")
-    
+    gr = None
     #função para verificar metodo chamado
     def Atribui(self, f,a,b,p):
         self.i = 0
@@ -30,17 +30,22 @@ class CalcZeroF():
         
     #função para gráfico
     def grafico(self, a,b,f):
+        self.resultado = ""
         try: 
             f = expand(f)
-            try:
-                self.aI = float(a)
-                self.bI = float(b)
-                self.gr = plot(f,(xS,self.aI,self.bI))
-            except:
-                self.gr = plot(f,(xS, -30.0, 30.0))
-            self.gr.save('gráfico.png')
+            self.aI = float(a)
+            self.bI = float(b)
+            self.gr = plot(f,(xS,self.aI,self.bI))
         except:
-            self.resultado ="verifique se preencheu a função corretamente"
+            try:
+                self.resultado ="se tiver preenchido o intervalo, verifique se está correto"
+                f = expand(f)
+                self.gr = plot(f,(xS, -30.0, 30.0))
+                self.gr.save('gráfico.png')
+            except:
+                self.resultado +="\nverifique se preencheu a função corretamente"
+        
+        
         
 
     #função para calculo geral
