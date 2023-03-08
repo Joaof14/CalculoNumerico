@@ -7,8 +7,11 @@ FunCalc = CalcZeroF()
 #função para chamar a classe com parametros para seus atributos
 def Controle():
     #atribui valores aos atributos do objeto
-    FunCalc.Atribui(f=fEntry.get(), a=aEntry.get(), b=bEntry.get(),p=pEntry.get())
-
+    try: 
+        FunCalc.Atribui(f=fEntry.get(), a=aEntry.get(), b=bEntry.get(),p=pEntry.get())
+    except: 
+        print("verifique se preencheu tudo corretamente!")
+        return 0
     #checa o método a ser utilzado
     if metodo.get() == FunCalc.nomes[0]:
         FunCalc.Bis()

@@ -13,23 +13,21 @@ class CalcZeroF():
     
     #função para verificar metodo chamado
     def Atribui(self, f,a,b,p):
-        try:
-            self.i = 0
-            self.f = expand(f)
-            self.a = float(a)
-            self.b = float(b)
-            self.p = float(p)
-            self.cond = True
-            self.fa = self.f.subs(xS, self.a)
-            self.fb = self.f.subs(xS, self.b)
-            self.file = open("resolução.txt","w")
-            self.linha = ""
-            self.resultado = ''
-            self.file.close()
-            self.aI = self.a
-            self.bI = self.b
-        except: 
-            print("verifique se preencheu tudo corretamente!")
+        self.i = 0
+        self.f = expand(f)
+        self.a = float(a)
+        self.b = float(b)
+        self.p = float(expand(p))
+        self.cond = True
+        self.fa = self.f.subs(xS, self.a)
+        self.fb = self.f.subs(xS, self.b)
+        self.file = open("resolução.txt","w")
+        self.linha = ""
+        self.resultado = ''
+        self.file.close()
+        self.aI = self.a
+        self.bI = self.b
+        
 
 
     #função para gráfico
