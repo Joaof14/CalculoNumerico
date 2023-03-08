@@ -1,11 +1,11 @@
 método de Newton 
  
-função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+função estudada: x*sin(x) + 4
 
 iteração: 0
-a: -5.0    fa: -22026.4657948067*E - 579.716337814537
-b: 5.0   fb: 670.283662185463 - 4.53999297624849e-5*E
-x: 0.0    fx: 18.281718171540955
+a: 1.0    fa: 4.84147098480790
+b: 5.0   fb: -0.794621373315692
+x: 3.0    fx: 4.423360024179601
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -13,12 +13,12 @@ portanto existe pelo menos uma raíz entre eles, com isso a recebe x
  
 método de Newton 
  
-função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+função estudada: x*sin(x) + 4
 
 iteração: 1
-a: -5.0    fa: -22026.4657948067*E - 579.716337814537
-b: 0.0   fb: 18.281718171540955
-x: -3.3627341323001443    fx: -2425.109437707773
+a: 3.0    fa: 4.423360024179601
+b: 5.0   fb: -0.794621373315692
+x: 4.563656017572346    fx: -0.5132715569030442
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -26,12 +26,12 @@ portanto existe pelo menos uma raíz entre eles, com isso a recebe x
  
 método de Newton 
  
-função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+função estudada: x*sin(x) + 4
 
 iteração: 2
-a: -3.3627341323001443    fa: -2425.109437707773
-b: 0.0   fb: 18.281718171540955
-x: -2.846016926159853    fx: -894.0776269138138
+a: 3.0    fa: 4.423360024179601
+b: 4.563656017572346   fb: -0.5132715569030442
+x: 4.255426635501433    fx: 0.1811932329548851
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -39,12 +39,12 @@ portanto existe pelo menos uma raíz entre eles, com isso a recebe x
  
 método de Newton 
  
-função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+função estudada: x*sin(x) + 4
 
 iteração: 3
-a: -2.846016926159853    fa: -894.0776269138138
-b: 0.0   fb: 18.281718171540955
-x: -2.3286156891037106    fx: -324.7536469438215
+a: 4.255426635501433    fa: 0.1811932329548851
+b: 4.563656017572346   fb: -0.5132715569030442
+x: 4.320721635771725    fx: 0.006469895086548938
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -52,12 +52,12 @@ portanto existe pelo menos uma raíz entre eles, com isso a recebe x
  
 método de Newton 
  
-função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+função estudada: x*sin(x) + 4
 
 iteração: 4
-a: -2.3286156891037106    fa: -324.7536469438215
-b: 0.0   fb: 18.281718171540955
-x: -1.8290833360392786    fx: -112.94888372636082
+a: 4.320721635771725    fa: 0.006469895086548938
+b: 4.563656017572346   fb: -0.5132715569030442
+x: 4.3232355606682    fx: 1.0218433504682878e-05
 
 Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
 sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
@@ -65,77 +65,12 @@ portanto existe pelo menos uma raíz entre eles, com isso a recebe x
  
 método de Newton 
  
-função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
+função estudada: x*sin(x) + 4
 
 iteração: 5
-a: -1.8290833360392786    fa: -112.94888372636082
-b: 0.0   fb: 18.281718171540955
-x: -1.391935806997956    fx: -35.354891429357316
-
-Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
-sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
-portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
- 
-método de Newton 
- 
-função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
-
-iteração: 6
-a: -1.391935806997956    fa: -35.354891429357316
-b: 0.0   fb: 18.281718171540955
-x: -1.0851275198959895    fx: -8.557953004160174
-
-Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
-sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
-portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
- 
-método de Newton 
- 
-função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
-
-iteração: 7
-a: -1.0851275198959895    fa: -8.557953004160174
-b: 0.0   fb: 18.281718171540955
-x: -0.9514173343954527    fx: -1.0461023754759529
-
-Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
-sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
-portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
- 
-método de Newton 
- 
-função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
-
-iteração: 8
-a: -0.9514173343954527    fa: -1.0461023754759529
-b: 0.0   fb: 18.281718171540955
-x: -0.9300424824056521    fx: -0.02256783953341692
-
-Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
-sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
-portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
- 
-método de Newton 
- 
-função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
-
-iteração: 9
-a: -0.9300424824056521    fa: -0.02256783953341692
-b: 0.0   fb: 18.281718171540955
-x: -0.9295606987296623    fx: -1.117914692215061e-05
-
-Temos que f(a)* f(x) é positivo, logo, pelo teorema de bolzano 
-sabemos que não existe raízes entre eles, enquanto que f(a)*f(b) é negativo 
-portanto existe pelo menos uma raíz entre eles, com isso a recebe x 
- 
-método de Newton 
- 
-função estudada: 5*x**3 + x**2 + cos(x) + 20 - E*exp(-2*x)
-
-iteração: 10
-a: -0.9295606987296623    fa: -1.117914692215061e-05
-b: 0.0   fb: 18.281718171540955
-x: -0.9295604598378999    fx: -2.7479779648232133e-12
+a: 4.3232355606682    fa: 1.0218433504682878e-05
+b: 4.563656017572346   fb: -0.5132715569030442
+x: 4.323239543703693    fx: 2.5710544804269375e-11
 
  
-a raíz da função é: -0.9295604598378999
+a raíz da função é: 4.323239543703693
