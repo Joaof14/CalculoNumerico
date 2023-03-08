@@ -28,8 +28,6 @@ class CalcZeroF():
         self.aI = self.a
         self.bI = self.b
         
-
-
     #função para gráfico
     def grafico(self, a,b,f):
         try: 
@@ -105,7 +103,8 @@ class CalcZeroF():
             self.x = float(ChuteI)
             fIter = expand(fIter)
         except:
-            print("cuidado ao inserir os valores!")
+            self.resultado = "cuidado ao inserir os valores!"
+            return 0
         self.i = -1
         while self.cond and self.i <= 50:
             self.linha = self.linha + "método do ponto fixo\n \n"
@@ -126,7 +125,8 @@ class CalcZeroF():
         try:
             self.x = float(ChuteI)
         except: 
-            print("cuidado ao inserir os valores!")
+            self.resultado = "cuidado ao inserir os valores!"
+            return 0
         flinha = diff(self.f, xS)
         self.i = -1
         while self.cond and self.i <= 50:

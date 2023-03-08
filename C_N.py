@@ -11,6 +11,7 @@ def Controle():
         FunCalc.Atribui(f=fEntry.get(), a=aEntry.get(), b=bEntry.get(),p=pEntry.get())
     except: 
         print("verifique se preencheu tudo corretamente!")
+        FunCalc.resultado = ''
         return 0
     #checa o método a ser utilzado
     if metodo.get() == FunCalc.nomes[0]:
