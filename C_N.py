@@ -1,17 +1,32 @@
 from tkinter import *
 from Calc import CalcZeroF
 
-#cria objeto para calcular
-FunCalc = CalcZeroF()
 
+FunCalc = CalcZeroF() #cria objeto para calcular
+
+window = Tk() #instanciando a classe Tk para criar uma janela
+resultadoDisplay = Label(
+        window, 
+        font=("Arial", 15),
+        text=""
+    )
 #função para chamar a classe com parametros para seus atributos
+def displayResult():
+    global resultadoDisplay
+    resultadoDisplay.pack_forget()
+    resultadoDisplay = Label(
+        window, 
+        font=("Arial", 15),
+        text=FunCalc.resultado
+    )
+    resultadoDisplay.pack()
+    
 def Controle():
     #atribui valores aos atributos do objeto
     try: 
         FunCalc.Atribui(f=fEntry.get(), a=aEntry.get(), b=bEntry.get(),p=pEntry.get())
     except: 
-        print("verifique se preencheu tudo corretamente!")
-        FunCalc.resultado = ''
+        FunCalc.resultado = "verifique se preencheu tudo corretamente!"
         return 0
     #checa o método a ser utilzado
     if metodo.get() == FunCalc.nomes[0]:
@@ -27,14 +42,15 @@ def Controle():
     else:
         print("método não selecionado")
 
-    print(FunCalc.resultado)
+    displayResult()
+    
 def grafico():
     #chama grafico
     FunCalc.grafico(a=aEntry.get(), b=bEntry.get(),f=fEntry.get())
+    displayResult()
 
-window = Tk() #instanciando a classe Tk para criar uma janela
-
-window.geometry("480x480")
+#atributos da janela
+window.geometry("540x540")
 fLabel = Label( window,
                 text ='função') #cria label e indica o que nele deve estar escrito
 
@@ -107,5 +123,10 @@ chuteIEntry = Entry(
 )
 chuteIEntry.pack()
 
+resultado = Label(window,
+                  text="Resultado",
+                  font=("Arial", 15))
+resultado.pack()
 
+resultadoDisplay.pack()
 window.mainloop() #faz janela aparecer

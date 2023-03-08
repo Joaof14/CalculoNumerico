@@ -40,7 +40,7 @@ class CalcZeroF():
                 self.gr = plot(f,(xS, -30.0, 30.0))
             self.gr.save('gráfico.png')
         except:
-            print("verifique se preencheu a função corretamente")
+            self.resultado ="verifique se preencheu a função corretamente"
         
 
     #função para calculo geral
@@ -197,7 +197,7 @@ class CalcZeroF():
             self.linha += "b: " + str(self.b) + "   fb: " + str(self.fb) + "\n"
             self.linha += "x: "+ str(self.x) + "    fx: " + str(self.fx) + "\n\n"
         elif self.resultado == '' and self.i > 50:
-            self.resultado = "a calculadora alcançou seu limite de iterações e não encontrou raíz"
+            self.resultado = "a calculadora alcançou seu limite de iterações\n" + "x: " + str(self.x)
         else:
             self.linha = self.resultado
         self.file.write(self.linha)

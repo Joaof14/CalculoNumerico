@@ -1,5 +1,5 @@
-função: 2*x**4 + 4*x**3 + 3*x**2 - 10*x -15 I[0,3] função de iteração: (2*x**4 + 4*x**3 + 3*x**2 - 15)/10
-função: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24 I[0,5] função de iteração: (x**5 - 2*x**4 - 9*x**3 + 22*x**2 - 24)/(-4)
-função: 5*x**3 + x**2 - exp(1-2*x) + cos(x) + 20 I[-5,5] função de iteração: (x**2 - exp(1-2*x) + cos(x) + 20)/(-5*x**2)
-função: x*sin(x) + 4 I[1,5] função de iteração: (-4)/sin(x)
+função 1: 2*x**4 + 4*x**3 + 3*x**2 - 10*x -15 I[0,3] função de iteração: (2*x**4 + 4*x**3 + 3*x**2 - 15)/10
+função 2: x**5 - 2*x**4 - 9*x**3 + 22*x**2 + 4*x - 24 I[0,5] função de iteração: (x**5 - 2*x**4 - 9*x**3 + 22*x**2 - 24)/(-4)
+função 3: 5*x**3 + x**2 - exp(1-2*x) + cos(x) + 20 I[-5,5] função de iteração: (x**2 - exp(1-2*x) + cos(x) + 20)/(-5*x**2)
+função 4: x*sin(x) + 4 I[1,5] função de iteração: (-4)/sin(x)
 os chutes iniciais serão o ponto médio do intervalo!
