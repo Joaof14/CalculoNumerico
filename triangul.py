@@ -1,5 +1,7 @@
-A = [[3,2,4],[1,1,2],[4,3,-2]]
-B = [1,2,3]
+#A = [[3,2,4],[1,1,2],[4,3,-2]]
+A = [[3,5,2,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]]
+#B = [1,2,3]
+B = [7,1,6,8]
 
 def outputTeste():
     global A
@@ -17,11 +19,7 @@ def EliminGauss():
         pivo = A[i][i]
         linha = A[i]
         if pivo == 0:
-            for j in range(i + 1,len(A)-1):
-                if abs(A[j][i]) < abs(A[j+1][i]):
-                    pass
-                else:
-                    pass
+            pivoteamento(i)
             pivo = A[i][i]
         for j in range(i + 1,len(A)):
             #define multiplicador da linha
@@ -34,4 +32,12 @@ def EliminGauss():
             B[j] = round(B[j] - m*B[i], 3)
     outputTeste()
 
+def pivoteamento(i):
+    global A
+    for j in range(i,len(A)-1):
+                if abs(A[j][i]) < abs(A[j+1][i]):
+                    aux = A[j]
+                    A[j] = A[j+1]
+                    A[j+1] = aux
+                    break
 EliminGauss()
