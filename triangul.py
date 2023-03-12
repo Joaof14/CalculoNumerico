@@ -14,12 +14,21 @@ def outputTeste():
 
 def EliminGauss():
     global A
+    global B
     for i in range(len(A)):
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]
         linha = A[i]
         if pivo == 0:
-            pivoteamento(i)
+            for j in range(i,len(A)-1):
+                if abs(A[j][i]) < abs(A[j+1][i]):
+                    aaux = A[j]
+                    A[j] = A[j+1]
+                    A[j+1] = aaux
+                    baux = B[j]
+                    B[j] = B[j+1]
+                    B[j+1] = baux
+                    break
             pivo = A[i][i]
         for j in range(i + 1,len(A)):
             #define multiplicador da linha
@@ -32,12 +41,6 @@ def EliminGauss():
             B[j] = round(B[j] - m*B[i], 3)
     outputTeste()
 
-def pivoteamento(i):
-    global A
-    for j in range(i,len(A)-1):
-                if abs(A[j][i]) < abs(A[j+1][i]):
-                    aux = A[j]
-                    A[j] = A[j+1]
-                    A[j+1] = aux
-                    break
+
+    
 EliminGauss()
