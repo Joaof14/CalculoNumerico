@@ -17,7 +17,12 @@ def EliminGauss():
         pivo = A[i][i]
         linha = A[i]
         if pivo == 0:
-            pass
+            for j in range(i + 1,len(A)-1):
+                if abs(A[j][i]) < abs(A[j+1][i]):
+                    pass
+                else:
+                    pass
+            pivo = A[i][i]
         for j in range(i + 1,len(A)):
             #define multiplicador da linha
             m = A[j][i] / pivo
