@@ -13,7 +13,5 @@ for i in range(len(c)):
     d.append(dlinha)
 
 
-
-
 print(c)
 print(d)

@@ -85,6 +85,9 @@ def FatorLu():
             output += str(L[i][j]) + ' '
         print(output)
     
+    #retrosubstuição ao contrário
+
+    #retrosubstuição normal
 
 
 
