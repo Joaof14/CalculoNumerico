@@ -14,7 +14,7 @@ def pivoteamento(i):
             B[j+1] = baux
             break
 
-def escalonamento(i,pivo):
+def escalonamento(i,pivo,atb):
     m = []
     linha = A[i]
     for j in range(i + 1,len(A)):
@@ -24,8 +24,9 @@ def escalonamento(i,pivo):
             #atualiza elementos da linha j com operações elementares entre 
             #ela, multiplicador e elementos da linha anteriormente definidos
             A[j][k] =  round(A[j][k] - m[-1]*linha[k], 3)
-        #atualiza vetor b para manter equivalência do sistema linear
-        B[j] = round(B[j] - m[-1]*B[i], 3)
+        if atb == True:
+            #atualiza vetor b para manter equivalência do sistema linear
+            B[j] = round(B[j] - m[-1]*B[i], 3)
 
 def outputTeste():
     global A
@@ -42,11 +43,10 @@ def EliminGauss():
     for i in range(len(A)):
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]
-        
         if pivo == 0:
             pivoteamento(i)
             pivo = A[i][i]
-        escalonamento(i,pivo)
+        escalonamento(i,pivo,True)
         
     outputTeste()
 
