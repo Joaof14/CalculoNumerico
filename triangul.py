@@ -50,6 +50,20 @@ def EliminGauss():
         
     outputTeste()
 
+def FatorLu():
+    global A
+    global B
+    for i in range(len(A)):
+        #define pivo e linha para utilizar com multiplicador operações
+        pivo = A[i][i]
+        if pivo == 0:
+            pivoteamento(i)
+            pivo = A[i][i]
+        escalonamento(i,pivo,False)
+    
+
+
+
 EliminGauss()
 
 
