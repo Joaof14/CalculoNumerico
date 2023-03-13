@@ -1,7 +1,7 @@
-#A = [[3,2,4],[1,1,2],[4,3,-2]]
-A = [[3,5,9,4],[0,0,1,5],[0,3,3,3],[0,9,7,0]]
-#B = [1,2,3]
-B = [7,1,6,8]
+A = [[3,2,4],[1,1,2],[4,3,-2]]
+#A = [[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]]
+B = [1,2,3]
+#B = [7,1,6,8]
 m = []
 def pivoteamento(i):
     for j in range(i,len(A)-1):
@@ -39,6 +39,7 @@ def outputTeste():
 def EliminGauss():
     global A
     global B
+    print("Método de Eliminação de Gauss")
     for i in range(len(A)):
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]
@@ -52,6 +53,7 @@ def EliminGauss():
 def FatorLu():
     global A
     global B
+    print("Método do fator LU")
     for i in range(len(A)):
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]
@@ -59,13 +61,33 @@ def FatorLu():
             pivoteamento(i)
             pivo = A[i][i]
         escalonamento(i,pivo,False)
-    L = A
+    L = []
     u = A
+    k = 0
+    for i in range(len(A)):
+        Llinha = []
+        for j in range(len(A)):
+            if i == j:
+                Llinha.append(1.000)
+            elif i < j:
+                Llinha.append(0.000)
+            else:
+                Llinha.append(round(m[k], 3))
+                k+=1
+        L.append(Llinha)
+    print("Matriz U:")
+    outputTeste()
+    #output de teste
+    print("Matriz L:")
+    for i in range(len(L)):
+        output = ''
+        for j in range(len(L[i])):
+            output += str(L[i][j]) + ' '
+        print(output)
     
 
 
+#EliminGauss()
 
-EliminGauss()
-
-
+FatorLu()
 
