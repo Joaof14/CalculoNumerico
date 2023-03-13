@@ -2,7 +2,7 @@
 A = [[3,5,9,4],[0,0,1,5],[0,3,0,3],[0,9,7,4]]
 #B = [1,2,3]
 B = [7,1,6,8]
-
+m = []
 def pivoteamento(i):
     for j in range(i,len(A)-1):
         if abs(A[j][i]) < abs(A[j+1][i]):
@@ -15,7 +15,6 @@ def pivoteamento(i):
             break
 
 def escalonamento(i,pivo,atb):
-    m = []
     linha = A[i]
     for j in range(i + 1,len(A)):
         #define multiplicador da linha
