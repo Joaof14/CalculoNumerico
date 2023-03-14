@@ -27,6 +27,23 @@ def escalonamento(i,pivo,atb):
             #atualiza vetor b para manter equivalência do sistema linear
             B[j] = round(B[j] - m[-1]*B[i], 3)
 
+def retrosub():
+    global A
+    global B
+    n = len(A)
+    y = n*[0]
+    
+    for i in range(n-1, -1, -1):
+        soma = 0
+        for j in range(i+1, n):
+            soma += A[i][j]* y[j]
+        y[i] = (B[i] - soma) / A[i][i]   # Fórmula da matriz;
+
+    print("Solução do sistema da matriz:")
+    for i, s in enumerate(y):
+        print(f"x.{i+1} = {s}")
+
+
 def outputTeste():
     global A
     for i in range(len(A)):
@@ -47,9 +64,11 @@ def EliminGauss():
             pivoteamento(i)
             pivo = A[i][i]
         escalonamento(i,pivo,True)
-        
+    print("Matriz A")   
     outputTeste()
+    retrosub()
 
+#metodo de fatoração LU
 def FatorLu():
     global A
     global B
@@ -92,6 +111,6 @@ def FatorLu():
 
 
 
-FatorLu()
+#FatorLu()
 
-#EliminGauss()
+EliminGauss()
