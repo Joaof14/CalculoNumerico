@@ -29,13 +29,14 @@ def escalonamento(i,pivo,atb):
             B[j] = round(B[j] - m[-1]*B[i], 3)
 
 
-def outputTeste():
+def outputTeste(mb):
     global A
     for i in range(len(A)):
         output = ''
         for j in range(len(A[i])):
             output += str(A[i][j]) + ' '
-        output += '|' + str(B[i])
+        if mb:
+            output += '|' + str(B[i])
         print(output)
 
 def EliminGauss():
@@ -50,7 +51,7 @@ def EliminGauss():
             pivo = A[i][i]
         escalonamento(i,pivo,True)
     print("Matriz A")   
-    outputTeste()
+    outputTeste(mb = True)
     retrosub(A,B, True)
 
 #metodo de fatoração LU
@@ -80,7 +81,7 @@ def FatorLu():
                 k+=1
         L.append(Llinha)
     print("Matriz U:")
-    outputTeste()
+    outputTeste(mb = False)
     #output de teste
     print("Matriz L:")
     for i in range(len(L)):
