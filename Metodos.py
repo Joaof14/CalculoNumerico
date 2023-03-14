@@ -96,6 +96,6 @@ def FatorLu():
 
 
 
-FatorLu()
+#FatorLu()
 
 #EliminGauss()
