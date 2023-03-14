@@ -1,4 +1,4 @@
-A = [[3,2,4],[1,0,2],[4,3,-2]]
+A = [[3,2,4],[1,1,2],[4,3,-2]]
 #A = [[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]]
 B = [1,2,3]
 #B = [7,1,6,8]
@@ -51,7 +51,7 @@ def EliminGauss():
         escalonamento(i,pivo,True)
     print("Matriz A")   
     outputTeste()
-    retrosub(A,B)
+    retrosub(A,B, True)
 
 #metodo de fatoração LU
 def FatorLu():
@@ -89,12 +89,12 @@ def FatorLu():
             output += str(L[i][j]) + ' '
         print(output)
     #retrosubstuição ao contrário
-
+    y = retrosub(L,B,False)
     #retrosubstuição normal
+    retrosub(u,y,True)
 
 
 
+FatorLu()
 
-#FatorLu()
-
-EliminGauss()
+#EliminGauss()
