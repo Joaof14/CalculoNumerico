@@ -3,6 +3,7 @@ A = [[3,2,4],[1,0,2],[4,3,-2]]
 B = [1,2,3]
 #B = [7,1,6,8]
 m = []
+from auxiliar import retrosub
 def pivoteamento(i):
     for j in range(i,len(A)-1):
         if abs(A[j][i]) < abs(A[j+1][i]):
@@ -27,22 +28,6 @@ def escalonamento(i,pivo,atb):
             #atualiza vetor b para manter equivalência do sistema linear
             B[j] = round(B[j] - m[-1]*B[i], 3)
 
-def retrosub():
-    global A
-    global B
-    n = len(A)
-    y = n*[0]
-    
-    for i in range(n-1, -1, -1):
-        soma = 0
-        for j in range(i+1, n):
-            soma += A[i][j]* y[j]
-        y[i] = (B[i] - soma) / A[i][i]   # Fórmula da matriz;
-
-    print("Solução do sistema da matriz:")
-    for i, s in enumerate(y):
-        print(f"x.{i+1} = {s}")
-
 
 def outputTeste():
     global A
@@ -66,7 +51,7 @@ def EliminGauss():
         escalonamento(i,pivo,True)
     print("Matriz A")   
     outputTeste()
-    retrosub()
+    retrosub(A,B)
 
 #metodo de fatoração LU
 def FatorLu():
@@ -103,7 +88,6 @@ def FatorLu():
         for j in range(len(L[i])):
             output += str(L[i][j]) + ' '
         print(output)
-    
     #retrosubstuição ao contrário
 
     #retrosubstuição normal
