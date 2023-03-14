@@ -13,12 +13,9 @@ def retrosub():
     
     for i in range(n-1, -1, -1):
         soma = 0
-        if i == n-1:
-            y[i] = B[i]
-        else:
-            for j in range(i+1, n):
-                soma += A[i][j]* y[j]
-            y[i] = (B[i] - soma) / A[i][i]   # Fórmula da matriz;
+        for j in range(i+1, n):
+            soma += A[i][j]* y[j]
+        y[i] = (B[i] - soma) / A[i][i]   # Fórmula da matriz;
 
     return y
 
