@@ -29,7 +29,7 @@ def retrosubI():
     
     for i in range(n):
         soma = 0
-        for j in range(i-1,0,-1):
+        for j in range(i-1,-1,-1):
             soma += A[i][j]* y[j]
         y[i] = (B[i] - soma) / A[i][i]   # Fórmula da matriz;
 
