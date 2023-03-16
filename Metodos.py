@@ -4,7 +4,7 @@ A = [[3,2,4],[1,1,2],[4,3,-2]]
 B = [1,2,3]
 #B = [7,1,6,8]
 m = []
-metodos = ("Eliminação de Gauss", "Fatoração LU")
+nomes = ("Eliminação de Gauss", "Fatoração LU")
 def pivoteamento(i):
     for j in range(i,len(A)-1):
         if abs(A[j][i]) < abs(A[j+1][i]):
