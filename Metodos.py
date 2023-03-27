@@ -62,20 +62,18 @@ def FatorLu():
             pivoteamento(i)
             pivo = A[i][i]
         escalonamento(i,pivo,False)
-    L = []
+    L = np.zeros(np.shape(A))
     u = A
     k = 0
     for i in range(len(A)):
-        Llinha = []
         for j in range(len(A)):
             if i == j:
-                Llinha.append(1.000)
+                L[i][j]=(1.000)
             elif i < j:
-                Llinha.append(0.000)
+                L[i][j]=(0.000)
             else:
-                Llinha.append(np.round(m[k], 3))
+                L[i][j]=(np.round(m[k], 3))
                 k+=1
-        L.append(Llinha)
     print("Matriz U:")
     outputTeste(mb = False)
     #output de teste
