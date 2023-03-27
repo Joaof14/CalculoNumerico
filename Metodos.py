@@ -1,19 +1,16 @@
 from auxiliar import retrosub
-A = [[3,2,4],[1,1,2],[4,3,-2]]
+import numpy as np
+
+A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
 #A = [[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]]
-B = [1,2,3]
+B = np.array([1,2,3], dtype= float)
 #B = [7,1,6,8]
 m = []
 metodos = ("Eliminação de Gauss", "Fatoração LU")
 def pivoteamento(i):
-    for j in range(i,len(A)-1):
-        if abs(A[j][i]) < abs(A[j+1][i]):
-            aaux = A[j]
-            A[j] = A[j+1]
-            A[j+1] = aaux
-            baux = B[j]
-            B[j] = B[j+1]
-            B[j+1] = baux
+    for j in range(i+1,len(A)):
+        A[[i,j]] = A[[j,i]]
+        if A[i][i] != 0:
             break
 
 def escalonamento(i,pivo,atb):
