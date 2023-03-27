@@ -14,17 +14,15 @@ def pivoteamento(i):
             break
 
 def escalonamento(i,pivo,atb):
-    linha = A[i]
     for j in range(i + 1,len(A)):
         #define multiplicador da linha
         m.append(A[j][i] / pivo)
-        for k in range(i, len(A)):
-            #atualiza elementos da linha j com operações elementares entre 
-            #ela, multiplicador e elementos da linha anteriormente definidos
-            A[j][k] =  round(A[j][k] - m[-1]*linha[k], 3)
+        #atualiza elementos da linha j com operações elementares entre 
+        #ela, multiplicador e elementos da linha anteriormente definidos
+        A[j] =  np.round(A[j] - m[-1]*A[i], 3)
         if atb == True:
             #atualiza vetor b para manter equivalência do sistema linear
-            B[j] = round(B[j] - m[-1]*B[i], 3)
+            B[j] = np.round(B[j] - m[-1]*B[i], 3)
 
 
 def outputTeste(mb):
@@ -75,7 +73,7 @@ def FatorLu():
             elif i < j:
                 Llinha.append(0.000)
             else:
-                Llinha.append(round(m[k], 3))
+                Llinha.append(np.round(m[k], 3))
                 k+=1
         L.append(Llinha)
     print("Matriz U:")
@@ -94,6 +92,6 @@ def FatorLu():
 
 
 
-#FatorLu()
+FatorLu()
 
 #EliminGauss()
