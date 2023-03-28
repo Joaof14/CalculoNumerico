@@ -38,10 +38,9 @@ def escalonamento(i,pivo,atb):
             B[j] = np.round(B[j] - m[-1]*B[i], 3)
 
         #outputs
-        output += 'fator m: ' + str(float(m[-1])) + '\n'
-        output += 'Linha ' + str(j) + ' = ' + 'Linha ' + str(j) + ' - ' + str(float(m[-1])) + '*' + 'Linha ' + str(i) + '\n'
-    
-
+        output += '\nfator m: ' + str(float(m[-1])) + '\n'
+        output += 'Linha ' + str(j+1) + ' = ' + 'Linha ' + str(j+1) + ' - ' + str(float(m[-1])) + '*' + 'Linha ' + str(i+1) + '\n'
+    output += '\n'
 
 def retrosub(C,D, ts):
     global output
@@ -54,8 +53,10 @@ def retrosub(C,D, ts):
                 soma += C[i][j]* y[j]
             y[i] = (D[i] - soma) / C[i][i]   # Fórmula da matriz;
         print("Solução do sistema da matriz:")
+        output = '\nSolução do sistema:\n'
         for i, s in enumerate(y):
             print(f"x.{i+1} = {s}") 
+            output += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
     else:
         n = len(C)
         y = n*[0]
@@ -65,8 +66,11 @@ def retrosub(C,D, ts):
                 soma += C[i][j]* y[j]
             y[i] = (D[i] - soma) / C[i][i]
         print("Solução Parcial")
+        output = '\nValores da matriz y:\n'
         for i, s in enumerate(y):
             print(f"y.{i+1} = {s}")
+            output += 'y.' + str(i+1) + ' = ' + str(s) + '\n'
+    outputtxt()
     return y   
 
 
@@ -102,8 +106,8 @@ def EliminGauss():
             pivoteamento(i)
             pivo = A[i][i]
 
-        output += 'Escalonamento na Matriz Ampliada AB\n'
-        output += 'pivo: ' + str(pivo) + '\n'
+        output += '\nEscalonamento na Matriz Ampliada AB\n'
+        output += 'pivo: ' + str(pivo) 
 
         escalonamento(i,pivo,True)
         outputtxt()
@@ -126,8 +130,8 @@ def FatorLu():
             pivoteamento(i)
             pivo = A[i][i]
 
-        output += 'Escalonamento na Matriz A\n'
-        output += 'pivo: ' + str(pivo) + '\n'
+        output += '\nEscalonamento na Matriz A\n'
+        output += 'pivo: ' + str(pivo)
         
         escalonamento(i,pivo,False)
         outputtxt()
@@ -147,12 +151,12 @@ def FatorLu():
                 k+=1
     
     #output de teste
-    output = "Matriz L:\n"
+    output = "\nMatriz L:\n"
     for i in range(len(L)):
         for j in range(len(L[i])):
             output += str(L[i][j]) + ' '
         output += '\n'
-    output += "Matriz U:\n"
+    output += "\nMatriz U:\n"
     outputtxt()
     outputMatrizesAB(mb = False)
 
@@ -228,8 +232,6 @@ def Gauss_Seidel():
                 output+= '  x(k).' + str(i+1) + ' = ' + str(xk[1][i])+'\n'
 
         #verificar convergencia
-        vetor = xk[1]-xk[0]
-        dr = np.max(np.abs(vetor))/(np.max(np.abs(xk[1])))
         if rep > 0:
             vetor = xk[1]-xk[0]
             dr = np.max(np.abs(vetor))/(np.max(np.abs(xk[1])))
