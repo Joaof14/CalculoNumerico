@@ -1,13 +1,13 @@
 import numpy as np
 
 #A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
-A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]])
+#A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]])
 #B = np.array([1,2,3], dtype= float)
-B = np.array([7,1,6,8])
+#B = np.array([7,1,6,8])
 
-#A = np.array([[10,2,1],[1,5,1],[2,3,10]])
-#B = np.array([7,-8,6])
-
+A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
+B = np.array([7,-8,6], dtype=float)
+x = np.zeros(B.size, dtype=float)
 m = []
 output = ''
 f = open("Resol.txt", 'w')
@@ -164,70 +164,94 @@ def FatorLu():
     retrosub(u,y,True)
 
 
-
 def Gauss_Jacobi():
     global output
-    x = np.zeros((2,B.size))
+    xk = np.zeros((2,B.size))
     rep = 0
     p = 0.05
-
+    print('Método de Gauss-Jacobi')
     #aplicar substuição
     while rep < 100:
         for i in range(B.size):
             soma = 0
+            #output = 'xk.'+ str[i] + ' = ' + str(B[i])
+    
             for j in range(B.size):
-                soma  += A[i][j]*x[0][j]
-            x[1][i] = ((B[i] - soma)/A[i][i]) + x[0][i]
+                if i != j:
+                    soma  += A[i][j]*xk[0][j]
+                    #output += ' - ' + str(A[i][j]) + '*' + str(xk[0][j])
+            xk[1][i] = ((B[i] - soma)/A[i][i])
+            if rep >0:
+                output += 'x(k-1).' + str(i+1) + ' = ' + str(xk[0][i]) 
+                output+= '  x(k).' + str(i+1) + ' = ' + str(xk[1][i])+'\n'
 
         #verificar convergencia 
-        vetor = x[1]-x[0]
-        dr = np.max(np.abs(vetor))/(np.max(np.abs(x[1])))
-        print(dr)
-        if dr < p and rep > 0:
-            break
-        else:
-            x = np.flip(x,axis = 0)
-        rep += 1
-    for i, s in enumerate(x[1]):
-        print(f"x.{i+1} = {s}") 
+        
+        if rep > 0:
 
+            vetor = xk[1]-xk[0]
+            dr = np.max(np.abs(vetor))/(np.max(np.abs(xk[1])))
+            output += 'dr = ' + str(dr) + '  precisão: ' + str(p) + '\n\n'
+
+            if dr < p:
+                break
+            else:
+                xk = np.flip(xk,axis = 0)
+        rep += 1
+        outputtxt()
+    for i, s in enumerate(xk[1]):
+        print(f"x.{i+1} = {s}") 
+    
 
 
 
 def Gauss_Seidel():
     global output
+    global x
     rep = 0
     p = 0.05
-    x = np.zeros((2,B.size))
+    xk = np.zeros((2,B.size))
 
     #aplicar substuição
     while rep < 100:
         for i in range(B.size):
             soma = 0
+
             for j in range(B.size):
                 if j < i and rep > 0:
-                    soma  += A[i][j]*x[1][j]
-                else:
-                    soma  += A[i][j]*x[0][j]
-            x[1][i] = ((B[i] - soma)/A[i][i]) + x[0][i]
+                    soma  += A[i][j]*xk[1][j]
+                elif j > i and rep > 0:
+                    soma  += A[i][j]*xk[0][j]
+            xk[1][i] = ((B[i] - soma)/A[i][i])
+            if rep > 0:
+                output += 'x(k-1).' + str(i+1) + ' = ' + str(xk[0][i]) 
+                output+= '  x(k).' + str(i+1) + ' = ' + str(xk[1][i])+'\n'
 
         #verificar convergencia
-        vetor = x[1]-x[0]
-        dr = np.max(np.abs(vetor))/(np.max(np.abs(x[1])))
-        print(dr)
-        if dr < p and rep > 0:
-            break
-        else:
-            x = np.flip(x,axis = 0)
+        vetor = xk[1]-xk[0]
+        dr = np.max(np.abs(vetor))/(np.max(np.abs(xk[1])))
+        if rep > 0:
+            vetor = xk[1]-xk[0]
+            dr = np.max(np.abs(vetor))/(np.max(np.abs(xk[1])))
+            output += 'dr = ' + str(dr) + '  precisão: ' + str(p) + '\n\n'
+            if dr < p:
+                break
+            else:
+                xk = np.flip(xk,axis = 0)
         rep += 1
-    for i, s in enumerate(x[1]):
+        outputtxt()
+    for i, s in enumerate(xk[1]):
         print(f"x.{i+1} = {s}") 
+
+
 
 
 outputMatrizesAB(mb = True)
 
 metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel)
 func = int(input("método que você quer \n"))
+output = '\nMétodo de ' + nomes[func] + '\n'
+outputtxt()
 metodos[func]()
 
 
