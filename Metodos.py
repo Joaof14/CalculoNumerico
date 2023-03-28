@@ -1,4 +1,3 @@
-from auxiliar import retrosub
 import numpy as np
 
 #A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
@@ -39,9 +38,38 @@ def escalonamento(i,pivo,atb):
             B[j] = np.round(B[j] - m[-1]*B[i], 3)
 
         #outputs
-        output += 'fator m: ' + str(round(m[-1], 3)) + '\n'
-        output += 'Linha ' + str(j) + ' - ' + str(round(m[-1], 3)) + '*' + 'Linha ' + str(i) + '\n'
+        output += 'fator m: ' + str(float(m[-1])) + '\n'
+        output += 'Linha ' + str(j) + ' = ' + 'Linha ' + str(j) + ' - ' + str(float(m[-1])) + '*' + 'Linha ' + str(i) + '\n'
     
+
+
+def retrosub(C,D, ts):
+    global output
+    n = len(C)
+    y = n*[0]
+    if ts == True:
+        for i in range(n-1, -1, -1):
+            soma = 0
+            for j in range(i+1, n):
+                soma += C[i][j]* y[j]
+            y[i] = (D[i] - soma) / C[i][i]   # Fórmula da matriz;
+        print("Solução do sistema da matriz:")
+        for i, s in enumerate(y):
+            print(f"x.{i+1} = {s}") 
+    else:
+        n = len(C)
+        y = n*[0]
+        for i in range(n):
+            soma = 0
+            for j in range(i-1,-1,-1):
+                soma += C[i][j]* y[j]
+            y[i] = (D[i] - soma) / C[i][i]
+        print("Solução Parcial")
+        for i, s in enumerate(y):
+            print(f"y.{i+1} = {s}")
+    return y   
+
+
 
 def outputMatrizesAB(mb):
     global A
@@ -80,6 +108,7 @@ def EliminGauss():
         escalonamento(i,pivo,True)
         outputtxt()
         outputMatrizesAB(mb = True)
+
     print("Matriz A")   
     retrosub(A,B, True)
 
@@ -103,6 +132,7 @@ def FatorLu():
         escalonamento(i,pivo,False)
         outputtxt()
         outputMatrizesAB(mb = False)
+
     L = np.zeros(np.shape(A))
     u = A
     k = 0
@@ -115,15 +145,19 @@ def FatorLu():
             else:
                 L[i][j]=(np.round(m[k], 3))
                 k+=1
-    print("Matriz U:")
-    outputMatrizesAB(mb = False)
+    
     #output de teste
-    print("Matriz L:")
+    output = "Matriz L:\n"
     for i in range(len(L)):
-        output = ''
         for j in range(len(L[i])):
             output += str(L[i][j]) + ' '
-        print(output)
+        output += '\n'
+    output += "Matriz U:\n"
+    outputtxt()
+    outputMatrizesAB(mb = False)
+
+
+
     #retrosubstuição ao contrário
     y = retrosub(L,B,False)
     #retrosubstuição normal
@@ -139,14 +173,13 @@ def Gauss_Jacobi():
 
     #aplicar substuição
     while rep < 100:
-
         for i in range(B.size):
             soma = 0
             for j in range(B.size):
                 soma  += A[i][j]*x[0][j]
             x[1][i] = ((B[i] - soma)/A[i][i]) + x[0][i]
-        #verificar convergencia
-        
+
+        #verificar convergencia 
         vetor = x[1]-x[0]
         dr = np.max(np.abs(vetor))/(np.max(np.abs(x[1])))
         print(dr)
@@ -166,6 +199,7 @@ def Gauss_Seidel():
     rep = 0
     p = 0.05
     x = np.zeros((2,B.size))
+
     #aplicar substuição
     while rep < 100:
         for i in range(B.size):
@@ -176,6 +210,7 @@ def Gauss_Seidel():
                 else:
                     soma  += A[i][j]*x[0][j]
             x[1][i] = ((B[i] - soma)/A[i][i]) + x[0][i]
+
         #verificar convergencia
         vetor = x[1]-x[0]
         dr = np.max(np.abs(vetor))/(np.max(np.abs(x[1])))
@@ -190,12 +225,9 @@ def Gauss_Seidel():
 
 
 outputMatrizesAB(mb = True)
+
 metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel)
 func = int(input("método que você quer \n"))
 metodos[func]()
 
 
-#FatorLu()
-#EliminGauss()
-#Gauss_Jacobi()
-#Gauss_Seidel()
