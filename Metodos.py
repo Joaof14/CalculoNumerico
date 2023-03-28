@@ -1,12 +1,12 @@
 import numpy as np
 
-#A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
-#A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]])
-#B = np.array([1,2,3], dtype= float)
-#B = np.array([7,1,6,8])
+A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
+#A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
+B = np.array([1,2,3], dtype= float)
+#B = np.array([7,1,6,8], dtype = float)
 
-A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
-B = np.array([7,-8,6], dtype=float)
+#A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
+#B = np.array([7,-8,6], dtype=float)
 x = np.zeros(B.size, dtype=float)
 m = []
 output = ''
@@ -18,6 +18,7 @@ def pivoteamento(i):
     global output
     for j in range(i+1,len(A)):
         A[[i,j]] = A[[j,i]]
+        B[[i,j]] = B[[j,i]]
         if A[i][i] != 0:
             break
 
