@@ -6,10 +6,8 @@ opc = []
 Janela = Tk()
 
 def mostrarMetodos():
-    mAl.pack_forget()
-    mBl.pack_forget()
-    mA.pack_forget()
-    mB.pack_forget()
+    mA.config(state='disabled')
+    mB.config(state='disabled')
     Info.pack_forget()
 
     for i in range(len(Metodos.nomes)):
@@ -30,9 +28,9 @@ def retornar():
     pEntry.pack_forget()
     pLabel.pack_forget()
     mAl.pack()
-    mA.pack()
+    mA.config(state='normal')
     mBl.pack()
-    mB.pack()
+    mB.config(state='normal')
     env.pack_forget()
     env.pack()
     
@@ -46,12 +44,12 @@ Info.pack()
 
 mAl = Label(Janela, text='Matriz dos coeficientes A')
 mAl.pack()
-mA = Text(height='20')
+mA = Text(height='8', font=('Arial', 15))
 mA.pack()
 
 mBl = Label(Janela, text='Matriz B dos resultados')
 mBl.pack()
-mB = Text(height='8')
+mB = Text(height='4', font=('Arial', 15))
 mB.pack()
 
 env = Button(text='Enviar Dados', command=mostrarMetodos)
