@@ -1,102 +1,260 @@
-from auxiliar import retrosub
-A = [[3,2,4],[1,1,2],[4,3,-2]]
-#A = [[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]]
-B = [1,2,3]
-#B = [7,1,6,8]
+import numpy as np
+
+A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
+#A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
+B = np.array([1,2,3], dtype= float)
+#B = np.array([7,1,6,8], dtype = float)
+
+#A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
+#B = np.array([7,-8,6], dtype=float)
+x = np.zeros(B.size, dtype=float)
 m = []
-nomes = ("Eliminação de Gauss", "Fatoração LU")
+output = ''
+f = open("Resol.txt", 'w')
+f.write("Matriz A|B: \n")
+f.close()
+nomes = ("Eliminação de Gauss", "Fatoração LU", "Gauss-Jacobi", "Gauss-Seidel")
 def pivoteamento(i):
-    for j in range(i,len(A)-1):
-        if abs(A[j][i]) < abs(A[j+1][i]):
-            aaux = A[j]
-            A[j] = A[j+1]
-            A[j+1] = aaux
-            baux = B[j]
-            B[j] = B[j+1]
-            B[j+1] = baux
+    global output
+    for j in range(i+1,len(A)):
+        A[[i,j]] = A[[j,i]]
+        B[[i,j]] = B[[j,i]]
+        if A[i][i] != 0:
             break
 
 def escalonamento(i,pivo,atb):
-    linha = A[i]
+
+    global output
+
     for j in range(i + 1,len(A)):
         #define multiplicador da linha
         m.append(A[j][i] / pivo)
-        for k in range(i, len(A)):
-            #atualiza elementos da linha j com operações elementares entre 
-            #ela, multiplicador e elementos da linha anteriormente definidos
-            A[j][k] =  round(A[j][k] - m[-1]*linha[k], 3)
+
+        #atualiza elementos da linha j com operações elementares entre 
+        #ela, multiplicador e elementos da linha anteriormente definidos
+        A[j] =  np.round(A[j] - m[-1]*A[i], 3)
+
         if atb == True:
             #atualiza vetor b para manter equivalência do sistema linear
-            B[j] = round(B[j] - m[-1]*B[i], 3)
+            B[j] = np.round(B[j] - m[-1]*B[i], 3)
+
+        #outputs
+        output += '\nfator m: ' + str(float(m[-1])) + '\n'
+        output += 'Linha ' + str(j+1) + ' = ' + 'Linha ' + str(j+1) + ' - ' + str(float(m[-1])) + '*' + 'Linha ' + str(i+1) + '\n'
+    output += '\n'
+
+def retrosub(C,D, ts):
+    global output
+    n = len(C)
+    y = n*[0]
+    if ts == True:
+        for i in range(n-1, -1, -1):
+            soma = 0
+            for j in range(i+1, n):
+                soma += C[i][j]* y[j]
+            y[i] = (D[i] - soma) / C[i][i]   # Fórmula da matriz;
+        print("Solução do sistema da matriz:")
+        output = '\nSolução do sistema:\n'
+        for i, s in enumerate(y):
+            print(f"x.{i+1} = {s}") 
+            output += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
+    else:
+        n = len(C)
+        y = n*[0]
+        for i in range(n):
+            soma = 0
+            for j in range(i-1,-1,-1):
+                soma += C[i][j]* y[j]
+            y[i] = (D[i] - soma) / C[i][i]
+        print("Solução Parcial")
+        output = '\nValores da matriz y:\n'
+        for i, s in enumerate(y):
+            print(f"y.{i+1} = {s}")
+            output += 'y.' + str(i+1) + ' = ' + str(s) + '\n'
+    outputtxt()
+    return y   
 
 
-def outputTeste(mb):
+
+def outputMatrizesAB(mb):
     global A
     for i in range(len(A)):
-        output = ''
+        outputM = ''
         for j in range(len(A[i])):
-            output += str(A[i][j]) + ' '
+            outputM += str(A[i][j]) + ' '
         if mb:
-            output += '|' + str(B[i])
-        print(output)
+            outputM += '|' + str(B[i])
+        outputM += '\n'
+        with open('Resol.txt', 'a') as f:
+            f.write(outputM)
+
+def outputtxt():
+    global output
+    with open('Resol.txt', 'a') as f:
+        f.write(output)
+    output = ''
 
 def EliminGauss():
     global A
     global B
+    global output
     print("Método de Eliminação de Gauss")
     for i in range(len(A)):
+        output = ''
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]
         if pivo == 0:
             pivoteamento(i)
             pivo = A[i][i]
+
+        output += '\nEscalonamento na Matriz Ampliada AB\n'
+        output += 'pivo: ' + str(pivo) 
+
         escalonamento(i,pivo,True)
+        outputtxt()
+        outputMatrizesAB(mb = True)
+
     print("Matriz A")   
-    outputTeste(mb = True)
     retrosub(A,B, True)
 
 #metodo de fatoração LU
 def FatorLu():
     global A
     global B
+    global output
     print("Método do fator LU")
     for i in range(len(A)):
+        output = ''
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]
         if pivo == 0:
             pivoteamento(i)
             pivo = A[i][i]
+
+        output += '\nEscalonamento na Matriz A\n'
+        output += 'pivo: ' + str(pivo)
+        
         escalonamento(i,pivo,False)
-    L = []
+        outputtxt()
+        outputMatrizesAB(mb = False)
+
+    L = np.zeros(np.shape(A))
     u = A
     k = 0
     for i in range(len(A)):
-        Llinha = []
         for j in range(len(A)):
             if i == j:
-                Llinha.append(1.000)
+                L[i][j]=(1.000)
             elif i < j:
-                Llinha.append(0.000)
+                L[i][j]=(0.000)
             else:
-                Llinha.append(round(m[k], 3))
+                L[i][j]=(np.round(m[k], 3))
                 k+=1
-        L.append(Llinha)
-    print("Matriz U:")
-    outputTeste(mb = False)
+    
     #output de teste
-    print("Matriz L:")
+    output = "\nMatriz L:\n"
     for i in range(len(L)):
-        output = ''
         for j in range(len(L[i])):
             output += str(L[i][j]) + ' '
-        print(output)
+        output += '\n'
+    output += "\nMatriz U:\n"
+    outputtxt()
+    outputMatrizesAB(mb = False)
+
+
+
     #retrosubstuição ao contrário
     y = retrosub(L,B,False)
     #retrosubstuição normal
     retrosub(u,y,True)
 
 
+def Gauss_Jacobi():
+    global output
+    xk = np.zeros((2,B.size))
+    rep = 0
+    p = 0.05
+    print('Método de Gauss-Jacobi')
+    #aplicar substuição
+    while rep < 100:
+        for i in range(B.size):
+            soma = 0
+            #output = 'xk.'+ str[i] + ' = ' + str(B[i])
+    
+            for j in range(B.size):
+                if i != j:
+                    soma  += A[i][j]*xk[0][j]
+                    #output += ' - ' + str(A[i][j]) + '*' + str(xk[0][j])
+            xk[1][i] = ((B[i] - soma)/A[i][i])
+            if rep >0:
+                output += 'x(k-1).' + str(i+1) + ' = ' + str(xk[0][i]) 
+                output+= '  x(k).' + str(i+1) + ' = ' + str(xk[1][i])+'\n'
 
-#FatorLu()
+        #verificar convergencia 
+        
+        if rep > 0:
 
-#EliminGauss()
+            vetor = xk[1]-xk[0]
+            dr = np.max(np.abs(vetor))/(np.max(np.abs(xk[1])))
+            output += 'dr = ' + str(dr) + '  precisão: ' + str(p) + '\n\n'
+
+            if dr < p:
+                break
+            else:
+                xk = np.flip(xk,axis = 0)
+        rep += 1
+        outputtxt()
+    for i, s in enumerate(xk[1]):
+        print(f"x.{i+1} = {s}") 
+    
+
+
+
+def Gauss_Seidel():
+    global output
+    global x
+    rep = 0
+    p = 0.05
+    xk = np.zeros((2,B.size))
+
+    #aplicar substuição
+    while rep < 100:
+        for i in range(B.size):
+            soma = 0
+
+            for j in range(B.size):
+                if j < i and rep > 0:
+                    soma  += A[i][j]*xk[1][j]
+                elif j > i and rep > 0:
+                    soma  += A[i][j]*xk[0][j]
+            xk[1][i] = ((B[i] - soma)/A[i][i])
+            if rep > 0:
+                output += 'x(k-1).' + str(i+1) + ' = ' + str(xk[0][i]) 
+                output+= '  x(k).' + str(i+1) + ' = ' + str(xk[1][i])+'\n'
+
+        #verificar convergencia
+        if rep > 0:
+            vetor = xk[1]-xk[0]
+            dr = np.max(np.abs(vetor))/(np.max(np.abs(xk[1])))
+            output += 'dr = ' + str(dr) + '  precisão: ' + str(p) + '\n\n'
+            if dr < p:
+                break
+            else:
+                xk = np.flip(xk,axis = 0)
+        rep += 1
+        outputtxt()
+    for i, s in enumerate(xk[1]):
+        print(f"x.{i+1} = {s}") 
+
+
+
+
+outputMatrizesAB(mb = True)
+
+metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel)
+func = int(input("método que você quer \n"))
+output = '\nMétodo de ' + nomes[func] + '\n'
+outputtxt()
+metodos[func]()
+
+
