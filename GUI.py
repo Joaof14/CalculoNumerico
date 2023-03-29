@@ -1,13 +1,35 @@
 from tkinter import *
 import Metodos
 
-
-
-
-def Controle():
-    pass
+opc = []
 
 Janela = Tk()
+
+def mostrarMetodos():
+    global opc, mBl, mAl, ret, p, env
+    mAl.pack_forget()
+    mBl.pack_forget()
+    mA.pack_forget()
+    mB.pack_forget()
+    Info.pack_forget()
+
+    for i in range(len(Metodos.nomes)):
+        opc.append(Radiobutton(  Janela,
+                            text=Metodos.nomes[i],
+                            command=Metodos.metodos[i],
+                            indicatoron=0,
+                            bg="gray"))
+        opc[i].pack()
+    pLabel.pack()
+    pEntry.pack()
+    ret = Button(text='retornar', command=retornar)
+    ret.pack()
+
+def retornar():
+    global opc
+    for i in range(len(Metodos.nomes)):
+        opc[i].pack_forget()
+
 
 Janela.geometry("500x500")
 Janela.title('Calculadora de Sistemas de EQuações Lineares')
@@ -25,14 +47,19 @@ mBl.pack()
 mB = Text(height='8')
 mB.pack()
 
-env = Button(text='Enviar Dados')
+env = Button(text='Enviar Dados', command=mostrarMetodos)
+env.pack()
 
-for i in range(len(Metodos.nomes)):
-    opc = Radiobutton(  Janela,
-                        text=Metodos.nomes[i],
-                        command=Metodos.metodos[i],
-                        indicatoron=0,
-                        bg="gray")
-    #opc.pack()
+pLabel = Label( Janela,
+                text ='precisão (Necessária somente em)')
+
+pEntry = Entry(
+    Janela,
+    font=("Arial", 15)
+)
+
+
+
+
 
 Janela.mainloop()
