@@ -11,11 +11,10 @@ def mostrarMetodos():
     Info.pack_forget()
 
     for i in range(len(Metodos.nomes)):
-        opc.append(Radiobutton(  Janela,
+        opc.append(Radiobutton( Janela,
                             text=Metodos.nomes[i],
                             command=Metodos.metodos[i],
-                            indicatoron=0,
-                            bg="gray"))
+                            indicatoron=0))
         opc[i].pack()
     pLabel.pack()
     pEntry.pack()
