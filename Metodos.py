@@ -252,9 +252,9 @@ def Gauss_Seidel():
 outputMatrizesAB(mb = True)
 
 metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel)
-func = int(input("método que você quer \n"))
-output = '\nMétodo de ' + nomes[func] + '\n'
-outputtxt()
-metodos[func]()
+#func = int(input("método que você quer \n"))
+#output = '\nMétodo de ' + nomes[func] + '\n'
+#outputtxt()
+#metodos[func]()
 
 

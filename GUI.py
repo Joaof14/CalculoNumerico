@@ -1,27 +1,38 @@
 from tkinter import *
 import Metodos
 
+
+
+
 def Controle():
-    if metodo.get() == Metodos.nomes[0]:
-        Metodos.EliminGauss()
-    elif metodo.get() == Metodos.nomes[1]:
-        Metodos.FatorLu()
-    else:
-        pass
+    pass
 
 Janela = Tk()
 
-Janela.geometry("360x360")
+Janela.geometry("500x500")
+Janela.title('Calculadora de Sistemas de EQuações Lineares')
 
-metodo = StringVar()
+Info = Label(text="Separe as colunas por vírgula!", bg = 'green')
+Info.pack()
+
+mAl = Label(Janela, text='Matriz dos coeficientes A')
+mAl.pack()
+mA = Text(height='20')
+mA.pack()
+
+mBl = Label(Janela, text='Matriz B dos resultados')
+mBl.pack()
+mB = Text(height='8')
+mB.pack()
+
+env = Button(text='Enviar Dados')
+
 for i in range(len(Metodos.nomes)):
     opc = Radiobutton(  Janela,
                         text=Metodos.nomes[i],
-                        variable=metodo,
-                        value=Metodos.nomes[i],
-                        command=Controle,
+                        command=Metodos.metodos[i],
                         indicatoron=0,
                         bg="gray")
-    opc.pack()
+    #opc.pack()
 
 Janela.mainloop()
