@@ -1,19 +1,45 @@
 import numpy as np
+import csv
 
-A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
+#A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
 #A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
-B = np.array([1,2,3], dtype= float)
+#B = np.array([1,2,3], dtype= float)
 #B = np.array([7,1,6,8], dtype = float)
 
 #A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
 #B = np.array([7,-8,6], dtype=float)
-x = np.zeros(B.size, dtype=float)
+
+
+
+A = []
+B = []
 m = []
 output = ''
-f = open("Resol.txt", 'w')
-f.write("Matriz A|B: \n")
-f.close()
 nomes = ("Eliminação de Gauss", "Fatoração LU", "Gauss-Jacobi", "Gauss-Seidel")
+
+def atribui(Inpa,Inpb):
+    global A,B, x, output, m
+    A = []
+    B = []
+    m = []
+    output = ''
+    a = Inpa.strip().split('\n')
+    b = Inpb.strip().split('\n')
+    d = len(b)
+    for i in range(d):
+        A.append(a[i].split(','))
+        B.append(b[i])
+    A = np.array(A, dtype=float)
+    B = np.array(B, dtype=float)
+    x = np.zeros(B.size, dtype=float)
+    f = open("Resol.txt", 'w')
+    f.write("Matriz A|B: \n")
+    f.close()
+    outputMatrizesAB(mb = True)
+
+
+
+
 def pivoteamento(i):
     global output
     for j in range(i+1,len(A)):
@@ -139,7 +165,7 @@ def FatorLu():
         outputMatrizesAB(mb = False)
 
     L = np.zeros(np.shape(A))
-    u = A
+    u = np.copy(A)
     k = 0
     for i in range(len(A)):
         for j in range(len(A)):
@@ -249,12 +275,9 @@ def Gauss_Seidel():
 
 
 
-outputMatrizesAB(mb = True)
+
 
 metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel)
-func = int(input("método que você quer \n"))
-output = '\nMétodo de ' + nomes[func] + '\n'
-outputtxt()
-metodos[func]()
+
 
 

@@ -6,19 +6,25 @@ opc = []
 Janela = Tk()
 
 def mostrarMetodos():
-    mA.config(state='disabled')
-    mB.config(state='disabled')
-    Info.pack_forget()
+    try:
+        Metodos.atribui(mA.get("1.0", "end"), mB.get("1.0", "end"))
+        print(Metodos.A)
+    except:
+        print('Verifique se preencheu corretamente e corrija caso necessário clicando em retorna!')
+    finally:
+        mA.config(state='disabled')
+        mB.config(state='disabled')
+        Info.pack_forget()
 
-    for i in range(len(Metodos.nomes)):
-        opc.append(Radiobutton( Janela,
-                            text=Metodos.nomes[i],
-                            command=Metodos.metodos[i],
-                            indicatoron=0))
-        opc[i].pack()
-    pLabel.pack()
-    pEntry.pack()
-    ret.pack()
+        for i in range(len(Metodos.nomes)):
+            opc.append(Radiobutton( Janela,
+                                text=Metodos.nomes[i],
+                                command=Metodos.metodos[i],
+                                indicatoron=0))
+            opc[i].pack()
+        pLabel.pack()
+        pEntry.pack()
+        ret.pack()
 
 def retornar():
     for i in range(len(Metodos.nomes)):
@@ -39,12 +45,12 @@ Info.pack()
 
 mAl = Label(Janela, text='Matriz dos coeficientes A')
 mAl.pack()
-mA = Text(height='8', font=('Arial', 15))
+mA = Text(height= '6', font=('Arial', 15))
 mA.pack()
 
 mBl = Label(Janela, text='Matriz B dos resultados')
 mBl.pack()
-mB = Text(height='4', font=('Arial', 15))
+mB = Text(height='6',font=('Arial', 15))
 mB.pack()
 
 env = Button(text='Enviar Dados', command=mostrarMetodos)
