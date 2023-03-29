@@ -26,12 +26,8 @@ def retornar():
     ret.pack_forget()
     pEntry.pack_forget()
     pLabel.pack_forget()
-    mAl.pack()
     mA.config(state='normal')
-    mBl.pack()
     mB.config(state='normal')
-    env.pack_forget()
-    env.pack()
     
 
 
