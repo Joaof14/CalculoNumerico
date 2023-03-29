@@ -6,7 +6,6 @@ opc = []
 Janela = Tk()
 
 def mostrarMetodos():
-    global opc, mBl, mAl, ret, p, env
     mAl.pack_forget()
     mBl.pack_forget()
     mA.pack_forget()
@@ -22,13 +21,19 @@ def mostrarMetodos():
         opc[i].pack()
     pLabel.pack()
     pEntry.pack()
-    ret = Button(text='retornar', command=retornar)
     ret.pack()
 
 def retornar():
-    global opc
     for i in range(len(Metodos.nomes)):
         opc[i].pack_forget()
+    ret.pack_forget()
+    pEntry.pack_forget()
+    pLabel.pack_forget()
+    mAl.pack()
+    mA.pack()
+    mBl.pack()
+    mB.pack()
+    
 
 
 Janela.geometry("500x500")
@@ -58,6 +63,7 @@ pEntry = Entry(
     font=("Arial", 15)
 )
 
+ret = Button(text='retornar', command=retornar)
 
 
 
