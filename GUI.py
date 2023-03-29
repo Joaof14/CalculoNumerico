@@ -33,6 +33,8 @@ def retornar():
     mA.pack()
     mBl.pack()
     mB.pack()
+    env.pack_forget()
+    env.pack()
     
 
 
