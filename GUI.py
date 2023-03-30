@@ -5,15 +5,13 @@ opc = []
 
 Janela = Tk()
 
+index= 0
+
 resultado = ''
 def mostrarMetodos():
-    global resultado
+    global resultado, func
     try:
-        Metodos.atribui(mA.get("1.0", "end"), mB.get("1.0", "end"))
         print(Metodos.A)
-    except:
-        print('Verifique se preencheu corretamente e corrija caso necessário clicando em retorna!')
-    finally:
         mA.config(state='disabled')
         mB.config(state='disabled')
         Info.pack_forget()
@@ -21,8 +19,10 @@ def mostrarMetodos():
         for i in range(len(Metodos.nomes)):
             opc.append(Radiobutton( Janela,
                                 text=Metodos.nomes[i],
-                                command = lambda: displayResult(i),
+                                command = displayResult,
                                 indicatoron=0,
+                                variable=index,
+                                value=i,
                                 state = 'normal'))
             opc[i].pack()
         pLabel.pack()
@@ -30,6 +30,11 @@ def mostrarMetodos():
         ret.pack()
         if resultado != '':
             resultado.pack_forget()
+        Metodos.atribui(mA.get("1.0", "end"), mB.get("1.0", "end"))
+    except:
+        resultado = Label(text = 'Verifique se preencheu corretamente')
+        retornar()
+        resultado.pack()
 
 def retornar():
     global resultado
@@ -41,10 +46,10 @@ def retornar():
     mB.config(state='normal')
     ret.pack_forget()
     
-def displayResult(i):
+def displayResult():
     global resultado
     
-    x = Metodos.metodos[i]()
+    x = Metodos.metodos[index]()
     res = 'Solução do sistema:\n'
     for i, s in enumerate(x):
         print(f"x.{i+1} = {s}") 

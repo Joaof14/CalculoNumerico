@@ -1,0 +1,38 @@
+Matriz A|B: 
+3.0 2.0 4.0 |1.0
+1.0 1.0 2.0 |2.0
+4.0 3.0 -2.0 |3.0
+
+Método de Eliminação de Gauss
+
+Escalonamento na Matriz Ampliada AB
+pivo: 3.0
+fator m: 0.3333333333333333
+Linha 2 = Linha 2 - 0.3333333333333333*Linha 1
+
+fator m: 1.3333333333333333
+Linha 3 = Linha 3 - 1.3333333333333333*Linha 1
+
+3.0 2.0 4.0 |1.0
+0.0 0.333 0.667 |1.667
+0.0 0.333 -7.333 |1.667
+
+Escalonamento na Matriz Ampliada AB
+pivo: 0.333
+fator m: 1.0
+Linha 3 = Linha 3 - 1.0*Linha 2
+
+3.0 2.0 4.0 |1.0
+0.0 0.333 0.667 |1.667
+0.0 0.0 -8.0 |0.0
+
+Escalonamento na Matriz Ampliada AB
+pivo: -8.0
+3.0 2.0 4.0 |1.0
+0.0 0.333 0.667 |1.667
+0.0 0.0 -8.0 |0.0
+
+Solução do sistema:
+x.1 = -3.004004004004004
+x.2 = 5.006006006006006
+x.3 = -0.0
