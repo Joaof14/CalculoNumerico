@@ -45,8 +45,8 @@ def displayResult():
     x = []
     for i in range(len(opc)):
         if opc[i].select():
-            x = Metodos.metodos[i]
-            print(x)
+            x = Metodos.metodos[i]()
+            #print(x)
     if x != []:
         res = 'Solução do sistema:\n'
         for i, s in enumerate(x):
