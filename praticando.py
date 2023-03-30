@@ -49,7 +49,7 @@ def InterpNt(xz,yz):
     o[0] += yz
     for i in range(1,d1):
         for j in range(d1-i):
-            o[i][j] = (o[i-1][j+1] - o[i-1][j])/(xz[j+1] - xz[j])
+            o[i][j] = (o[i-1][j+1] - o[i-1][j])/(xz[j+i] - xz[j])
     d = o[:,0]
     print(o)
 #InterpLg(x,y)  
