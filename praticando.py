@@ -43,4 +43,14 @@ def InterpLg(xz,yz):
     print(sp.expand(pxn))
 
 
-InterpLg(x,y)  
+def InterpNt(xz,yz):
+    d1 = len(xz)
+    o = np.zeros((d1,d1))
+    o[0] += yz
+    for i in range(1,d1):
+        for j in range(d1-i):
+            o[i][j] = (o[i-1][j+1] - o[i-1][j])/(xz[j+1] - xz[j])
+    d = o[:,0]
+    print(o)
+#InterpLg(x,y)  
+InterpNt(x,y)
