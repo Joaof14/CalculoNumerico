@@ -188,7 +188,6 @@ def FatorLu():
     outputMatrizesAB(mb = False)
 
 
-
     #retrosubstuição ao contrário
     y = retrosub(L,B,False)
     #retrosubstuição normal

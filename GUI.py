@@ -5,7 +5,9 @@ opc = []
 
 Janela = Tk()
 
+resultado = ''
 def mostrarMetodos():
+    global resultado
     try:
         Metodos.atribui(mA.get("1.0", "end"), mB.get("1.0", "end"))
         print(Metodos.A)
@@ -19,12 +21,15 @@ def mostrarMetodos():
         for i in range(len(Metodos.nomes)):
             opc.append(Radiobutton( Janela,
                                 text=Metodos.nomes[i],
-                                command=Metodos.metodos[i],
+                                value = i,
+                                command = displayResult,
                                 indicatoron=0))
             opc[i].pack()
         pLabel.pack()
         pEntry.pack()
         ret.pack()
+        if resultado != '':
+            resultado.pack_forget()
 
 def retornar():
     for i in range(len(Metodos.nomes)):
@@ -35,6 +40,21 @@ def retornar():
     mA.config(state='normal')
     mB.config(state='normal')
     
+def displayResult():
+    global resultado
+    x = []
+    for i in range(len(opc)):
+        if opc[i].select():
+            x = Metodos.metodos[i]
+            print(x)
+    if x != []:
+        res = 'Solução do sistema:\n'
+        for i, s in enumerate(x):
+            print(f"x.{i+1} = {s}") 
+            res += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
+        resultado = Label(text=res)
+        resultado.pack()
+    retornar()
 
 
 Janela.geometry("500x500")
