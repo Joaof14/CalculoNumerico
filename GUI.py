@@ -5,7 +5,7 @@ opc = []
 
 Janela = Tk()
 
-index= 0
+index = IntVar()
 
 resultado = ''
 def mostrarMetodos():
@@ -48,9 +48,9 @@ def retornar():
     
 def displayResult():
     global resultado
-    
-    x = Metodos.metodos[index]()
-    res = 'Solução do sistema:\n'
+    x = Metodos.metodos[index.get()]()
+    res = 'Método de: ' + Metodos.nomes[index.get()]
+    res += '\nSolução do sistema:\n'
     for i, s in enumerate(x):
         print(f"x.{i+1} = {s}") 
         res += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
@@ -87,8 +87,6 @@ pEntry = Entry(
 )
 
 ret = Button(text='retornar', command=retornar)
-
-
 
 
 Janela.mainloop()
