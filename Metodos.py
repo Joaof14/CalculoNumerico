@@ -282,7 +282,6 @@ def InterpNt(xz,yz):
     for i in range(1,d1):
         for j in range(d1-i):
             o[i][j] = (o[i-1][j+1] - o[i-1][j])/(xz[j+i] - xz[j])
-    pxn = 0
     d = o[:,0]
     pxn = d[0]
     for i in range(1,d1):
