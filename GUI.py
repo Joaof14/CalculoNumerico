@@ -22,7 +22,8 @@ def mostrarMetodos():
             opc.append(Radiobutton( Janela,
                                 text=Metodos.nomes[i],
                                 command = lambda: displayResult(i),
-                                indicatoron=0))
+                                indicatoron=0,
+                                state = 'normal'))
             opc[i].pack()
         pLabel.pack()
         pEntry.pack()
