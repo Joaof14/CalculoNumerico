@@ -19,18 +19,22 @@ nomes = ("Eliminação de Gauss", "Fatoração LU", "Gauss-Jacobi", "Gauss-Seide
 
 def atribui(Inpa,Inpb):
     global A,B, x, output, m
-    A = []
-    B = []
-    m = []
     output = ''
-    a = Inpa.strip().split('\n')
-    b = Inpb.strip().split('\n')
-    db = len(b)
-    for i in range(db):
-        A.append(a[i].split(','))
-        B.append(b[i])
-    A = np.array(A, dtype=float)
-    B = np.array(B, dtype=float)
+    if type(Inpa) == str:
+        a = Inpa.strip().split('\n')
+        b = Inpb.strip().split('\n')
+        db = len(b)
+        for i in range(db):
+            A.append(a[i].split(','))
+            B.append(b[i])
+        A = np.array(A, dtype=float)
+        B = np.array(B, dtype=float)
+    elif type(Inpa) == list:
+        A = np.array(Inpa)
+        B = np.array(Inpb)
+    else:
+        A = np.zeros((3,3))
+        B = np.zeros(3)
     da = np.shape(A)
     if da[0] != db:
         IndexError
@@ -39,8 +43,6 @@ def atribui(Inpa,Inpb):
     f.write("Matriz A|B: \n")
     f.close()
     outputMatrizesAB(mb = True)
-    
-
 
 
 
