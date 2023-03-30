@@ -25,17 +25,21 @@ def atribui(Inpa,Inpb):
     output = ''
     a = Inpa.strip().split('\n')
     b = Inpb.strip().split('\n')
-    d = len(b)
-    for i in range(d):
+    db = len(b)
+    for i in range(db):
         A.append(a[i].split(','))
         B.append(b[i])
     A = np.array(A, dtype=float)
     B = np.array(B, dtype=float)
+    da = np.shape(A)
+    if da[0] != db:
+        IndexError
     x = np.zeros(B.size, dtype=float)
     f = open("Resol.txt", 'w')
     f.write("Matriz A|B: \n")
     f.close()
     outputMatrizesAB(mb = True)
+    
 
 
 
