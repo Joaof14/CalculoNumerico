@@ -141,7 +141,7 @@ def EliminGauss():
         outputMatrizesAB(mb = True)
 
     print("Matriz A")   
-    retrosub(A,B, True)
+    return retrosub(A,B, True)
 
 #metodo de fatoração LU
 def FatorLu():
@@ -192,7 +192,7 @@ def FatorLu():
     #retrosubstuição ao contrário
     y = retrosub(L,B,False)
     #retrosubstuição normal
-    retrosub(u,y,True)
+    return retrosub(u,y,True)
 
 
 def Gauss_Jacobi():
@@ -233,6 +233,7 @@ def Gauss_Jacobi():
     for i, s in enumerate(xk[1]):
         print(f"x.{i+1} = {s}") 
     
+    return xk[1]
 
 
 
@@ -272,7 +273,7 @@ def Gauss_Seidel():
     for i, s in enumerate(xk[1]):
         print(f"x.{i+1} = {s}") 
 
-
+    return xk[1]
 
 
 
