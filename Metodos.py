@@ -247,14 +247,42 @@ def Gauss_Seidel():
         print(f"x.{i+1} = {s}") 
 
 
+def Interpol(inpA, inpB):
+    d = len(inpA)
+    mA = []
+    for i in range(d):
+        linha = []
+        for j in range(d):
+            calc = inpA[i] ** j
+            linha.append(calc)
+        mA.append(linha)
+    mB = inpB
+    print(mA)
+    print(mB)
 
 
-outputMatrizesAB(mb = True)
 
-metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel)
-func = int(input("método que você quer \n"))
-output = '\nMétodo de ' + nomes[func] + '\n'
-outputtxt()
-metodos[func]()
 
+#
+objtv = int(input("Digite 1 para input de Matriz \nDigite 2 para input de Par ordenado"))
+if objtv == 1:
+    outputMatrizesAB(mb = True)
+    metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel)
+    func = int(input("método que você quer \n"))
+    output = '\nMétodo de ' + nomes[func] + '\n'
+    outputtxt()
+    metodos[func]()
+else:
+    pares= np.array(['1,2','2,2','3,2'])
+    xl = []
+    y = []
+    for par in pares:
+        xl.append(par.split(',')[0])
+        y.append(par.split(',')[1])
+
+    xl = np.array(xl, dtype=float)
+    y = np.array(y, dtype=float)
+    print(xl)
+    print(y)
+    Interpol(xl,y)
 
