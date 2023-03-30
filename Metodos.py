@@ -275,7 +275,22 @@ def InterpLg(xz,yz):
         pxn += lxk*yz[j]
     print(sp.expand(pxn))
 
-
+def InterpNt(xz,yz):
+    d1 = len(xz)
+    o = np.zeros((d1,d1))
+    o[0] += yz
+    for i in range(1,d1):
+        for j in range(d1-i):
+            o[i][j] = (o[i-1][j+1] - o[i-1][j])/(xz[j+i] - xz[j])
+    pxn = 0
+    d = o[:,0]
+    pxn = d[0]
+    for i in range(1,d1):
+        aux = 1
+        for j in range(i):
+            aux*=(xS-xz[j])
+        pxn += d[i]*aux
+    print(sp.expand(pxn))
 
 #
 objtv = int(input("Digite 1 para input de Matriz \nDigite 2 para input de Par ordenado"))
@@ -289,15 +304,14 @@ if objtv == 1:
 else:
     pares= np.array(['-1,4','0,1','2,-1'])
     xl = []
-    y = []
+    yl = []
     for par in pares:
         xl.append(par.split(',')[0])
-        y.append(par.split(',')[1])
+        yl.append(par.split(',')[1])
 
     xl = np.array(xl, dtype=float)
-    yl = np.array(y, dtype=float)
-    print(xl)
-    print(y)
+    yl = np.array(yl, dtype=float)
     #Interpol(xl,y)
-    InterpLg(xl,yl)
+    #InterpLg(xl,yl)
+    InterpNt(xl,yl)
 
