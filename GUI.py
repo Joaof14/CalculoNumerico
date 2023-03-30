@@ -21,8 +21,7 @@ def mostrarMetodos():
         for i in range(len(Metodos.nomes)):
             opc.append(Radiobutton( Janela,
                                 text=Metodos.nomes[i],
-                                value = i,
-                                command = displayResult,
+                                command = lambda: displayResult(i),
                                 indicatoron=0))
             opc[i].pack()
         pLabel.pack()
@@ -32,28 +31,25 @@ def mostrarMetodos():
             resultado.pack_forget()
 
 def retornar():
+    global resultado
     for i in range(len(Metodos.nomes)):
         opc[i].pack_forget()
-    ret.pack_forget()
     pEntry.pack_forget()
     pLabel.pack_forget()
     mA.config(state='normal')
     mB.config(state='normal')
+    ret.pack_forget()
     
-def displayResult():
+def displayResult(i):
     global resultado
-    x = []
-    for i in range(len(opc)):
-        if opc[i].select():
-            x = Metodos.metodos[i]()
-            #print(x)
-    if x != []:
-        res = 'Solução do sistema:\n'
-        for i, s in enumerate(x):
-            print(f"x.{i+1} = {s}") 
-            res += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
-        resultado = Label(text=res)
-        resultado.pack()
+    
+    x = Metodos.metodos[i]()
+    res = 'Solução do sistema:\n'
+    for i, s in enumerate(x):
+        print(f"x.{i+1} = {s}") 
+        res += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
+    resultado = Label(text=res)
+    resultado.pack()
     retornar()
 
 
