@@ -1,5 +1,7 @@
 import numpy as np
+import sympy as sp
 
+xS = sp.Symbol('x')
 A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
 #A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
 B = np.array([1,2,3], dtype= float)
@@ -260,6 +262,18 @@ def Interpol(inpA, inpB):
     print(mA)
     print(mB)
 
+def InterpLg(xz,yz):
+    d = len(xz)
+    pxn = 0
+    lx = []
+    for j in range(d):
+        lxk = 1
+        for k in range(d):
+            if k != j:
+                lxk *= (xS - xz[k])/(xz[j] - xz[k])
+        lx.append(lxk)
+        pxn += lxk*yz[j]
+    print(sp.expand(pxn))
 
 
 
@@ -273,7 +287,7 @@ if objtv == 1:
     outputtxt()
     metodos[func]()
 else:
-    pares= np.array(['1,2','2,2','3,2'])
+    pares= np.array(['-1,4','0,1','2,-1'])
     xl = []
     y = []
     for par in pares:
@@ -281,8 +295,9 @@ else:
         y.append(par.split(',')[1])
 
     xl = np.array(xl, dtype=float)
-    y = np.array(y, dtype=float)
+    yl = np.array(y, dtype=float)
     print(xl)
     print(y)
-    Interpol(xl,y)
+    #Interpol(xl,y)
+    InterpLg(xl,yl)
 
