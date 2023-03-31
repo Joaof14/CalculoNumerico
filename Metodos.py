@@ -1,7 +1,7 @@
 import numpy as np
-import sympy as sp
+from sympy import  expand, Symbol
 
-xS = sp.Symbol('x')
+xS = Symbol('x')
 A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
 #A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
 B = np.array([1,2,3], dtype= float)
@@ -262,20 +262,24 @@ def Interpol(inpA, inpB):
     print(mA)
     print(mB)
 
-def InterpLg(xz,yz):
+def InterpLg(xz,yz, pt):
     d = len(xz)
     pxn = 0
-    lx = []
+    r = 0
     for j in range(d):
         lxk = 1
+        rk = 1
         for k in range(d):
             if k != j:
+                rk *= (pt - xz[k])/(xz[j] - xz[k])
                 lxk *= (xS - xz[k])/(xz[j] - xz[k])
-        lx.append(lxk)
+        r += rk*yz[j]
         pxn += lxk*yz[j]
-    print(sp.expand(pxn))
+    print(pxn)
+    print(r)
+    
 
-def InterpNt(xz,yz):
+def InterpNt(xz,yz,pt):
     d1 = len(xz)
     o = np.zeros((d1,d1))
     o[0] += yz
@@ -284,15 +288,20 @@ def InterpNt(xz,yz):
             o[i][j] = (o[i-1][j+1] - o[i-1][j])/(xz[j+i] - xz[j])
     d = o[:,0]
     pxn = d[0]
+    r = d[0]
     for i in range(1,d1):
         aux = 1
+        rax = 1
         for j in range(i):
             aux*=(xS-xz[j])
+            rax*=(pt-xz[j])
         pxn += d[i]*aux
-    print(sp.expand(pxn))
+        r += d[i]*rax
+    print(expand(pxn))
+    print(r)
 
 #
-objtv = int(input("Digite 1 para input de Matriz \nDigite 2 para input de Par ordenado"))
+objtv = int(input("Digite 1 para input de Matriz \nDigite 2 para input de Par ordenado\n"))
 if objtv == 1:
     outputMatrizesAB(mb = True)
     metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel)
@@ -301,7 +310,7 @@ if objtv == 1:
     outputtxt()
     metodos[func]()
 else:
-    pares= np.array(['-1,4','0,1','2,-1'])
+    pares= np.array(['-1,2','0,1','1,2','3,82', '2,17'])
     xl = []
     yl = []
     for par in pares:
@@ -310,7 +319,7 @@ else:
 
     xl = np.array(xl, dtype=float)
     yl = np.array(yl, dtype=float)
-    #Interpol(xl,y)
-    #InterpLg(xl,yl)
-    InterpNt(xl,yl)
+    #Interpol(xl,yl)
+    InterpLg(xl,yl,5)
+    InterpNt(xl,yl,5)
 
