@@ -1,51 +1,16 @@
 from tkinter import *
 import Metodos
 
-opc = []
 
 Janela = Tk()
 
 index = IntVar()
+frame1 = Frame(master=Janela)
+frame2 = Frame(master=Janela)
+opc = []
 
 resultado = ''
-def mostrarMetodos():
-    global resultado, func
-    try:
-        print(Metodos.A)
-        mA.config(state='disabled')
-        mB.config(state='disabled')
-        Info.pack_forget()
 
-        for i in range(len(Metodos.nomes)):
-            opc.append(Radiobutton( Janela,
-                                text=Metodos.nomes[i],
-                                command = displayResult,
-                                indicatoron=0,
-                                variable=index,
-                                value=i,
-                                state = 'normal'))
-            opc[i].pack()
-        pLabel.pack()
-        pEntry.pack()
-        ret.pack()
-        if resultado != '':
-            resultado.pack_forget()
-        Metodos.atribui(mA.get("1.0", "end"), mB.get("1.0", "end"))
-    except:
-        resultado = Label(text = 'Verifique se preencheu corretamente')
-        retornar()
-        resultado.pack()
-
-def retornar():
-    global resultado
-    for i in range(len(Metodos.nomes)):
-        opc[i].pack_forget()
-    pEntry.pack_forget()
-    pLabel.pack_forget()
-    mA.config(state='normal')
-    mB.config(state='normal')
-    ret.pack_forget()
-    
 def displayResult():
     global resultado
     x = Metodos.metodos[index.get()]()
@@ -56,37 +21,70 @@ def displayResult():
         res += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
     resultado = Label(text=res)
     resultado.pack()
-    retornar()
 
+
+def Tela2():
+    i = index.get()
+    if i in range(0,4):
+        Info.config(text = "Separe as colunas por vírgula")
+        LabelInput1.config(text = "Matriz A")
+        LabelInput2.config(text = "Matriz B")
+        if i in range(2,4):
+            pLabel.pack()
+            pEntry.pack()
+    elif  i == 4:
+        print('ok')
+    else:
+        pass
+    frame1.pack_forget()
+    frame2.pack()
+
+def Tela1():
+    frame1.pack()
+    
+
+
+
+
+
+for i, nome in enumerate(Metodos.nomes):
+    opc.append(Radiobutton(frame1,
+                variable=index,
+                value = i,
+                text = nome,
+                command = Tela2))
+    opc[i].pack()
 
 Janela.geometry("500x500")
-Janela.title('Calculadora de Sistemas de EQuações Lineares')
+Janela.title('Calculadora de Sistemas de Equações Lineares e Interpolação')
 
-Info = Label(text="Separe as colunas por vírgula!", bg = 'green')
+Info = Label(frame2)
 Info.pack()
 
-mAl = Label(Janela, text='Matriz dos coeficientes A')
-mAl.pack()
-mA = Text(height= '6', font=('Arial', 15))
-mA.pack()
+LabelInput1 = Label(frame2)
+LabelInput1.pack()
+InputA = Text(frame2,height= '6', font=('Arial', 15))
+InputA.pack()
+LabelInput2  = Label(frame2)
+LabelInput2.pack()
+InputB = Text(frame2,height='6',font=('Arial', 15))
+InputB.pack()
 
-mBl = Label(Janela, text='Matriz B dos resultados')
-mBl.pack()
-mB = Text(height='6',font=('Arial', 15))
-mB.pack()
+env = Button(frame2, text='Enviar Dados')
 
-env = Button(text='Enviar Dados', command=mostrarMetodos)
-env.pack()
 
-pLabel = Label( Janela,
-                text ='precisão (Necessária somente em)')
+pLabel = Label(frame2,
+                text ='Precisão')
 
 pEntry = Entry(
-    Janela,
+    frame2,
     font=("Arial", 15)
 )
 
-ret = Button(text='retornar', command=retornar)
+ret = Button(frame2,text='retornar')
 
+
+
+Tela1()
 
 Janela.mainloop()

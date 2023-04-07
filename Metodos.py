@@ -16,7 +16,8 @@ A = []
 B = []
 m = []
 output = ''
-nomes = ("Eliminação de Gauss", "Fatoração LU", "Gauss-Jacobi", "Gauss-Seidel")
+nomes = ("Eliminação de Gauss", "Fatoração LU", "Gauss-Jacobi", "Gauss-Seidel",
+"Interpolação por Sistema linear", "Interpolação de Lagrange", "Interpolação de Newton")
 
 def atribui(Inpa,Inpb):
     global A,B, x, output, m
@@ -332,4 +333,4 @@ def InterpNt(xz,yz,pt):
     print(expand(pxn))
     print(r)
 
-metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel)
+Metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel,Interpol,InterpLg,InterpNt)
