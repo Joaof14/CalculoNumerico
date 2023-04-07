@@ -1,10 +1,11 @@
 import numpy as np
-import csv
 
 #A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
 #A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
 #B = np.array([1,2,3], dtype= float)
 #B = np.array([7,1,6,8], dtype = float)
+from sympy import  expand, Symbol
+xS = Symbol('x')
 
 #A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
 #B = np.array([7,-8,6], dtype=float)
@@ -131,7 +132,7 @@ def EliminGauss():
     global B
     global output
     print("Método de Eliminação de Gauss")
-    for i in range(len(A)):
+    for i in range(len(A)-1):
         output = ''
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]
@@ -155,7 +156,7 @@ def FatorLu():
     global B
     global output
     print("Método do fator LU")
-    for i in range(len(A)):
+    for i in range(len(A)-1):
         output = ''
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]
@@ -280,10 +281,55 @@ def Gauss_Seidel():
 
     return xk[1]
 
+def Interpol(inpA, inpB):
+    d = len(inpA)
+    mA = []
+    for i in range(d):
+        linha = []
+        for j in range(d):
+            calc = inpA[i] ** j
+            linha.append(calc)
+        mA.append(linha)
+    mB = inpB
+    print(mA)
+    print(mB)
+
+def InterpLg(xz,yz, pt):
+    d = len(xz)
+    pxn = 0
+    r = 0
+    for j in range(d):
+        lxk = 1
+        rk = 1
+        for k in range(d):
+            if k != j:
+                rk *= (pt - xz[k])/(xz[j] - xz[k])
+                lxk *= (xS - xz[k])/(xz[j] - xz[k])
+        r += rk*yz[j]
+        pxn += lxk*yz[j]
+    print(pxn)
+    print(r)
 
 
+def InterpNt(xz,yz,pt):
+    d1 = len(xz)
+    o = np.zeros((d1,d1))
+    o[0] += yz
+    for i in range(1,d1):
+        for j in range(d1-i):
+            o[i][j] = (o[i-1][j+1] - o[i-1][j])/(xz[j+i] - xz[j])
+    d = o[:,0]
+    pxn = d[0]
+    r = d[0]
+    for i in range(1,d1):
+        aux = 1
+        rax = 1
+        for j in range(i):
+            aux*=(xS-xz[j])
+            rax*=(pt-xz[j])
+        pxn += d[i]*aux
+        r += d[i]*rax
+    print(expand(pxn))
+    print(r)
 
 metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel)
-
-
-

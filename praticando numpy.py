@@ -55,9 +55,9 @@ def Gauss_Seidel():
     for i, s in enumerate(x[1]):
         print(f"x.{i+1} = {s}")     
         
-            
+
 
 
 
 #Gauss_Jacobi()
-Gauss_Seidel()
+#Gauss_Seidel()
