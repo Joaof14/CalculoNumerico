@@ -3,9 +3,9 @@ from sympy import  expand, Symbol
 
 xS = Symbol('x')
 A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
-#A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
+A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
 B = np.array([1,2,3], dtype= float)
-#B = np.array([7,1,6,8], dtype = float)
+B = np.array([7,1,6,8], dtype = float)
 
 #A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
 #B = np.array([7,-8,6], dtype=float)
@@ -101,7 +101,7 @@ def EliminGauss():
     global B
     global output
     print("Método de Eliminação de Gauss")
-    for i in range(len(A)):
+    for i in range(len(A)-1):
         output = ''
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]
@@ -125,7 +125,7 @@ def FatorLu():
     global B
     global output
     print("Método do fator LU")
-    for i in range(len(A)):
+    for i in range(len(A)-1):
         output = ''
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]

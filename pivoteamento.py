@@ -9,3 +9,11 @@ A[[i,j]] = A[[j,i]]
 print(A)
 
 
+j = np.argmax(np.abs(A[:,i])) 
+A[[i,j]] = A[[j,i]]
+B[[i,j]] = B[[j,i]]
+global output
+j = np.argmax(np.abs(A[:,i])) 
+A[[i,j]] = A[[j,i]]
+if atb == True:
+    B[[i,j]] = B[[j,i]]
