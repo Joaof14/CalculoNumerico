@@ -5,14 +5,15 @@ import Metodos
 Janela = Tk()
 
 index = IntVar()
+index_s = IntVar()
 frameSL_primaria = Frame(master=Janela)
 frameSL_secundaria = Frame(master=Janela)
 frameITP = Frame(master=Janela)
-frameInp = Frame(master=Janela)
+frameTela2 = Frame(master=Janela)
 opc = []
 opc2 = []
 
-resultado = ''
+resultado = Label(Janela)
 
 def displayResult():
     global resultado
@@ -47,17 +48,21 @@ def Tela2():
     frameSL_primaria.pack_forget()
     frameITP.pack_forget()
 
-    
-    frameInp.pack()
+    ret.pack()
+    frameTela2.pack()
 
 def Tela1():
+    resultado.pack_forget()
     frameSL_secundaria.pack_forget()
-    frameInp.pack_forget()
+    frameTela2.pack_forget()
     frameSL_primaria.pack()
     frameITP.pack()
     
 
 
+
+label_sl_secundario = Label(frameSL_secundaria, text = 'escolha como realizar a resolução\n do sistema para a interpolação!\n O método de eliminação de gauss\n será considerado padrão')
+label_sl_secundario.pack()
 
 
 
@@ -66,10 +71,11 @@ for i, nome in enumerate(Metodos.nomesSL):
                 variable=index,
                 value = i,
                 text = nome,
-                command = Tela2))
+                command = Tela2,
+                indicatoron=False))
     opc[i].pack()
     opc2.append(Radiobutton(frameSL_secundaria,
-                variable=index,
+                variable=index_s,
                 value = i,
                 text = nome))
     opc2[i].pack()
@@ -80,37 +86,38 @@ for i, nome in enumerate(Metodos.nomesItp):
                 variable=index,
                 value = i+4,
                 text = nome,
-                command = Tela2))
+                command = Tela2,
+                indicatoron=False))
     opc[i+4].pack()
 
-Janela.geometry("500x500")
+
+
+
+Janela.geometry("500x600")
 Janela.title('Calculadora de Sistemas de Equações Lineares e Interpolação')
 
-Info = Label(frameInp)
+Info = Label(frameTela2)
 Info.pack()
 
-LabelInput1 = Label(frameInp)
+LabelInput1 = Label(frameTela2)
 LabelInput1.pack()
-InputA = Text(frameInp,height= '6', font=('Arial', 15))
+InputA = Text(frameTela2,height= '6', font=('Arial', 15))
 InputA.pack()
-LabelInput2  = Label(frameInp)
+LabelInput2  = Label(frameTela2)
 LabelInput2.pack()
-InputB = Text(frameInp,height='6',font=('Arial', 15))
+InputB = Text(frameTela2,height='6',font=('Arial', 15))
 InputB.pack()
 
-env = Button(frameInp, text='Enviar Dados')
 
-
-pLabel = Label(frameInp,
+pLabel = Label(frameTela2,
                 text ='Precisão')
 
 pEntry = Entry(
-    frameInp,
+    frameTela2,
     font=("Arial", 15)
 )
 
-ret = Button(frameInp,text='retornar')
-
+ret = Button(frameTela2,text='retornar', command=Tela1)
 
 
 Tela1()
