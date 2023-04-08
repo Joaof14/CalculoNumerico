@@ -5,9 +5,12 @@ import Metodos
 Janela = Tk()
 
 index = IntVar()
-frame1 = Frame(master=Janela)
-frame2 = Frame(master=Janela)
+frameSL_primaria = Frame(master=Janela)
+frameSL_secundaria = Frame(master=Janela)
+frameITP = Frame(master=Janela)
+frameInp = Frame(master=Janela)
 opc = []
+opc2 = []
 
 resultado = ''
 
@@ -32,56 +35,81 @@ def Tela2():
         if i in range(2,4):
             pLabel.pack()
             pEntry.pack()
-    elif  i == 4:
-        print('ok')
     else:
-        pass
-    frame1.pack_forget()
-    frame2.pack()
+        Info.config(text = "Separe as coordenadas por vírgula, colocando cada par em uma linha diferente")
+        LabelInput1.config(text = "Coordendas x,y")
+        LabelInput2.config(text = "valor de x que se deseja obter o y")
+        if  i == 4:
+            frameSL_secundaria.pack()
+            print('ok')
+        else:
+            pass
+    frameSL_primaria.pack_forget()
+    frameITP.pack_forget()
+
+    
+    frameInp.pack()
 
 def Tela1():
-    frame1.pack()
+    frameSL_secundaria.pack_forget()
+    frameInp.pack_forget()
+    frameSL_primaria.pack()
+    frameITP.pack()
     
 
 
 
 
 
-for i, nome in enumerate(Metodos.nomes):
-    opc.append(Radiobutton(frame1,
+for i, nome in enumerate(Metodos.nomesSL):
+    opc.append(Radiobutton(frameSL_primaria,
                 variable=index,
                 value = i,
                 text = nome,
                 command = Tela2))
     opc[i].pack()
+    opc2.append(Radiobutton(frameSL_secundaria,
+                variable=index,
+                value = i,
+                text = nome))
+    opc2[i].pack()
+
+
+for i, nome in enumerate(Metodos.nomesItp):
+    opc.append(Radiobutton(frameITP,
+                variable=index,
+                value = i+4,
+                text = nome,
+                command = Tela2))
+    opc[i+4].pack()
 
 Janela.geometry("500x500")
 Janela.title('Calculadora de Sistemas de Equações Lineares e Interpolação')
 
-Info = Label(frame2)
+Info = Label(frameInp)
 Info.pack()
 
-LabelInput1 = Label(frame2)
+LabelInput1 = Label(frameInp)
 LabelInput1.pack()
-InputA = Text(frame2,height= '6', font=('Arial', 15))
+InputA = Text(frameInp,height= '6', font=('Arial', 15))
 InputA.pack()
-LabelInput2  = Label(frame2)
+LabelInput2  = Label(frameInp)
 LabelInput2.pack()
-InputB = Text(frame2,height='6',font=('Arial', 15))
+InputB = Text(frameInp,height='6',font=('Arial', 15))
 InputB.pack()
 
-env = Button(frame2, text='Enviar Dados')
+env = Button(frameInp, text='Enviar Dados')
 
 
-pLabel = Label(frame2,
+pLabel = Label(frameInp,
                 text ='Precisão')
 
 pEntry = Entry(
-    frame2,
+    frameInp,
     font=("Arial", 15)
 )
 
-ret = Button(frame2,text='retornar')
+ret = Button(frameInp,text='retornar')
 
 
 

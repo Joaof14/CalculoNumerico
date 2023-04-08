@@ -16,8 +16,8 @@ A = []
 B = []
 m = []
 output = ''
-nomes = ("Eliminação de Gauss", "Fatoração LU", "Gauss-Jacobi", "Gauss-Seidel",
-"Interpolação por Sistema linear", "Interpolação de Lagrange", "Interpolação de Newton")
+nomesSL = ("Eliminação de Gauss", "Fatoração LU", "Gauss-Jacobi", "Gauss-Seidel")
+nomesItp = ("Interpolação por Sistema linear", "Interpolação de Lagrange", "Interpolação de Newton")
 
 def atribui(Inpa,Inpb):
     global A,B, x, output, m
