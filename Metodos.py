@@ -2,13 +2,23 @@ import numpy as np
 from sympy import  expand, Symbol
 
 xS = Symbol('x')
-A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
+
 A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
-B = np.array([1,2,3], dtype= float)
 B = np.array([7,1,6,8], dtype = float)
 
-#A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
-#B = np.array([7,-8,6], dtype=float)
+
+
+A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
+B = np.array([1,2,3], dtype= float)
+
+
+
+
+A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
+B = np.array([7,-8,6], dtype=float)
+
+
+
 x = np.zeros(B.size, dtype=float)
 m = []
 output = ''
@@ -218,7 +228,7 @@ def Gauss_Seidel():
     rep = 0
     p = 0.05
     xk = np.zeros((2,B.size))
-
+    print('método de gaus-seidel')
     #aplicar substuição
     while rep < 100:
         for i in range(B.size):
@@ -301,25 +311,6 @@ def InterpNt(xz,yz,pt):
     print(r)
 
 #
-objtv = int(input("Digite 1 para input de Matriz \nDigite 2 para input de Par ordenado\n"))
-if objtv == 1:
-    outputMatrizesAB(mb = True)
-    metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel)
-    func = int(input("método que você quer \n"))
-    output = '\nMétodo de ' + nomes[func] + '\n'
-    outputtxt()
-    metodos[func]()
-else:
-    pares= np.array(['-1,2','0,1','1,2','3,82', '2,17'])
-    xl = []
-    yl = []
-    for par in pares:
-        xl.append(par.split(',')[0])
-        yl.append(par.split(',')[1])
-
-    xl = np.array(xl, dtype=float)
-    yl = np.array(yl, dtype=float)
-    #Interpol(xl,yl)
-    InterpLg(xl,yl,5)
-    InterpNt(xl,yl,5)
+Gauss_Jacobi()
+Gauss_Seidel()
 
