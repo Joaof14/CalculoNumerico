@@ -54,3 +54,4 @@ def InterpNt(xz,yz):
     print(o)
 #InterpLg(x,y)  
 InterpNt(x,y)
+
