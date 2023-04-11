@@ -19,7 +19,10 @@ def displayResult():
     global resultado
     resultado.config(text='')
     if index.get() < 4:
-        Metodos.atribuiMatriz(InputA.get("1.0", "end"), InputB.get("1.0", "end"))
+        if index.get() > 1:
+            Metodos.atribuiMatriz(InputA.get("1.0", "end"), InputB.get("1.0", "end"), pr = pEntry.get())
+        else:
+            Metodos.atribuiMatriz(InputA.get("1.0", "end"), InputB.get("1.0", "end"))
         res = 'Método de: ' + Metodos.nomesItp[index.get()]
         res += '\nSolução do sistema:\n'
         x = Metodos.metodos[index.get()]()

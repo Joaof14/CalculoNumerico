@@ -12,15 +12,15 @@ xS = Symbol('x')
 
 
 
-A = []
-B = []
-m = []
-output = ''
+
 nomesSL = ("Eliminação de Gauss", "Fatoração LU", "Gauss-Jacobi", "Gauss-Seidel")
 nomesItp = ("Interpolação por Sistema linear", "Interpolação de Lagrange", "Interpolação de Newton")
 
-def atribuiMatriz(Inpa,Inpb):
-    global A,B, x, output, m
+def atribuiMatriz(Inpa,Inpb, pr = '0.0000000001'):
+    global A,B, x, output, m,p
+    A = []
+    B = []
+    m = []
     output = ''
     if type(Inpa) == str:
         a = Inpa.strip().split('\n')
@@ -43,6 +43,7 @@ def atribuiMatriz(Inpa,Inpb):
     x = np.zeros(B.size, dtype=float)
     f = open("Resol.txt", 'w')
     f.write("Matriz A|B: \n")
+    p = float(pr)
     f.close()
     outputMatrizesAB(mb = True)
 
@@ -211,7 +212,6 @@ def Gauss_Jacobi():
     global output
     xk = np.zeros((2,B.size))
     rep = 0
-    p = 0.05
     print('Método de Gauss-Jacobi')
     #aplicar substuição
     while rep < 100:
@@ -253,7 +253,6 @@ def Gauss_Seidel():
     global output
     global x
     rep = 0
-    p = 0.05
     xk = np.zeros((2,B.size))
 
     #aplicar substuição
