@@ -64,6 +64,10 @@ def Tela1():
 label_sl_secundario = Label(frameSL_secundaria, text = 'escolha como realizar a resolução\n do sistema para a interpolação!\n O método de eliminação de gauss\n será considerado padrão')
 label_sl_secundario.pack()
 
+label_tela_1 = Label(frameSL_primaria, 
+                     text = "escolha o que quer realizar",
+                      font = ("Arial", 15))
+label_tela_1.pack()
 
 
 for i, nome in enumerate(Metodos.nomesSL):
