@@ -11,7 +11,9 @@ for par in pares:
 
 x = np.array(x, dtype=float)
 y = np.array(y, dtype=float)
+print('pontos x: ')
 print(x)
+print('pontos y: ')
 print(y)
 
 def Interpol(inpA, inpB):
@@ -29,21 +31,26 @@ def Interpol(inpA, inpB):
 
 #Interpol(x,y)
 
-def InterpLg(xz,yz):
+def InterpLg(xz,yz, pt):
+    print("Interpolação de Lagrange")
     d = len(xz)
     pxn = 0
-    lx = []
+    r = 0
     for j in range(d):
         lxk = 1
+        rk = 1
         for k in range(d):
             if k != j:
+                rk *= (pt - xz[k])/(xz[j] - xz[k])
                 lxk *= (xS - xz[k])/(xz[j] - xz[k])
-        lx.append(lxk)
+        r += rk*yz[j]
         pxn += lxk*yz[j]
     print(sp.expand(pxn))
+    print(f'P({pt}) = {r}')
 
 
-def InterpNt(xz,yz):
+def InterpNt(xz,yz, pt):
+    print("Interpolação de Newton")
     d1 = len(xz)
     o = np.zeros((d1,d1))
     o[0] += yz
@@ -51,27 +58,18 @@ def InterpNt(xz,yz):
         for j in range(d1-i):
             o[i][j] = (o[i-1][j+1] - o[i-1][j])/(xz[j+i] - xz[j])
     d = o[:,0]
-    print(o)
-#InterpLg(x,y)  
-InterpNt(x,y)
-objtv = int(input("Digite 1 para input de Matriz \nDigite 2 para input de Par ordenado\n"))
-if objtv == 1:
-    outputMatrizesAB(mb = True)
-    metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel)
-    func = int(input("método que você quer \n"))
-    output = '\nMétodo de ' + nomes[func] + '\n'
-    outputtxt()
-    metodos[func]()
-else:
-    pares= np.array(['-1,2','0,1','1,2','3,82', '2,17'])
-    xl = []
-    yl = []
-    for par in pares:
-        xl.append(par.split(',')[0])
-        yl.append(par.split(',')[1])
+    pxn = d[0]
+    r = d[0]
+    for i in range(1,d1):
+        aux = 1
+        rax = 1
+        for j in range(i):
+            aux*=(xS-xz[j])
+            rax*=(pt-xz[j])
+        pxn += d[i]*aux
+        r += d[i]*rax
+    print(sp.expand(pxn))
+    print(f'P({pt}) = {r}')
 
-    xl = np.array(xl, dtype=float)
-    yl = np.array(yl, dtype=float)
-    #Interpol(xl,yl)
-    InterpLg(xl,yl,5)
-    InterpNt(xl,yl,5)
+InterpLg(x,y,5)  
+InterpNt(x,y,5)
