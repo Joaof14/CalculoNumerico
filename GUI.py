@@ -141,3 +141,4 @@ calcular.pack()
 Tela1()
 
 Janela.mainloop()
+
