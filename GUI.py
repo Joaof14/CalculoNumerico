@@ -17,13 +17,21 @@ resultado = Label(Janela)
 
 def displayResult():
     global resultado
-    x = Metodos.metodos[index.get()]()
-    res = 'Método de: ' + Metodos.nomes[index.get()]
-    res += '\nSolução do sistema:\n'
-    for i, s in enumerate(x):
-        print(f"x.{i+1} = {s}") 
-        res += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
-    resultado = Label(text=res)
+    resultado.config(text='')
+    if index.get() < 4:
+        Metodos.atribuiMatriz(InputA.get("1.0", "end"), InputB.get("1.0", "end"))
+        res = 'Método de: ' + Metodos.nomesItp[index.get()]
+        res += '\nSolução do sistema:\n'
+        x = Metodos.metodos[index.get()]()
+        for i, s in enumerate(x):
+            print(f"x.{i+1} = {s}") 
+            res += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
+    else:
+        res = 'Método de: ' + Metodos.nomesSL[index.get()]
+        if index.get == 4:
+            pass
+        
+    resultado.config(text=res)
     resultado.pack()
 
 
@@ -113,6 +121,7 @@ InputB = Text(frameTela2,height='6',font=('Arial', 15))
 InputB.pack()
 
 
+
 pLabel = Label(frameTela2,
                 text ='Precisão')
 
@@ -123,6 +132,8 @@ pEntry = Entry(
 
 ret = Button(frameTela2,text='retornar', command=Tela1)
 
+calcular = Button(master=frameTela2, command = displayResult, text = 'calcular')
+calcular.pack()
 
 Tela1()
 

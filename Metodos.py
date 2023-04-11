@@ -19,7 +19,7 @@ output = ''
 nomesSL = ("Eliminação de Gauss", "Fatoração LU", "Gauss-Jacobi", "Gauss-Seidel")
 nomesItp = ("Interpolação por Sistema linear", "Interpolação de Lagrange", "Interpolação de Newton")
 
-def atribui(Inpa,Inpb):
+def atribuiMatriz(Inpa,Inpb):
     global A,B, x, output, m
     output = ''
     if type(Inpa) == str:
@@ -148,8 +148,10 @@ def EliminGauss():
         outputtxt()
         outputMatrizesAB(mb = True)
 
-    print("Matriz A")   
-    return retrosub(A,B, True)
+    print("Matriz A") 
+    z = retrosub(A,B, True)  
+    print(z)
+    return z
 
 #metodo de fatoração LU
 def FatorLu():
@@ -198,8 +200,11 @@ def FatorLu():
 
     #retrosubstuição ao contrário
     y = retrosub(L,B,False)
+    print(y)
+    z = retrosub(u,y,True)
+    print(z)
     #retrosubstuição normal
-    return retrosub(u,y,True)
+    return z
 
 
 def Gauss_Jacobi():
@@ -333,4 +338,4 @@ def InterpNt(xz,yz,pt):
     print(expand(pxn))
     print(r)
 
-Metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel,Interpol,InterpLg,InterpNt)
+metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel,Interpol,InterpLg,InterpNt)
