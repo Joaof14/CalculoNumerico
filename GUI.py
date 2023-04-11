@@ -23,14 +23,14 @@ def displayResult():
             Metodos.atribuiMatriz(InputA.get("1.0", "end"), InputB.get("1.0", "end"), pr = pEntry.get())
         else:
             Metodos.atribuiMatriz(InputA.get("1.0", "end"), InputB.get("1.0", "end"))
-        res = 'Método de: ' + Metodos.nomesItp[index.get()]
+        res = 'Método de: ' + Metodos.nomesSL[index.get()]
         res += '\nSolução do sistema:\n'
         x = Metodos.metodos[index.get()]()
         for i, s in enumerate(x):
             print(f"x.{i+1} = {s}") 
             res += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
     else:
-        res = 'Método de: ' + Metodos.nomesSL[index.get()]
+        res = 'Método de: ' + Metodos.nomesItp[index.get()]
         if index.get == 4:
             pass
         
@@ -63,11 +63,14 @@ def Tela2():
     frameTela2.pack()
 
 def Tela1():
+    pLabel.pack_forget()
+    pEntry.pack_forget()
     resultado.pack_forget()
     frameSL_secundaria.pack_forget()
     frameTela2.pack_forget()
     frameSL_primaria.pack()
     frameITP.pack()
+    index.set(value = 0)
     
 
 
