@@ -13,7 +13,6 @@ B = np.array([1,2,3], dtype= float)
 
 
 
-
 A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
 B = np.array([7,-8,6], dtype=float)
 
