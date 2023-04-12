@@ -3,7 +3,7 @@ from sympy import  expand, Symbol
 
 xS = Symbol('x')
 
-A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
+A = np.array([[3,5,9,4],[0,2,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
 B = np.array([7,1,6,8], dtype = float)
 
 
@@ -229,7 +229,7 @@ def Gauss_Seidel():
     global output
     global x
     rep = 0
-    p = 0.05
+    p = 0.0005
     xk = np.zeros((2,B.size))
     print('método de gaus-seidel')
     #aplicar substuição
