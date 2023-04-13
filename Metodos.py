@@ -4,7 +4,7 @@ import numpy as np
 #A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
 #B = np.array([1,2,3], dtype= float)
 #B = np.array([7,1,6,8], dtype = float)
-from sympy import  expand, Symbol
+from sympy import  expand, Symbol, solve, Subs
 xS = Symbol('x')
 
 #A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
@@ -25,8 +25,7 @@ def atribuiMatriz(Inpa,Inpb, pr = '0.0000000001'):
     if type(Inpa) == str:
         a = Inpa.strip().split('\n')
         b = Inpb.strip().split('\n')
-        db = len(b)
-        for i in range(db):
+        for i in range(len(b)):
             A.append(a[i].split(','))
             B.append(b[i])
         A = np.array(A, dtype=float)
@@ -38,6 +37,7 @@ def atribuiMatriz(Inpa,Inpb, pr = '0.0000000001'):
         A = np.zeros((3,3))
         B = np.zeros(3)
     da = np.shape(A)
+    db = np.shape(B)
     if da[0] != db:
         IndexError
     x = np.zeros(B.size, dtype=float)
@@ -88,10 +88,8 @@ def retrosub(C,D, ts):
             for j in range(i+1, n):
                 soma += C[i][j]* y[j]
             y[i] = (D[i] - soma) / C[i][i]   # Fórmula da matriz;
-        print("Solução do sistema da matriz:")
         output = '\nSolução do sistema:\n'
         for i, s in enumerate(y):
-            print(f"x.{i+1} = {s}") 
             output += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
     else:
         n = len(C)
@@ -101,10 +99,8 @@ def retrosub(C,D, ts):
             for j in range(i-1,-1,-1):
                 soma += C[i][j]* y[j]
             y[i] = (D[i] - soma) / C[i][i]
-        print("Solução Parcial")
         output = '\nValores da matriz y:\n'
         for i, s in enumerate(y):
-            print(f"y.{i+1} = {s}")
             output += 'y.' + str(i+1) + ' = ' + str(s) + '\n'
     outputtxt()
     return y   
@@ -133,7 +129,6 @@ def EliminGauss():
     global A
     global B
     global output
-    print("Método de Eliminação de Gauss")
     for i in range(len(A)-1):
         output = ''
         #define pivo e linha para utilizar com multiplicador operações
@@ -148,10 +143,8 @@ def EliminGauss():
         escalonamento(i,pivo,True)
         outputtxt()
         outputMatrizesAB(mb = True)
-
-    print("Matriz A") 
+ 
     z = retrosub(A,B, True)  
-    print(z)
     return z
 
 #metodo de fatoração LU
@@ -159,7 +152,6 @@ def FatorLu():
     global A
     global B
     global output
-    print("Método do fator LU")
     for i in range(len(A)-1):
         output = ''
         #define pivo e linha para utilizar com multiplicador operações
@@ -201,9 +193,8 @@ def FatorLu():
 
     #retrosubstuição ao contrário
     y = retrosub(L,B,False)
-    print(y)
     z = retrosub(u,y,True)
-    print(z)
+    
     #retrosubstuição normal
     return z
 
@@ -212,7 +203,6 @@ def Gauss_Jacobi():
     global output
     xk = np.zeros((2,B.size))
     rep = 0
-    print('Método de Gauss-Jacobi')
     #aplicar substuição
     while rep < 100:
         for i in range(B.size):
@@ -247,11 +237,8 @@ def Gauss_Jacobi():
         rep += 1
         outputtxt()
     if rep == 100 and dr>p:
-        print('Método não convergiu')
         z = 'Método não convergiu'
     else:
-        for i, s in enumerate(xk[1]):
-            print(f"x.{i+1} = {s}") 
         z = xk[1]
     return z
 
@@ -293,30 +280,53 @@ def Gauss_Seidel():
         rep += 1
         outputtxt()
     if rep == 100 and dr>p:
-        print('Método não convergiu')
         z = 'Método não convergiu'
     else:
-        for i, s in enumerate(xk[1]):
-            print(f"x.{i+1} = {s}") 
         z = xk[1]
         
     return z
 
-def Interpol(inpA, inpB):
-    d = len(inpA)
+
+
+
+
+def atribuiCordenadas(inpA, ponto):
+    global pts_x, pts_y, pt
+    pares = inpA.strip().split('\n')
+    pt = float(ponto)
+    pts_x = []
+    pts_y = []
+    for par in pares:
+        pts_x.append(par.split(',')[0])
+        pts_y.append(par.split(',')[1])
+    pts_x = np.array(pts_x, dtype=float)
+    pts_y = np.array(pts_y, dtype=float)
+    
+
+def Interpol():
+    d = len(pts_x)
     mA = []
+    pxn = 0 
+    r = 0
     for i in range(d):
         linha = []
         for j in range(d):
-            calc = inpA[i] ** j
+            calc = pts_x[i] ** j
             linha.append(calc)
         mA.append(linha)
-    mB = inpB
-    print(mA)
-    print(mB)
+    mB = pts_y
+    atribuiMatriz(mA, mB)
+    vetor = metodos[0]()
+    for i in range(len(vetor)):
+        pxn += vetor[i]*xS**i
+        r += vetor[i]*pt**i
+    z = 'O polinômio é: \nP(x) = ' + str(pxn) + '\nP(' +str(pt) + ') = ' + str(r)
 
-def InterpLg(xz,yz, pt):
-    d = len(xz)
+    return z
+
+
+def InterpLg():
+    d = len(pts_x)
     pxn = 0
     r = 0
     for j in range(d):
@@ -324,21 +334,21 @@ def InterpLg(xz,yz, pt):
         rk = 1
         for k in range(d):
             if k != j:
-                rk *= (pt - xz[k])/(xz[j] - xz[k])
-                lxk *= (xS - xz[k])/(xz[j] - xz[k])
-        r += rk*yz[j]
-        pxn += lxk*yz[j]
-    print(pxn)
-    print(r)
+                rk *= (pt - pts_x[k])/(pts_x[j] - pts_x[k])
+                lxk *= (xS - pts_x[k])/(pts_x[j] - pts_x[k])
+        r += rk*pts_y[j]
+        pxn += lxk*pts_y[j]
+    z = 'O polinômio é: \nP(x) = ' + str(pxn) + '\nP(' +str(pt) + ') = ' + str(r)
+    return z
 
 
-def InterpNt(xz,yz,pt):
-    d1 = len(xz)
+def InterpNt():
+    d1 = len(pts_x)
     o = np.zeros((d1,d1))
-    o[0] += yz
+    o[0] += pts_y
     for i in range(1,d1):
         for j in range(d1-i):
-            o[i][j] = (o[i-1][j+1] - o[i-1][j])/(xz[j+i] - xz[j])
+            o[i][j] = (o[i-1][j+1] - o[i-1][j])/(pts_x[j+i] - pts_x[j])
     d = o[:,0]
     pxn = d[0]
     r = d[0]
@@ -346,11 +356,12 @@ def InterpNt(xz,yz,pt):
         aux = 1
         rax = 1
         for j in range(i):
-            aux*=(xS-xz[j])
-            rax*=(pt-xz[j])
+            aux*=(xS-pts_x[j])
+            rax*=(pt-pts_x[j])
         pxn += d[i]*aux
         r += d[i]*rax
-    print(expand(pxn))
-    print(r)
+    z = 'O polinômio é: \nP(x) = ' + str(pxn) + '\nP(' +str(pt) + ') = ' + str(r)
+    return z
+    
 
 metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel,Interpol,InterpLg,InterpNt)
