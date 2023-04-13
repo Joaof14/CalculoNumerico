@@ -218,11 +218,15 @@ def Gauss_Jacobi():
         for i in range(B.size):
             soma = 0
             #output = 'xk.'+ str[i] + ' = ' + str(B[i])
-    
+            if A[i][i] == 0:
+                ZeroDivisionError
+                output += '\n\n ERRO DE DIVISÃO POR ZERO, PROGRAMA INTERROMPIDO \n\n'
+                break    
             for j in range(B.size):
                 if i != j:
                     soma  += A[i][j]*xk[0][j]
                     #output += ' - ' + str(A[i][j]) + '*' + str(xk[0][j])
+            
             xk[1][i] = ((B[i] - soma)/A[i][i])
             if rep >0:
                 output += 'x(k-1).' + str(i+1) + ' = ' + str(xk[0][i]) 
@@ -263,7 +267,10 @@ def Gauss_Seidel():
     while rep < 100:
         for i in range(B.size):
             soma = 0
-
+            if A[i][i] == 0:
+                ZeroDivisionError
+                output += '\n\n ERRO DE DIVISÃO POR ZERO, PROGRAMA INTERROMPIDO \n\n'
+                break
             for j in range(B.size):
                 if j < i and rep > 0:
                     soma  += A[i][j]*xk[1][j]
@@ -292,6 +299,7 @@ def Gauss_Seidel():
         for i, s in enumerate(xk[1]):
             print(f"x.{i+1} = {s}") 
         z = xk[1]
+        
     return z
 
 def Interpol(inpA, inpB):
