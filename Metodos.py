@@ -242,10 +242,14 @@ def Gauss_Jacobi():
                 xk = np.flip(xk,axis = 0)
         rep += 1
         outputtxt()
-    for i, s in enumerate(xk[1]):
-        print(f"x.{i+1} = {s}") 
-    
-    return xk[1]
+    if rep == 100 and dr>p:
+        print('Método não convergiu')
+        z = 'Método não convergiu'
+    else:
+        for i, s in enumerate(xk[1]):
+            print(f"x.{i+1} = {s}") 
+        z = xk[1]
+    return z
 
 
 
@@ -281,10 +285,14 @@ def Gauss_Seidel():
                 xk = np.flip(xk,axis = 0)
         rep += 1
         outputtxt()
-    for i, s in enumerate(xk[1]):
-        print(f"x.{i+1} = {s}") 
-
-    return xk[1]
+    if rep == 100 and dr>p:
+        print('Método não convergiu')
+        z = 'Método não convergiu'
+    else:
+        for i, s in enumerate(xk[1]):
+            print(f"x.{i+1} = {s}") 
+        z = xk[1]
+    return z
 
 def Interpol(inpA, inpB):
     d = len(inpA)

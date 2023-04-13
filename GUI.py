@@ -26,9 +26,12 @@ def displayResult():
         res = 'Método de: ' + Metodos.nomesSL[index.get()]
         res += '\nSolução do sistema:\n'
         x = Metodos.metodos[index.get()]()
-        for i, s in enumerate(x):
-            print(f"x.{i+1} = {s}") 
-            res += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
+        if type(x) == str:
+            res += x
+        else:
+            for i, s in enumerate(x):
+                print(f"x.{i+1} = {s}") 
+                res += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
     else:
         res = 'Método de: ' + Metodos.nomesItp[index.get()]
         if index.get == 4:
