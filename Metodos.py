@@ -1,5 +1,10 @@
 import numpy as np
 from sympy import  expand, Symbol
+import warnings
+
+np.seterr(all = 'warn')
+
+warnings.filterwarnings('error')
 
 xS = Symbol('x')
 
@@ -16,6 +21,8 @@ B = np.array([1,2,3], dtype= float)
 A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
 B = np.array([7,-8,6], dtype=float)
 
+A = np.array([[10,2,1,2],[1,0,5,1],[2,0,0,10], [1,3,2,0]], dtype = float)
+B = np.array([7,-8,6, 2], dtype=float)
 
 
 x = np.zeros(B.size, dtype=float)
@@ -316,6 +323,9 @@ def InterpNt(xz,yz,pt):
     print(r)
 
 #
-Gauss_Jacobi()
-Gauss_Seidel()
+try:
+    Gauss_Jacobi()
+    Gauss_Seidel()
+except:
+    print('error was raised')
 
