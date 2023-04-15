@@ -1,6 +1,7 @@
 from tkinter import *
 import Metodos
-
+import warnings
+warnings.filterwarnings('error')
 
 Janela = Tk()
 
@@ -37,10 +38,16 @@ def displayResult():
             res += 'método não conseguiu calcular'
         
     else:
-        Metodos.atribuiCordenadas(InputA.get("1.0", "end"), InputB.get("1.0", "end"))
-        res = 'Método de: ' + Metodos.nomesItp[index.get()-4]
-        x = Metodos.metodos[index.get()]()
-        res += x
+        try:
+            Metodos.atribuiCordenadas(InputA.get("1.0", "end"), InputB.get("1.0", "end"))
+            res = 'Método de: ' + Metodos.nomesItp[index.get()-4]
+        except:
+            res += 'erro no input'
+        try:
+            x = Metodos.metodos[index.get()]()
+            res += x
+        except:
+            res += 'método não conseguiu calcular'
         
     resultado.config(text=res)
     resultado.pack()
