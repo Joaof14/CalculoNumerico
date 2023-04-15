@@ -1,5 +1,4 @@
 import numpy as np
-
 #A = np.array([[3,2,4],[1,1,2],[4,3,-2]],dtype=float)
 #A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
 #B = np.array([1,2,3], dtype= float)
@@ -10,7 +9,7 @@ xS = Symbol('x')
 #A = np.array([[10,2,1],[1,5,1],[2,3,10]], dtype = float)
 #B = np.array([7,-8,6], dtype=float)
 
-
+np.seterr(all = 'warn')
 
 
 nomesSL = ("Eliminação de Gauss", "Fatoração LU", "Gauss-Jacobi", "Gauss-Seidel")
@@ -297,6 +296,11 @@ def atribuiCordenadas(inpA, ponto):
     pts_x = []
     pts_y = []
     for par in pares:
+        if len(par.split(',')) != 2:
+            IndexError
+            pts_x = []
+            pts_y = []
+            break
         pts_x.append(par.split(',')[0])
         pts_y.append(par.split(',')[1])
     pts_x = np.array(pts_x, dtype=float)
