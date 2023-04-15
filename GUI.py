@@ -25,7 +25,7 @@ def displayResult():
             res = 'Método de: ' + Metodos.nomesSL[index.get()]
             res += '\nSolução do sistema:\n'
         except:
-            res += 'erro no input'
+            res += 'erro no input\n'
         try:
             x = Metodos.metodos[index.get()]()
             if type(x) == str:
@@ -40,9 +40,9 @@ def displayResult():
     else:
         try:
             Metodos.atribuiCordenadas(InputA.get("1.0", "end"), InputB.get("1.0", "end"))
-            res = 'Método de: ' + Metodos.nomesItp[index.get()-4]
+            res = 'Método de: ' + Metodos.nomesItp[index.get()-4] + '\n'
         except:
-            res += 'erro no input'
+            res += 'erro no input, método não calculou corretamente \n'
         try:
             x = Metodos.metodos[index.get()]()
             res += x
