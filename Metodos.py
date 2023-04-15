@@ -39,7 +39,6 @@ def atribuiMatriz(Inpa,Inpb, pr = '0.0000000001'):
     db = np.shape(B)
     if da[0] != db:
         IndexError
-    x = np.zeros(B.size, dtype=float)
     f = open("Resol.txt", 'w')
     f.write("Matriz A|B: \n")
     p = float(pr)
