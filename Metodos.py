@@ -158,9 +158,6 @@ def FatorLu():
         output = ''
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]
-        if abs(pivo) <= 0.0000000000000001:
-            pivoteamento(i)
-            pivo = A[i][i]
 
         output += '\nEscalonamento na Matriz A\n'
         output += 'pivo: ' + str(pivo)
