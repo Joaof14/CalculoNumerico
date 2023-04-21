@@ -239,6 +239,7 @@ def Gauss_Jacobi():
                 xk = np.flip(xk,axis = 0)
         rep += 1
     if rep == 100 and dr>p:
+        output += '\nMétodo não convergiu\n'
         z = 'Método não convergiu'
     else:
         z = xk[1]
@@ -285,6 +286,7 @@ def Gauss_Seidel():
                 xk = np.flip(xk,axis = 0)
         rep += 1
     if rep == 100 and dr>p:
+        output += '\nMétodo não convergiu\n'
         z = 'Método não convergiu'
     else:
         z = xk[1]
