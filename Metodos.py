@@ -110,9 +110,9 @@ def outputMatrizesAB(mb):
     for i in range(len(A)):
         outputM = ''
         for j in range(len(A[i])):
-            outputM += str(A[i][j]) + ' '
+            outputM += str(np.round(A[i][j], 4)) + ' '
         if mb:
-            outputM += '|' + str(B[i])
+            outputM += '|' + str(np.round(B[i],4))
         outputM += '\n'
         with open('Resol.txt', 'a') as f:
             f.write(outputM)
