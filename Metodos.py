@@ -183,7 +183,7 @@ def FatorLu():
     output = "\nMatriz L:\n"
     for i in range(len(L)):
         for j in range(len(L[i])):
-            output += str(L[i][j]) + ' '
+            output += str(np.round(L[i][j],4)) + ' '
         output += '\n'
     output += "\nMatriz U:\n"
     outputtxt()
