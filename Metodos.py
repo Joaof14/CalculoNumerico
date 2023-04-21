@@ -127,6 +127,7 @@ def EliminGauss():
     global A
     global B
     global output
+    output += 'Método de Eliminação de Gauss\n\n'
     for i in range(len(A)-1):
         output = ''
         #define pivo e linha para utilizar com multiplicador operações
@@ -150,6 +151,7 @@ def FatorLu():
     global A
     global B
     global output
+    output += 'Método de Fatoração LU\n\n'
     for i in range(len(A)-1):
         output = ''
         #define pivo e linha para utilizar com multiplicador operações
@@ -201,6 +203,7 @@ def Gauss_Jacobi():
     global output
     xk = np.zeros((2,B.size))
     rep = 0
+    output += 'Método de Gauss-Jacobi\n\n'
     #aplicar substuição
     while rep < 100:
         for i in range(B.size):
@@ -233,11 +236,13 @@ def Gauss_Jacobi():
             else:
                 xk = np.flip(xk,axis = 0)
         rep += 1
-        outputtxt()
     if rep == 100 and dr>p:
         z = 'Método não convergiu'
     else:
         z = xk[1]
+        for i, s in enumerate(z):
+            output += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
+    outputtxt()
     return z
 
 
@@ -247,7 +252,7 @@ def Gauss_Seidel():
     global x
     rep = 0
     xk = np.zeros((2,B.size))
-
+    output += 'Método de Gauss-Seidel\n\n'
     #aplicar substuição
     while rep < 100:
         for i in range(B.size):
@@ -276,12 +281,13 @@ def Gauss_Seidel():
             else:
                 xk = np.flip(xk,axis = 0)
         rep += 1
-        outputtxt()
     if rep == 100 and dr>p:
         z = 'Método não convergiu'
     else:
         z = xk[1]
-        
+        for i, s in enumerate(z):
+            output += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
+    outputtxt()
     return z
 
 
