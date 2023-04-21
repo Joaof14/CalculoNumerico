@@ -208,7 +208,7 @@ def Gauss_Jacobi():
     while rep < 100:
         for i in range(B.size):
             soma = 0
-            #output = 'xk.'+ str[i] + ' = ' + str(B[i])
+            
             if A[i][i] == 0:
                 ZeroDivisionError
                 output += '\n\n ERRO DE DIVISÃO POR ZERO, PROGRAMA INTERROMPIDO \n\n'
@@ -216,7 +216,7 @@ def Gauss_Jacobi():
             for j in range(B.size):
                 if i != j:
                     soma  += A[i][j]*xk[0][j]
-                    #output += ' - ' + str(A[i][j]) + '*' + str(xk[0][j])
+                    
             
             xk[1][i] = ((B[i] - soma)/A[i][i])
             if rep >0:
