@@ -133,7 +133,7 @@ def EliminGauss():
         output = ''
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]
-        if pivo == 0:
+        if abs(pivo) <= 0.0000000000000001:
             pivoteamento(i)
             pivo = A[i][i]
 
@@ -158,7 +158,7 @@ def FatorLu():
         output = ''
         #define pivo e linha para utilizar com multiplicador operações
         pivo = A[i][i]
-        if pivo == 0:
+        if abs(pivo) <= 0.0000000000000001:
             pivoteamento(i)
             pivo = A[i][i]
 
