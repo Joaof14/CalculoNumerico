@@ -65,11 +65,11 @@ def escalonamento(i,pivo,atb):
 
         #atualiza elementos da linha j com operações elementares entre 
         #ela, multiplicador e elementos da linha anteriormente definidos
-        A[j] =  np.round(A[j] - m[-1]*A[i], 3)
+        A[j] =  A[j] - m[-1]*A[i]
 
         if atb == True:
             #atualiza vetor b para manter equivalência do sistema linear
-            B[j] = np.round(B[j] - m[-1]*B[i], 3)
+            B[j] = B[j] - m[-1]*B[i]
 
         #outputs
         output += '\nfator m: ' + str(float(m[-1])) + '\n'
@@ -176,7 +176,7 @@ def FatorLu():
             elif i < j:
                 L[i][j]=(0.000)
             else:
-                L[i][j]=(np.round(m[k], 3))
+                L[i][j]=m[k]
                 k+=1
     
     #output de teste
