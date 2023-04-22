@@ -73,27 +73,25 @@ def escalonamento(i,pivo,atb):
         output += 'Linha ' + str(j+1) + ' = ' + 'Linha ' + str(j+1) + ' - ' + str(float(m[-1])) + '*' + 'Linha ' + str(i+1) + '\n'
     output += '\n'
 
-def retrosub(C,D, ts):
+def retrosub(ts):
     global output
-    n = len(C)
-    y = n*[0]
+    n = B.size
+    y = np.zeros(shape=n, dtype=float)
     if ts == True:
         for i in range(n-1, -1, -1):
             soma = 0
             for j in range(i+1, n):
-                soma += C[i][j]* y[j]
-            y[i] = (D[i] - soma) / C[i][i]   # Fórmula da matriz;
+                soma += A[i][j]* y[j]
+            y[i] = (B[i] - soma) / A[i][i]   # Fórmula da matriz;
         output = '\nSolução do sistema:\n'
         for i, s in enumerate(y):
             output += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
     else:
-        n = len(C)
-        y = n*[0]
         for i in range(n):
             soma = 0
             for j in range(i-1,-1,-1):
-                soma += C[i][j]* y[j]
-            y[i] = (D[i] - soma) / C[i][i]
+                soma += A[i][j]* y[j]
+            y[i] = (B[i] - soma) / A[i][i]
         output = '\nValores da matriz y:\n'
         for i, s in enumerate(y):
             output += 'y.' + str(i+1) + ' = ' + str(s) + '\n'
@@ -141,7 +139,7 @@ def EliminGauss():
         outputtxt()
         outputMatrizesAB(mb = True)
  
-    z = retrosub(A,B, True)  
+    z = retrosub(True)  
     return z
 
 #metodo de fatoração LU
@@ -188,8 +186,8 @@ def FatorLu():
 
 
     #retrosubstuição ao contrário
-    y = retrosub(L,B,False)
-    z = retrosub(u,y,True)
+    y = retrosub(False)
+    z = retrosub(True)
     
     #retrosubstuição normal
     return z
@@ -367,8 +365,8 @@ def InterpNt():
         for j in range(i):
             aux*=(xS-pts_x[j])
             rax*=(pt-pts_x[j])
-        pxn += d[i]*aux
-        r += d[i]*rax
+        pxn += B[i]*aux
+        r += B[i]*rax
     z = 'O polinômio é: \nP(x) = ' + str(pxn) + '\nP(' +str(pt) + ') = ' + str(r)
     return z
     
