@@ -3,6 +3,41 @@ import numpy as np
 A = np.array([[10,2,1],[1,5,1],[2,3,10]])
 B = np.array([7,-8,6])
 
+A = [[0, -0.2,-0.2],[-0.75, 0, -0.25],[-0.5, -0.5, 0]]
+A = np.array([[2,-0.2,-0.1],[-0.2,-1,-0.2],[-0.2,-0.3,3]], dtype=float)
+
+cl = np.zeros(B.size, dtype=float)
+
+for i in range (B.size):
+    cl[i] = np.sum(np.abs(A[i]))
+print(cl)
+clmax = np.max(cl)
+
+cc = np.zeros(B.size, dtype=float)
+
+for i in range (B.size):
+    cc[i] = np.sum(np.abs(A[:,i]))
+print(cc)
+ccmax = np.max(cc)
+
+sassenfeld = np.ones(shape=B.size, dtype=float)
+for i in range(B.size):
+    aux = 0
+    for j in range(B.size):
+        aux += np.abs(A[i][j])*sassenfeld[j]
+    sassenfeld[i] = aux
+
+
+print(clmax)
+print(ccmax)
+numsassenfeld = np.max(sassenfeld)
+print(numsassenfeld)
+
+
+
+
+
+
 
 
 
@@ -57,7 +92,3 @@ def Gauss_Seidel():
         
 
 
-
-
-#Gauss_Jacobi()
-#Gauss_Seidel()
