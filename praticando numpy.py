@@ -6,6 +6,14 @@ B = np.array([7,-8,6])
 A = [[0, -0.2,-0.2],[-0.75, 0, -0.25],[-0.5, -0.5, 0]]
 A = np.array([[2,-0.2,-0.1],[-0.2,-1,-0.2],[-0.2,-0.3,3]], dtype=float)
 
+cc = np.zeros(B.size, dtype=float)
+
+for i in range (B.size):
+    cc[i] = np.sum(np.abs(A[:,i]))
+print(cc)
+ccmax = np.max(cc)
+
+
 cl = np.zeros(B.size, dtype=float)
 
 for i in range (B.size):
@@ -26,11 +34,10 @@ for i in range(B.size):
     for j in range(B.size):
         aux += np.abs(A[i][j])*sassenfeld[j]
     sassenfeld[i] = aux
-
+numsassenfeld = np.max(sassenfeld)
 
 print(clmax)
 print(ccmax)
-numsassenfeld = np.max(sassenfeld)
 print(numsassenfeld)
 
 

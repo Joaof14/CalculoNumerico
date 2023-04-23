@@ -199,8 +199,27 @@ def Gauss_Jacobi():
     xk = np.zeros((2,B.size))
     rep = 0
     output += '\n\nMétodo de Gauss-Jacobi\n\n'
+    repmax = 100
+    #Verifica critério das linhas e das colunas
+    cl = np.zeros(B.size, dtype=float)
+
+    for i in range (B.size):
+        cl[i] = np.sum(np.abs(A[i]))
+    print(cl)
+    clmax = np.max(cl)
+
+    cc = np.zeros(B.size, dtype=float)
+
+    for i in range (B.size):
+        cc[i] = np.sum(np.abs(A[:,i]))
+    print(cc)
+    ccmax = np.max(cc)
+
+    if clmax > 1 and ccmax > 1:
+        repmax = 40
+
     #aplicar substuição
-    while rep < 100:
+    while rep < repmax:
         for i in range(B.size):
             soma = 0
             
@@ -231,7 +250,7 @@ def Gauss_Jacobi():
             else:
                 xk = np.flip(xk,axis = 0)
         rep += 1
-    if rep == 100 and dr>p:
+    if rep == repmax and dr>p:
         output += '\nMétodo não convergiu\n'
         z = 'Método não convergiu'
     else:
@@ -246,12 +265,31 @@ def Gauss_Jacobi():
 
 def Gauss_Seidel():
     global output
-    global x
     rep = 0
     xk = np.zeros((2,B.size))
     output += '\n\nMétodo de Gauss-Seidel\n\n'
+    repmax = 100
+    #verifica criterio das linha e de Sassenfeld
+    cc = np.zeros(B.size, dtype=float)
+
+    for i in range (B.size):
+        cc[i] = np.sum(np.abs(A[:,i]))
+    print(cc)
+    ccmax = np.max(cc)
+
+    sassenfeld = np.ones(shape=B.size, dtype=float)
+    for i in range(B.size):
+        aux = 0
+        for j in range(B.size):
+            aux += np.abs(A[i][j])*sassenfeld[j]
+        sassenfeld[i] = aux
+    numsassenfeld = np.max(sassenfeld)
+
+    if numsassenfeld > 1 and ccmax > 1:
+        repmax=40
+
     #aplicar substuição
-    while rep < 100:
+    while rep < repmax:
         for i in range(B.size):
             soma = 0
             if A[i][i] == 0:
@@ -268,7 +306,7 @@ def Gauss_Seidel():
                 output += 'x(k-1).' + str(i+1) + ' = ' + str(xk[0][i]) 
                 output+= '  x(k).' + str(i+1) + ' = ' + str(xk[1][i])+'\n'
 
-        #verificar convergencia
+        #verificar resultado
         if rep > 0:
             vetor = xk[1]-xk[0]
             dr = np.max(np.abs(vetor))/(np.max(np.abs(xk[1])))
@@ -278,7 +316,7 @@ def Gauss_Seidel():
             else:
                 xk = np.flip(xk,axis = 0)
         rep += 1
-    if rep == 100 and dr>p:
+    if rep == repmax and dr>p:
         output += '\nMétodo não convergiu\n'
         z = 'Método não convergiu'
     else:
@@ -329,7 +367,7 @@ def Interpol():
         pxn += vetor[i]*xS**i
         r += vetor[i]*pt**i
     z = 'O polinômio é: \nP(x) = ' + str(pxn) + '\nP(' +str(pt) + ') = ' + str(r)
-
+    plot(pxn, (xS, np.min(pts_x), np.max(pts_x)))
     return z
 
 
@@ -346,6 +384,7 @@ def InterpLg():
                 lxk *= (xS - pts_x[k])/(pts_x[j] - pts_x[k])
         r += rk*pts_y[j]
         pxn += lxk*pts_y[j]
+    plot(pxn, (xS, np.min(pts_x), np.max(pts_x)))
     z = 'O polinômio é: \nP(x) = ' + str(pxn) + '\nP(' +str(pt) + ') = ' + str(r)
     return z
 
@@ -368,6 +407,7 @@ def InterpNt():
             rax*=(pt-pts_x[j])
         pxn += B[i]*aux
         r += B[i]*rax
+    plot(pxn, (xS, np.min(pts_x), np.max(pts_x)))
     z = 'O polinômio é: \nP(x) = ' + str(pxn) + '\nP(' +str(pt) + ') = ' + str(r)
     return z
     
