@@ -216,6 +216,7 @@ def Gauss_Jacobi():
     ccmax = np.max(cc)
 
     if clmax > 1 and ccmax > 1:
+        output += '\n Sistema não obedece aos critérios de convergência suficientes, logo a convergência não é uma certeza \n'
         repmax = 40
 
     #aplicar substuição
@@ -238,7 +239,7 @@ def Gauss_Jacobi():
                 output += 'x(k-1).' + str(i+1) + ' = ' + str(xk[0][i]) 
                 output+= '  x(k).' + str(i+1) + ' = ' + str(xk[1][i])+'\n'
 
-        #verificar convergencia 
+        #verificar parada
         
         if rep > 0:
 
@@ -288,6 +289,8 @@ def Gauss_Seidel():
 
     if numsassenfeld > 1 and ccmax > 1:
         repmax=40
+        output += '\n Sistema não obedece aos critérios de convergência suficientes, logo a convergência não é uma certeza \n'
+        
 
     #aplicar substuição
     while rep < repmax:
@@ -308,7 +311,7 @@ def Gauss_Seidel():
                 output += 'x(k-1).' + str(i+1) + ' = ' + str(xk[0][i]) 
                 output+= '  x(k).' + str(i+1) + ' = ' + str(xk[1][i])+'\n'
 
-        #verificar resultado
+        #verificar parada
         if rep > 0:
             vetor = xk[1]-xk[0]
             dr = np.max(np.abs(vetor))/(np.max(np.abs(xk[1])))
