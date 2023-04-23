@@ -411,8 +411,8 @@ def InterpNt():
         for j in range(i):
             aux*=(xS-pts_x[j])
             rax*=(pt-pts_x[j])
-        pxn += B[i]*aux
-        r += B[i]*rax
+        pxn += d[i]*aux
+        r += d[i]*rax
     pxn = str(pxn)
     pxn = expand(pxn)
     plot(pxn, (xS, np.min(pts_x), np.max(pts_x)), title = str(pxn))
