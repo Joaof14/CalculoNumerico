@@ -3,7 +3,7 @@ import numpy as np
 #A = np.array([[3,5,9,4],[0,0,1,5],[0,3,2,3],[0,9,7,4]], dtype = float)
 #B = np.array([1,2,3], dtype= float)
 #B = np.array([7,1,6,8], dtype = float)
-from sympy import  expand, Symbol, solve, Subs
+from sympy import  expand, Symbol
 from sympy.plotting import plot
 xS = Symbol('x')
 
@@ -368,8 +368,10 @@ def Interpol():
     for i in range(len(vetor)):
         pxn += vetor[i]*xS**i
         r += vetor[i]*pt**i
+    pxn = str(pxn)
+    pxn = expand(pxn)
     z = 'O polinômio é: \nP(x) = ' + str(pxn) + '\nP(' +str(pt) + ') = ' + str(r)
-    plot(pxn, (xS, np.min(pts_x), np.max(pts_x)))
+    plot(pxn, (xS, np.min(pts_x), np.max(pts_x)), title = str(pxn))
     return z
 
 
@@ -386,7 +388,9 @@ def InterpLg():
                 lxk *= (xS - pts_x[k])/(pts_x[j] - pts_x[k])
         r += rk*pts_y[j]
         pxn += lxk*pts_y[j]
-    plot(pxn, (xS, np.min(pts_x), np.max(pts_x)))
+    pxn = str(pxn)
+    pxn = expand(pxn)
+    plot(pxn, (xS, np.min(pts_x), np.max(pts_x)), title = str(pxn))
     z = 'O polinômio é: \nP(x) = ' + str(pxn) + '\nP(' +str(pt) + ') = ' + str(r)
     return z
 
@@ -409,7 +413,10 @@ def InterpNt():
             rax*=(pt-pts_x[j])
         pxn += B[i]*aux
         r += B[i]*rax
-    plot(pxn, (xS, np.min(pts_x), np.max(pts_x)))
+    pxn = str(pxn)
+    pxn = expand(pxn)
+    plot(pxn, (xS, np.min(pts_x), np.max(pts_x)), title = str(pxn))
+    
     z = 'O polinômio é: \nP(x) = ' + str(pxn) + '\nP(' +str(pt) + ') = ' + str(r)
     return z
     
