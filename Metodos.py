@@ -216,7 +216,7 @@ def Gauss_Jacobi():
     ccmax = np.max(cc)
 
     if clmax > 1 and ccmax > 1:
-        output += '\n Sistema não obedece aos critérios de convergência suficientes, logo a convergência não é uma certeza \n'
+        output += '\n Sistema não oedece aos critérios de convergência suficientes\nlogo a convergência não é uma certeza \n'
         repmax = 40
 
     #aplicar substuição
@@ -289,7 +289,7 @@ def Gauss_Seidel():
 
     if numsassenfeld > 1 and ccmax > 1:
         repmax=40
-        output += '\n Sistema não obedece aos critérios de convergência suficientes, logo a convergência não é uma certeza \n'
+        output += '\nSistema não obedece aos critérios de convergência suficientes \nlogo a convergência não é uma certeza \n'
         
 
     #aplicar substuição
