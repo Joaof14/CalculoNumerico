@@ -220,6 +220,7 @@ def Gauss_Jacobi():
 
     #aplicar substuição
     while rep < repmax:
+        output+='\niteração: ' + str(rep) +'\n'
         for i in range(B.size):
             soma = 0
             
@@ -290,6 +291,7 @@ def Gauss_Seidel():
 
     #aplicar substuição
     while rep < repmax:
+        output+='\niteração: ' + str(rep) +'\n'
         for i in range(B.size):
             soma = 0
             if A[i][i] == 0:
