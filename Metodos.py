@@ -53,7 +53,7 @@ def pivoteamento(i):
     j = np.argmax(np.abs(A[:,i]))
     A[[i,j]] = A[[j,i]]
 
-def escalonamento(i,pivo,atb):
+def escalonamento(i,pivo,atb = True):
     global output
 
     for j in range(i + 1,len(A)):
@@ -73,31 +73,32 @@ def escalonamento(i,pivo,atb):
         output += 'Linha ' + str(j+1) + ' = ' + 'Linha ' + str(j+1) + ' - ' + str(float(m[-1])) + '*' + 'Linha ' + str(i+1) + '\n'
     output += '\n'
 
-def retrosub(ts):
+def retrosub(C,D, ts):
     global output
-    n = B.size
-    y = np.zeros(shape=n, dtype=float)
+    n = len(C)
+    y = n*[0]
     if ts == True:
         for i in range(n-1, -1, -1):
             soma = 0
             for j in range(i+1, n):
-                soma += A[i][j]* y[j]
-            y[i] = (B[i] - soma) / A[i][i]   # Fórmula da matriz;
+                soma += C[i][j]* y[j]
+            y[i] = (D[i] - soma) / C[i][i]   # Fórmula da matriz;
         output = '\nSolução do sistema:\n'
         for i, s in enumerate(y):
             output += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
     else:
+        n = len(C)
+        y = n*[0]
         for i in range(n):
             soma = 0
             for j in range(i-1,-1,-1):
-                soma += A[i][j]* y[j]
-            y[i] = (B[i] - soma) / A[i][i]
+                soma += C[i][j]* y[j]
+            y[i] = (D[i] - soma) / C[i][i]
         output = '\nValores da matriz y:\n'
         for i, s in enumerate(y):
             output += 'y.' + str(i+1) + ' = ' + str(s) + '\n'
     outputtxt()
     return y   
-
 
 
 def outputMatrizesAB(mb):
@@ -139,7 +140,7 @@ def EliminGauss():
         outputtxt()
         outputMatrizesAB(mb = True)
  
-    z = retrosub(True)  
+    z = retrosub(A,B, True)  
     return z
 
 #metodo de fatoração LU
@@ -186,8 +187,8 @@ def FatorLu():
 
 
     #retrosubstuição ao contrário
-    y = retrosub(False)
-    z = retrosub(True)
+    y = retrosub(L,B,False)
+    z = retrosub(u,y,True)
     
     #retrosubstuição normal
     return z
