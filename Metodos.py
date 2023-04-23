@@ -76,7 +76,9 @@ def escalonamento(i,pivo,atb = True):
 def retrosub(C,D, ts):
     global output
     n = len(C)
-    y = n*[0]
+    C = np.array(C, dtype=float)
+    D = np.array(D, dtype=float)
+    y = np.zeros(n)
     if ts == True:
         for i in range(n-1, -1, -1):
             soma = 0
@@ -87,8 +89,6 @@ def retrosub(C,D, ts):
         for i, s in enumerate(y):
             output += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
     else:
-        n = len(C)
-        y = n*[0]
         for i in range(n):
             soma = 0
             for j in range(i-1,-1,-1):
