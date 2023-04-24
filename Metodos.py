@@ -17,7 +17,7 @@ nomesSL = ("Eliminação de Gauss", "Fatoração LU", "Gauss-Jacobi", "Gauss-Sei
 nomesItp = ("Interpolação por Sistema linear", "Interpolação de Lagrange", "Interpolação de Newton")
 
 def atribuiMatriz(Inpa,Inpb, pr = '0.0000000001'):
-    global A,B, output, m,p
+    global A,B, output, m,p, Acopia, Bcopia
     A = []
     B = []
     m = []
@@ -45,6 +45,8 @@ def atribuiMatriz(Inpa,Inpb, pr = '0.0000000001'):
     p = float(pr)
     f.close()
     outputMatrizesAB(mb = True)
+    Acopia = np.copy(A)
+    Bcopia = np.copy(B)
 
 
 
@@ -119,9 +121,20 @@ def outputtxt():
         f.write(output)
     output = ''
 
+def verifica(solu):
+    global output
+    solu = np.array(solu, dtype = float)
+    residuos = np.zeros(len(A))
+    output += '\nResíduo=B-B~\n'
+    for i in range(len(A)):
+        somatorio = 0
+        for j in range(len(A)):
+            somatorio += solu[j]*Acopia[i][j]
+        residuos[i] = Bcopia[i] - somatorio
+        output += '\nResíduo.'+ str(i+1) +'=' + str(residuos[i])
+    outputtxt()
+
 def EliminGauss():
-    global A
-    global B
     global output
     output += '\n\nMétodo de Eliminação de Gauss\n\n'
     outputtxt()
@@ -139,8 +152,8 @@ def EliminGauss():
         escalonamento(i,pivo,True)
         outputtxt()
         outputMatrizesAB(mb = True)
- 
-    z = retrosub(A,B, True)  
+    z = retrosub(A,B, True)
+    verifica(z)
     return z
 
 #metodo de fatoração LU
@@ -189,7 +202,7 @@ def FatorLu():
     #retrosubstuição ao contrário
     y = retrosub(L,B,False)
     z = retrosub(u,y,True)
-    
+    verifica(z)
     #retrosubstuição normal
     return z
 
@@ -257,6 +270,7 @@ def Gauss_Jacobi():
         z = 'Método não convergiu'
     else:
         z = xk[1]
+        verifica(z)
         output += '\nSolução do sistema: \n'
         for i, s in enumerate(z):
             output += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
@@ -326,6 +340,7 @@ def Gauss_Seidel():
         z = 'Método não convergiu'
     else:
         z = xk[1]
+        verifica(z)
         output += '\nSolução do sistema: \n'
         for i, s in enumerate(z):
             output += 'x.' + str(i+1) + ' = ' + str(s) + '\n'
