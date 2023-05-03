@@ -177,7 +177,8 @@ def geometrico():
     print("Geometrica: R² = " + str(r2))
     print(str(b) + '*' + str(a) + '^(x)')
 
-
+def polinomial():
+    pass
 
 linear()
 logaritmico()
