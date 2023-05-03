@@ -51,7 +51,7 @@ def linear():
 def logaritmico():
     #construindo tabela
     pibpc_df = pd.read_excel("CalcN3/Tabela_pib_per_capita_brasileiro.xlsx")
-    pibpc_df = pd.DataFrame(dict1)
+    #pibpc_df = pd.DataFrame(dict1)
     pibpc_df['Ln Ano'] = pibpc_df['Ano'].apply(ln)
     pibpc_df['yLnx'] = pibpc_df['Ln Ano'] * pibpc_df["PIB per capita-valores correntes (Reais)"]
     pibpc_df["(Ln x)²"] = pibpc_df['Ln Ano'] * pibpc_df['Ln Ano'] 
@@ -74,7 +74,7 @@ def logaritmico():
     pibpc_df["SQTOT"] = (ymedio - pibpc_df["PIB per capita-valores correntes (Reais)"] )**2
     r2 = pibpc_df['SQREG'].sum()/pibpc_df['SQTOT'].sum()
 
-    print("Linear: R² = " + str(r2))
+    print("Logaritmico: R² = " + str(r2))
 
     print(str(a) + '*Lnx +(' + str(b) + ')')
 
@@ -82,7 +82,7 @@ def exponencial():
 
     # construindo a tabela
     pibpc_df = pd.read_excel("CalcN3/Tabela_pib_per_capita_brasileiro.xlsx")
-    pibpc_df = pd.DataFrame(dict1)
+    #pibpc_df = pd.DataFrame(dict1)
     pibpc_df['Ln y'] = pibpc_df['PIB per capita-valores correntes (Reais)'].apply(ln)
     pibpc_df['xLny'] = pibpc_df['Ano'] * pibpc_df["Ln y"]
     pibpc_df["x²"] = pibpc_df['Ano'] * pibpc_df['Ano'] 
@@ -98,7 +98,7 @@ def exponencial():
     n = pibpc_df["Ln y"].size
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
-    b = exp(b)
+    
 
     # calculando R²
     ymedio = pibpc_df["Ln y"].mean()
@@ -106,14 +106,14 @@ def exponencial():
     pibpc_df["SQTOT"] = (ymedio - pibpc_df["Ln y"] )**2
     r2 = pibpc_df['SQREG'].sum()/pibpc_df['SQTOT'].sum()
 
-    print("Linear: R² = " + str(r2))
-
+    b = exp(b)
+    print("Exponencial: R² = " + str(r2))
     print(str(a) + '*e^(' + str(b) + '*x)')
 
 def potencia():
     # construindo a tabela
     pibpc_df = pd.read_excel("CalcN3/Tabela_pib_per_capita_brasileiro.xlsx")
-    pibpc_df = pd.DataFrame(dict1)
+    #pibpc_df = pd.DataFrame(dict1)
     pibpc_df['Ln y'] = pibpc_df['PIB per capita-valores correntes (Reais)'].apply(ln)
     pibpc_df['Ln x'] = pibpc_df['Ano'].apply(ln)
     pibpc_df['LnxLny'] = pibpc_df['Ln x'] * pibpc_df["Ln y"]
@@ -130,7 +130,7 @@ def potencia():
     n = pibpc_df["Ln y"].size
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
-    b = exp(b)
+    
 
     # calculando R²
     ymedio = pibpc_df["Ln y"].mean()
@@ -138,8 +138,8 @@ def potencia():
     pibpc_df["SQTOT"] = (ymedio - pibpc_df["Ln y"] )**2
     r2 = pibpc_df['SQREG'].sum()/pibpc_df['SQTOT'].sum()
 
-    print("Linear: R² = " + str(r2))
-
+    b = exp(b)
+    print("Potência: R² = " + str(r2))
     print(str(b) + '*x^(' + str(a) + ')')
     
 
@@ -148,7 +148,7 @@ def potencia():
 def geometrico():
     # construindo a tabela
     pibpc_df = pd.read_excel("CalcN3/Tabela_pib_per_capita_brasileiro.xlsx")
-    pibpc_df = pd.DataFrame(dict2)
+    #pibpc_df = pd.DataFrame(dict2)
     pibpc_df['Ln y'] = pibpc_df['PIB per capita-valores correntes (Reais)'].apply(ln)
     pibpc_df['xLny'] = pibpc_df['Ano'] * pibpc_df["Ln y"]
     pibpc_df["x²"] = pibpc_df['Ano'] * pibpc_df['Ano'] 
@@ -164,8 +164,7 @@ def geometrico():
     n = pibpc_df["Ln y"].size
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
-    b = exp(b)
-    a = exp(a)
+    
 
     # calculando R²
     ymedio = pibpc_df["Ln y"].mean()
@@ -173,14 +172,15 @@ def geometrico():
     pibpc_df["SQTOT"] = (ymedio - pibpc_df["Ln y"] )**2
     r2 = pibpc_df['SQREG'].sum()/pibpc_df['SQTOT'].sum()
 
-    print("Linear: R² = " + str(r2))
-
+    b = exp(b)
+    a = exp(a)
+    print("Geometrica: R² = " + str(r2))
     print(str(b) + '*' + str(a) + '^(x)')
 
 
 
-#linear()
-#logaritmico()
-#exponencial()
-#potencia()
+linear()
+logaritmico()
+exponencial()
+potencia()
 geometrico()
