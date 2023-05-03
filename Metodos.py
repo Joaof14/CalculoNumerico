@@ -122,6 +122,7 @@ def outputtxt():
     output = ''
 
 def verifica(solu):
+    #verifica resíduos
     global output
     solu = np.array(solu, dtype = float)
     residuos = np.zeros(len(A))
@@ -148,7 +149,7 @@ def EliminGauss():
 
         output += '\nEscalonamento na Matriz Ampliada AB\n'
         output += 'pivo: ' + str(pivo) 
-
+        #escalona a matriz
         escalonamento(i,pivo,True)
         outputtxt()
         outputMatrizesAB(mb = True)
@@ -374,6 +375,7 @@ def Interpol():
     mA = []
     pxn = 0 
     r = 0
+    #constroi matriz do sistema de equações lineares
     for i in range(d):
         linha = []
         for j in range(d):
@@ -383,6 +385,7 @@ def Interpol():
     mB = pts_y
     atribuiMatriz(mA, mB)
     vetor = metodos[0]()
+    #utiliza resultado so sistema para construção de polinômio
     for i in range(len(vetor)):
         pxn += vetor[i]*xS**i
         r += vetor[i]*pt**i
@@ -397,6 +400,7 @@ def InterpLg():
     d = len(pts_x)
     pxn = 0
     r = 0
+    #calcular o numero de Lagrange no ponto e no polinômia
     for j in range(d):
         lxk = 1
         rk = 1
@@ -408,6 +412,7 @@ def InterpLg():
         pxn += lxk*pts_y[j]
     pxn = str(pxn)
     pxn = expand(pxn)
+    #produz o gráfico
     plot(pxn, (xS, np.min(pts_x), np.max(pts_x)), title = str(pxn))
     z = 'O polinômio é: \nP(x) = ' + str(pxn) + '\nP(' +str(pt) + ') = ' + str(r)
     return z
@@ -415,6 +420,7 @@ def InterpLg():
 
 def InterpNt():
     d1 = len(pts_x)
+    #constrói tabela de diferenças divididas
     o = np.zeros((d1,d1))
     o[0] += pts_y
     for i in range(1,d1):
@@ -423,6 +429,8 @@ def InterpNt():
     d = o[:,0]
     pxn = d[0]
     r = d[0]
+
+    #Calcula o polinômio e seu valor no ponto
     for i in range(1,d1):
         aux = 1
         rax = 1
