@@ -2,12 +2,18 @@ import pandas as pd
 import numpy as np
 from math import log, exp
 
+
+dict1 = {'Ano' : [1,2,3,4],
+        'PIB per capita-valores correntes (Reais)': [3,5,6,8]}
+
+dict2 = {'Ano' : [1,3,4,7],
+        'PIB per capita-valores correntes (Reais)': [0.5,1,3,4.5]}
+
 e = exp(1)
 def ln(x):
     return log(x, e)
 
-dict1 = {'Ano' : [1,2,3,4],
-        'PIB per capita-valores correntes (Reais)': [3,5,6,8]}
+
 
 def linear():
     #construindo tabela
@@ -27,7 +33,7 @@ def linear():
     n = pibpc_df["xy"].size
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
-    print(str(a) + 'x +(' + str(b) + ')')
+    print(str(a) + '*x +(' + str(b) + ')')
 
 
     # calculando R²
@@ -70,7 +76,7 @@ def logaritmico():
 
     print("Linear: R² = " + str(r2))
 
-    print(str(a) + 'Lnx +(' + str(b) + ')')
+    print(str(a) + '*Lnx +(' + str(b) + ')')
 
 def exponencial():
 
@@ -102,7 +108,7 @@ def exponencial():
 
     print("Linear: R² = " + str(r2))
 
-    print(str(a) + 'Lnx +(' + str(b) + ')')
+    print(str(a) + '*e^(' + str(b) + '*x)')
 
 def potencia():
     # construindo a tabela
@@ -134,7 +140,7 @@ def potencia():
 
     print("Linear: R² = " + str(r2))
 
-    print(str(a) + 'Lnx +(' + str(b) + ')')
+    print(str(b) + '*x^(' + str(a) + ')')
     
 
 
@@ -142,7 +148,7 @@ def potencia():
 def geometrico():
     # construindo a tabela
     pibpc_df = pd.read_excel("CalcN3/Tabela_pib_per_capita_brasileiro.xlsx")
-    pibpc_df = pd.DataFrame(dict1)
+    pibpc_df = pd.DataFrame(dict2)
     pibpc_df['Ln y'] = pibpc_df['PIB per capita-valores correntes (Reais)'].apply(ln)
     pibpc_df['xLny'] = pibpc_df['Ano'] * pibpc_df["Ln y"]
     pibpc_df["x²"] = pibpc_df['Ano'] * pibpc_df['Ano'] 
@@ -159,6 +165,7 @@ def geometrico():
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
     b = exp(b)
+    a = exp(a)
 
     # calculando R²
     ymedio = pibpc_df["Ln y"].mean()
@@ -168,11 +175,12 @@ def geometrico():
 
     print("Linear: R² = " + str(r2))
 
-    print(str(a) + 'Lnx +(' + str(b) + ')')
+    print(str(b) + '*' + str(a) + '^(x)')
 
 
 
 #linear()
 #logaritmico()
 #exponencial()
-potencia()
+#potencia()
+geometrico()
