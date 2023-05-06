@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from math import log, exp
-
+import SistLinear
 
 dict1 = {'Ano' : [1,2,3,4],
         'PIB per capita-valores correntes (Reais)': [3,5,6,8]}
@@ -178,6 +178,10 @@ def geometrico():
     print(str(b) + '*' + str(a) + '^(x)')
 
 def polinomial():
+
+
+
+
     pass
 
 linear()
