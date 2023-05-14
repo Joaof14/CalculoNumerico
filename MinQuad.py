@@ -2,45 +2,103 @@ import pandas as pd
 import numpy as np
 from math import log, exp
 import SistLinear
+from urllib.request import urlopen
+
+#tratamento dos dados
+url = "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt"
+pag = urlopen(url)
+html = pag.read()
+texto = html.decode()
+ind1 = texto.rfind('decimal')
+lista = texto[ind1-12:-1].split('\n')
+
+dados = {'year' : [],
+'month' : [],
+'decimal_date' : [],
+'monthly_average' : [],
+'de_season_alized' : [],
+'days' : [],
+'std_dev_days' : [],
+'unc_mon_mean' : []}
+
+for item in lista[2:-1]:
+    dados['year'].append(item[0:6])
+    dados['month'].append(item[6:12])
+    dados['decimal_date'].append(item[12:23])
+    dados['monthly_average'].append(item[26:35])
+    dados['de_season_alized'].append(item[38:48])
+    dados['days'].append(item[48:55])
+    dados['std_dev_days'].append(item[55:63])
+    dados['unc_mon_mean'].append(item[63:])
+
+
+dataframe = pd.DataFrame(dados)
+print(dataframe.head())
+
+
+dataframe['year'] = dataframe['year'].apply(int)
+dataframe['month'] = dataframe['month'].apply(int)
+dataframe['decimal_date'] = dataframe['decimal_date'].apply(float)
+dataframe['monthly_average'] = dataframe['monthly_average'].apply(float)
+dataframe['de_season_alized'] = dataframe['de_season_alized'].apply(float)
+dataframe['days'] = dataframe['days'].apply(float)
+dataframe['std_dev_days'].apply(float)
+dataframe['unc_mon_mean'].apply(float)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 dict1 = {'Ano' : [1,2,3,4],
-        'PIB per capita-valores correntes (Reais)': [3,5,6,8]}
+        'y': [3,5,6,8]}
 
 dict2 = {'Ano' : [1,3,4,7],
-        'PIB per capita-valores correntes (Reais)': [0.5,1,3,4.5]}
+        'y': [0.5,1,3,4.5]}
 
 e = exp(1)
 def ln(x):
     return log(x, e)
-
-
+dict1['Ano'].append(2)
+print(dict1['Ano'])
 
 def linear():
     #construindo tabela
-    pibpc_df = pd.read_excel("CalcN3/Tabela_pib_per_capita_brasileiro.xlsx")
-    #pibpc_df = pd.DataFrame(dict1)
-    pibpc_df['xy'] = pibpc_df['Ano'] * pibpc_df["PIB per capita-valores correntes (Reais)"]
-    pibpc_df["x²"] = pibpc_df['Ano'] * pibpc_df['Ano'] 
-    print(pibpc_df.head())
+    tabela = pd.DataFrame()
+    tabela['x'] = dataframe['decimal_date']
+    tabela['y'] = dataframe['monthly_average']
+    tabela['xy'] = tabela['x'] * tabela['y']
+    tabela["x²"] = tabela['x'] * tabela['x']
+    print(tabela.head())
 
     #somas
-    sumx2 = pibpc_df["x²"].sum()
-    sumx = pibpc_df["Ano"].sum()
-    sumy = pibpc_df["PIB per capita-valores correntes (Reais)"].sum()
-    sumxy = pibpc_df["xy"].sum()
+    sumx2 = tabela["x²"].sum()
+    sumx = tabela["Ano"].sum()
+    sumy = dataframe['monthly_average'].sum()
+    sumxy = tabela["xy"].sum()
 
     #calculo coeficientes
-    n = pibpc_df["xy"].size
+    n = tabela["xy"].size
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
     print(str(a) + '*x +(' + str(b) + ')')
 
 
     # calculando R²
-    ymedio = pibpc_df["PIB per capita-valores correntes (Reais)"].mean()
-    pibpc_df['SQREG'] = (ymedio - (a * pibpc_df['Ano']) - b)**2
-    pibpc_df["SQTOT"] = (ymedio - pibpc_df["PIB per capita-valores correntes (Reais)"] )**2
-    r2 = pibpc_df['SQREG'].sum()/pibpc_df['SQTOT'].sum()
+    ymedio = dataframe['monthly_average'].mean()
+    tabela['SQREG'] = (ymedio - (a * tabela['x']) - b)**2
+    tabela["SQTOT"] = (ymedio - dataframe['monthly_average'] )**2
+    r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
     print("Linear: R² = " + str(r2))
 
 
@@ -50,29 +108,30 @@ def linear():
 
 def logaritmico():
     #construindo tabela
-    pibpc_df = pd.read_excel("CalcN3/Tabela_pib_per_capita_brasileiro.xlsx")
-    #pibpc_df = pd.DataFrame(dict1)
-    pibpc_df['Ln Ano'] = pibpc_df['Ano'].apply(ln)
-    pibpc_df['yLnx'] = pibpc_df['Ln Ano'] * pibpc_df["PIB per capita-valores correntes (Reais)"]
-    pibpc_df["(Ln x)²"] = pibpc_df['Ln Ano'] * pibpc_df['Ln Ano'] 
-    print(pibpc_df.head())
+    tabela = pd.DataFrame()
+    tabela['x'] = dataframe['decimal_date']
+    tabela['y'] = dataframe['monthly_average']
+    tabela['Lnx'] = tabela['x'].apply(ln)
+    tabela['yLnx'] = tabela['Lnx'] * dataframe['monthly_average']
+    tabela["(Ln x)²"] = tabela['Lnx'] * tabela['Lnx'] 
+    print(tabela.head())
 
     #somas
-    sumx2 = pibpc_df["(Ln x)²"].sum()
-    sumx = pibpc_df["Ln Ano"].sum()
-    sumy = pibpc_df["PIB per capita-valores correntes (Reais)"].sum()
-    sumxy = pibpc_df["yLnx"].sum()
+    sumx2 = tabela["(Ln x)²"].sum()
+    sumx = tabela["Lnx"].sum()
+    sumy = dataframe['monthly_average'].sum()
+    sumxy = tabela["yLnx"].sum()
 
     #calculo coeficientes
-    n = pibpc_df["Ln Ano"].size
+    n = tabela["Lnx"].size
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
 
     # calculando R²
-    ymedio = pibpc_df["PIB per capita-valores correntes (Reais)"].mean()
-    pibpc_df['SQREG'] = (ymedio - (a * pibpc_df['Ln Ano']) - b)**2
-    pibpc_df["SQTOT"] = (ymedio - pibpc_df["PIB per capita-valores correntes (Reais)"] )**2
-    r2 = pibpc_df['SQREG'].sum()/pibpc_df['SQTOT'].sum()
+    ymedio = dataframe['monthly_average'].mean()
+    tabela['SQREG'] = (ymedio - (a * tabela['Lnx']) - b)**2
+    tabela["SQTOT"] = (ymedio - dataframe['monthly_average'] )**2
+    r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
 
     print("Logaritmico: R² = " + str(r2))
 
@@ -81,30 +140,32 @@ def logaritmico():
 def exponencial():
 
     # construindo a tabela
-    pibpc_df = pd.read_excel("CalcN3/Tabela_pib_per_capita_brasileiro.xlsx")
-    #pibpc_df = pd.DataFrame(dict1)
-    pibpc_df['Ln y'] = pibpc_df['PIB per capita-valores correntes (Reais)'].apply(ln)
-    pibpc_df['xLny'] = pibpc_df['Ano'] * pibpc_df["Ln y"]
-    pibpc_df["x²"] = pibpc_df['Ano'] * pibpc_df['Ano'] 
-    print(pibpc_df.head())
+    tabela = pd.DataFrame()
+    tabela['x'] = dataframe['decimal_date']
+    tabela['y'] = dataframe['monthly_average']
+    #tabela = pd.DataFrame(dict1)
+    tabela['Ln y'] = tabela['y'].apply(ln)
+    tabela['xLny'] = tabela['x'] * tabela["Ln y"]
+    tabela["x²"] = tabela['x'] * tabela['x'] 
+    print(tabela.head())
 
     #somas
-    sumx2 = pibpc_df["x²"].sum()
-    sumx = pibpc_df["Ano"].sum()
-    sumy = pibpc_df["Ln y"].sum()
-    sumxy = pibpc_df["xLny"].sum()
+    sumx2 = tabela["x²"].sum()
+    sumx = tabela["Ano"].sum()
+    sumy = tabela["Ln y"].sum()
+    sumxy = tabela["xLny"].sum()
 
     #calculo coeficentes
-    n = pibpc_df["Ln y"].size
+    n = tabela["Ln y"].size
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
     
 
     # calculando R²
-    ymedio = pibpc_df["Ln y"].mean()
-    pibpc_df['SQREG'] = (ymedio - (a * pibpc_df['Ano']) - b)**2
-    pibpc_df["SQTOT"] = (ymedio - pibpc_df["Ln y"] )**2
-    r2 = pibpc_df['SQREG'].sum()/pibpc_df['SQTOT'].sum()
+    ymedio = tabela["Ln y"].mean()
+    tabela['SQREG'] = (ymedio - (a * tabela['x']) - b)**2
+    tabela["SQTOT"] = (ymedio - tabela["Ln y"] )**2
+    r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
 
     b = exp(b)
     print("Exponencial: R² = " + str(r2))
@@ -112,31 +173,33 @@ def exponencial():
 
 def potencia():
     # construindo a tabela
-    pibpc_df = pd.read_excel("CalcN3/Tabela_pib_per_capita_brasileiro.xlsx")
-    #pibpc_df = pd.DataFrame(dict1)
-    pibpc_df['Ln y'] = pibpc_df['PIB per capita-valores correntes (Reais)'].apply(ln)
-    pibpc_df['Ln x'] = pibpc_df['Ano'].apply(ln)
-    pibpc_df['LnxLny'] = pibpc_df['Ln x'] * pibpc_df["Ln y"]
-    pibpc_df["Ln x²"] = pibpc_df['Ln x'] * pibpc_df['Ln x'] 
-    print(pibpc_df.head())
+    tabela = pd.DataFrame()
+    tabela['x'] = dataframe['decimal_date']
+    tabela['y'] = dataframe['monthly_average']
+    #tabela = pd.DataFrame(dict1)
+    tabela['Ln y'] = tabela['y'].apply(ln)
+    tabela['Ln x'] = tabela['x'].apply(ln)
+    tabela['LnxLny'] = tabela['Ln x'] * tabela["Ln y"]
+    tabela["Ln x²"] = tabela['Ln x'] * tabela['Ln x'] 
+    print(tabela.head())
 
     #somas
-    sumx2 = pibpc_df["Ln x²"].sum()
-    sumx = pibpc_df["Ln x"].sum()
-    sumy = pibpc_df["Ln y"].sum()
-    sumxy = pibpc_df["LnxLny"].sum()
+    sumx2 = tabela["Ln x²"].sum()
+    sumx = tabela["Ln x"].sum()
+    sumy = tabela["Ln y"].sum()
+    sumxy = tabela["LnxLny"].sum()
 
     #calculo coeficentes
-    n = pibpc_df["Ln y"].size
+    n = tabela["Ln y"].size
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
     
 
     # calculando R²
-    ymedio = pibpc_df["Ln y"].mean()
-    pibpc_df['SQREG'] = (ymedio - (a * pibpc_df['Ln x']) - b)**2
-    pibpc_df["SQTOT"] = (ymedio - pibpc_df["Ln y"] )**2
-    r2 = pibpc_df['SQREG'].sum()/pibpc_df['SQTOT'].sum()
+    ymedio = tabela["Ln y"].mean()
+    tabela['SQREG'] = (ymedio - (a * tabela['Ln x']) - b)**2
+    tabela["SQTOT"] = (ymedio - tabela["Ln y"] )**2
+    r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
 
     b = exp(b)
     print("Potência: R² = " + str(r2))
@@ -147,30 +210,32 @@ def potencia():
 #igual exponencial
 def geometrico():
     # construindo a tabela
-    pibpc_df = pd.read_excel("CalcN3/Tabela_pib_per_capita_brasileiro.xlsx")
-    #pibpc_df = pd.DataFrame(dict2)
-    pibpc_df['Ln y'] = pibpc_df['PIB per capita-valores correntes (Reais)'].apply(ln)
-    pibpc_df['xLny'] = pibpc_df['Ano'] * pibpc_df["Ln y"]
-    pibpc_df["x²"] = pibpc_df['Ano'] * pibpc_df['Ano'] 
-    print(pibpc_df.head())
+    tabela = pd.DataFrame()
+    tabela['x'] = dataframe['decimal_date']
+    tabela['y'] = dataframe['monthly_average']
+    #tabela = pd.DataFrame(dict2)
+    tabela['Ln y'] = tabela['y'].apply(ln)
+    tabela['xLny'] = tabela['x'] * tabela["Ln y"]
+    tabela["x²"] = tabela['x'] * tabela['x'] 
+    print(tabela.head())
 
     #somas
-    sumx2 = pibpc_df["x²"].sum()
-    sumx = pibpc_df["Ano"].sum()
-    sumy = pibpc_df["Ln y"].sum()
-    sumxy = pibpc_df["xLny"].sum()
+    sumx2 = tabela["x²"].sum()
+    sumx = tabela["Ano"].sum()
+    sumy = tabela["Ln y"].sum()
+    sumxy = tabela["xLny"].sum()
 
     #calculo coeficentes
-    n = pibpc_df["Ln y"].size
+    n = tabela["Ln y"].size
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
     
 
     # calculando R²
-    ymedio = pibpc_df["Ln y"].mean()
-    pibpc_df['SQREG'] = (ymedio - (a * pibpc_df['Ano']) - b)**2
-    pibpc_df["SQTOT"] = (ymedio - pibpc_df["Ln y"] )**2
-    r2 = pibpc_df['SQREG'].sum()/pibpc_df['SQTOT'].sum()
+    ymedio = tabela["Ln y"].mean()
+    tabela['SQREG'] = (ymedio - (a * tabela['x']) - b)**2
+    tabela["SQTOT"] = (ymedio - tabela["Ln y"] )**2
+    r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
 
     b = exp(b)
     a = exp(a)
@@ -179,13 +244,9 @@ def geometrico():
 
 def polinomial():
 
-
-
-
     pass
 
-linear()
-logaritmico()
-exponencial()
-potencia()
-geometrico()
+
+
+
+
