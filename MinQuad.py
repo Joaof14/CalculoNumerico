@@ -3,6 +3,8 @@ import numpy as np
 from math import log, exp
 import SistLinear
 from urllib.request import urlopen
+import matplotlib.pyplot as plt
+
 
 #tratamento dos dados
 url = "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt"
@@ -51,29 +53,13 @@ dataframe['unc_mon_mean'].apply(float)
 
 
 
-
-
-
-
-
-
-
-
-
-dict1 = {'Ano' : [1,2,3,4],
-        'y': [3,5,6,8]}
-
-dict2 = {'Ano' : [1,3,4,7],
-        'y': [0.5,1,3,4.5]}
-
 e = exp(1)
 def ln(x):
     return log(x, e)
-dict1['Ano'].append(2)
-print(dict1['Ano'])
 
 def linear():
     #construindo tabela
+    output = ''
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -83,8 +69,8 @@ def linear():
 
     #somas
     sumx2 = tabela["x²"].sum()
-    sumx = tabela["Ano"].sum()
-    sumy = dataframe['monthly_average'].sum()
+    sumx = tabela["x"].sum()
+    sumy = tabela['y'].sum()
     sumxy = tabela["xy"].sum()
 
     #calculo coeficientes
@@ -95,16 +81,22 @@ def linear():
 
 
     # calculando R²
-    ymedio = dataframe['monthly_average'].mean()
+    ymedio = tabela['y'].mean()
     tabela['SQREG'] = (ymedio - (a * tabela['x']) - b)**2
-    tabela["SQTOT"] = (ymedio - dataframe['monthly_average'] )**2
+    tabela["SQTOT"] = (ymedio - tabela['y'] )**2
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
     print("Linear: R² = " + str(r2))
 
+    #gráfico
+    x_col = np.array(tabela['x']) 
+    y_reg = np.array(a*x_col + b)
+    graf, eix = plt.subplots()
+    eix.plot(x_col, y_reg)
+    eix.set_xlabel('Ano')
+    eix.set_ylabel('Partes por milhão de Co2 ')
+    graf.savefig('RL.png')
 
-
-
-
+    
 
 def logaritmico():
     #construindo tabela
@@ -112,14 +104,14 @@ def logaritmico():
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
     tabela['Lnx'] = tabela['x'].apply(ln)
-    tabela['yLnx'] = tabela['Lnx'] * dataframe['monthly_average']
+    tabela['yLnx'] = tabela['Lnx'] * tabela['y']
     tabela["(Ln x)²"] = tabela['Lnx'] * tabela['Lnx'] 
     print(tabela.head())
 
     #somas
     sumx2 = tabela["(Ln x)²"].sum()
     sumx = tabela["Lnx"].sum()
-    sumy = dataframe['monthly_average'].sum()
+    sumy = tabela['y'].sum()
     sumxy = tabela["yLnx"].sum()
 
     #calculo coeficientes
@@ -128,14 +120,27 @@ def logaritmico():
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
 
     # calculando R²
-    ymedio = dataframe['monthly_average'].mean()
+    ymedio = tabela['y'].mean()
     tabela['SQREG'] = (ymedio - (a * tabela['Lnx']) - b)**2
-    tabela["SQTOT"] = (ymedio - dataframe['monthly_average'] )**2
+    tabela["SQTOT"] = (ymedio - tabela['y'] )**2
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
+
+    #gráfico
+    x_col = np.array(tabela['Lnx']) 
+    y_reg = np.array(a*x_col + b)
+    graf, eix = plt.subplots()
+    eix.plot(x_col, y_reg)
+    eix.set_xlabel('Ano')
+    eix.set_ylabel('Partes por milhão de Co2 ')
+    graf.savefig('RL_log.png')
 
     print("Logaritmico: R² = " + str(r2))
 
     print(str(a) + '*Lnx +(' + str(b) + ')')
+    
+
+
+
 
 def exponencial():
 
@@ -151,7 +156,7 @@ def exponencial():
 
     #somas
     sumx2 = tabela["x²"].sum()
-    sumx = tabela["Ano"].sum()
+    sumx = tabela["x"].sum()
     sumy = tabela["Ln y"].sum()
     sumxy = tabela["xLny"].sum()
 
@@ -166,8 +171,19 @@ def exponencial():
     tabela['SQREG'] = (ymedio - (a * tabela['x']) - b)**2
     tabela["SQTOT"] = (ymedio - tabela["Ln y"] )**2
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
-
     b = exp(b)
+    
+    #gráfico
+    x_col = np.array(tabela['x']) 
+    y_reg = np.array(a*e**(b*x_col))
+    graf, eix = plt.subplots()
+    eix.plot(x_col, y_reg)
+    eix.set_xlabel('Ano')
+    eix.set_ylabel('Partes por milhão de Co2 ')
+    graf.savefig('RL_exp.png')
+
+
+    
     print("Exponencial: R² = " + str(r2))
     print(str(a) + '*e^(' + str(b) + '*x)')
 
@@ -204,7 +220,19 @@ def potencia():
     b = exp(b)
     print("Potência: R² = " + str(r2))
     print(str(b) + '*x^(' + str(a) + ')')
+
+    #grafico
+    x_col = np.array(tabela['x']) 
+    y_reg = np.array(b*x_col**a)
+    graf, eix = plt.subplots()
+    eix.plot(x_col, y_reg)
+    eix.set_xlabel('Ano')
+    eix.set_ylabel('Partes por milhão de Co2 ')
+    graf.savefig('RL_pot.png')
     
+    
+
+
 
 
 #igual exponencial
@@ -221,7 +249,7 @@ def geometrico():
 
     #somas
     sumx2 = tabela["x²"].sum()
-    sumx = tabela["Ano"].sum()
+    sumx = tabela["x"].sum()
     sumy = tabela["Ln y"].sum()
     sumxy = tabela["xLny"].sum()
 
@@ -236,9 +264,19 @@ def geometrico():
     tabela['SQREG'] = (ymedio - (a * tabela['x']) - b)**2
     tabela["SQTOT"] = (ymedio - tabela["Ln y"] )**2
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
-
     b = exp(b)
     a = exp(a)
+
+    #gráfico
+    x_col = np.array(tabela['x']) 
+    y_reg = np.array(b*a**x_col)
+    graf, eix = plt.subplots()
+    eix.plot(x_col, y_reg)
+    eix.set_xlabel('Ano')
+    eix.set_ylabel('Partes por milhão de Co2 ')
+    graf.savefig('RL_Geo.png')
+
+    
     print("Geometrica: R² = " + str(r2))
     print(str(b) + '*' + str(a) + '^(x)')
 
@@ -246,6 +284,11 @@ def polinomial():
 
     pass
 
+linear()
+logaritmico()
+exponencial()
+potencia()
+geometrico()
 
 
 
