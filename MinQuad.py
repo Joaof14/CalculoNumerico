@@ -36,7 +36,7 @@ for item in lista[2:]:
 
 
 dataframe = pd.DataFrame(dados)
-print(dataframe.head())
+
 
 
 dataframe['year'] = dataframe['year'].apply(int)
@@ -84,8 +84,7 @@ def linear():
     tabela['y'] = dataframe['monthly_average']
     tabela['xy'] = tabela['x'] * tabela['y']
     tabela["x²"] = tabela['x'] * tabela['x']
-    print(tabela.head())
-    print(tabela.tail())
+    
 
     #somas
     sumx2 = tabela["x²"].sum()
@@ -97,8 +96,6 @@ def linear():
     n = tabela["xy"].size
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
-    print(str(a) + '*x +(' + str(b) + ')')
-    print(n)
 
     # calculando R²
     ymedio = tabela['y'].mean()
@@ -107,11 +104,12 @@ def linear():
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
 
     #Previsão
+    output+= '\nPrevisão'
     x_prev = np.copy(prev_data)
     y_prev = a * x_prev + b
     for i in range(x_prev.size):
-        pass
-        #f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
+        output += '\n'
+        output+= f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} ppm de carbono na atmosfera em média'
 
     #gráfico
     x_col = np.array(tabela['x']) 
@@ -136,7 +134,6 @@ def logaritmico():
     tabela['Lnx'] = tabela['x'].apply(ln)
     tabela['yLnx'] = tabela['Lnx'] * tabela['y']
     tabela["(Ln x)²"] = tabela['Lnx'] * tabela['Lnx'] 
-    print(tabela.head())
 
     #somas
     sumx2 = tabela["(Ln x)²"].sum()
@@ -156,22 +153,23 @@ def logaritmico():
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
 
     #Previsão
+    output+= '\nPrevisão'
     x_prev = np.copy(prev_data)
     for i in range(x_prev.size):
         x_prev[i] = ln(x_prev[i])
         y_prev[i] = a * x_prev[i] + b
-        #f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
+        output += '\n'
+        output+= f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} ppm de carbono na atmosfera em média'
 
     #gráfico
-    x_col = np.array(tabela['Lnx']) 
-    y_reg = np.array(a*x_col + b)
+    x_col = np.array(tabela['x']) 
+    y_reg = np.array(a*tabela['Lnx'] + b)
     graf, eix = plt.subplots()
     eix.plot(x_col, y_reg)
     eix.set_xlabel('Ano')
     eix.set_ylabel('Partes por milhão de Co2 ')
     graf.savefig('RL_log.png')
 
-    print("Logaritmico: R² = " + str(r2))
 
     with open('Tabela_Log.txt', 'w') as f:
         tabela.to_string(f)
@@ -191,7 +189,6 @@ def exponencial():
     tabela['Ln y'] = tabela['y'].apply(ln)
     tabela['xLny'] = tabela['x'] * tabela["Ln y"]
     tabela["x²"] = tabela['x'] * tabela['x'] 
-    print(tabela.head())
 
     #somas
     sumx2 = tabela["x²"].sum()
@@ -212,20 +209,20 @@ def exponencial():
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
     
     #Previsão
+    output+= '\nPrevisão'
     x_prev = np.copy(prev_data)
     for i in range(x_prev.size):
         y_prev[i] = a * x_prev[i] + b
         y_prev[i] = exp(y_prev[i])
-        #f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
+        output+= '\n'
+        output += f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} ppm de carbono na atmosfera em média'
     
-    b = exp(b)
     
     
     
     #gráfico
     x_col = np.array(tabela['x']) 
-    y_reg = a*tabela['x'] + b
-    y_reg = y_reg.apply(exp)
+    y_reg = e**(a*tabela['x'] + b)
     y_reg = np.array(y_reg)
     graf, eix = plt.subplots()
     eix.plot(x_col, y_reg)
@@ -236,7 +233,6 @@ def exponencial():
     with open('Tabela_exponencial.txt','w') as f:
             tabela.to_string(f)
     
-    print("Exponencial: R² = " + str(r2))
     outputtxt(output)
 
 def potencia():
@@ -250,7 +246,6 @@ def potencia():
     tabela['Ln x'] = tabela['x'].apply(ln)
     tabela['LnxLny'] = tabela['Ln x'] * tabela["Ln y"]
     tabela["Ln x²"] = tabela['Ln x'] * tabela['Ln x'] 
-    print(tabela.head())
 
     #somas
     sumx2 = tabela["Ln x²"].sum()
@@ -271,21 +266,20 @@ def potencia():
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
 
     #Previsão
+    output+= '\nPrevisão'
     x_prev = np.copy(prev_data)
     for i in range(x_prev.size):
         x_prev[i] = ln(x_prev[i])
         y_prev[i] = a * x_prev[i] + b
         y_prev[i] = exp(y_prev[i])
-        #f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
-
-    b = exp(b)
-    print("Potência: R² = " + str(r2))
-    
+        output += '\n'
+        output+= f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} ppm de carbono na atmosfera em média'
 
     
     #grafico
     x_col = np.array(tabela['x']) 
-    y_reg = np.array(b*x_col**a)
+    y_reg = e**(a * tabela['Ln x'] + b)
+    y_reg = np.array(y_reg)
     graf, eix = plt.subplots()
     eix.plot(x_col, y_reg)
     eix.set_xlabel('Ano')
@@ -309,7 +303,6 @@ def geometrico():
     tabela['Ln y'] = tabela['y'].apply(ln)
     tabela['xLny'] = tabela['x'] * tabela["Ln y"]
     tabela["x²"] = tabela['x'] * tabela['x'] 
-    print(tabela.head())
 
     #somas
     sumx2 = tabela["x²"].sum()
@@ -331,17 +324,18 @@ def geometrico():
     
 
     #Previsão
+    output+= '\nPrevisão'
     x_prev = np.copy(prev_data)
     for i in range(x_prev.size):
         y_prev[i] = a * x_prev[i] + b
         y_prev[i] = exp(y_prev[i])
-        #f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
+        output += '\n'
+        output+= f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} ppm de carbono na atmosfera em média'
 
 
     #gráfico
     x_col = np.array(tabela['x']) 
-    y_reg = a*tabela['x'] + b
-    y_reg = y_reg.apply(exp)
+    y_reg = e**(a*tabela['x'] + b)
     y_reg = np.array(y_reg)
     graf, eix = plt.subplots()
     eix.plot(x_col, y_reg)
@@ -352,7 +346,7 @@ def geometrico():
     with open('Tabela_geo.txt','w') as f:
         tabela.to_string(f)
     
-    output += "R² = " + str(r2)
+    output += "\n\nR² = " + str(r2)
     outputtxt(output)
 
 
@@ -386,14 +380,15 @@ def polinomial(grau = 2):
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
 
     #previsão
+    output+= '\nPrevisão'
     x_prev = np.copy(prev_data)
     y_prev = np.zeros(x_prev.size)
     for i in range(x_prev.size):
         for j in range(n-1, -1, -1):
             y_prev[i] += coef[j]*x_prev[i]**j
     for i in range(x_prev.size):
-        #f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
-        pass
+        output += '\n'
+        output+= f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} ppm de carbono na atmosfera em média'
 
 
     #gráfico
@@ -409,15 +404,14 @@ def polinomial(grau = 2):
         tabela.to_string(f)
 
 
-
-    output += "R² = " + str(r2) + '\n Equação: ' + equac
+    output += "\n\nR² = " + str(r2) + '\nEquação: ' + equac
     outputtxt(output)
 
 linear()
-#logaritmico()
-#exponencial()
-#potencia()
-#geometrico()
+logaritmico()
+exponencial()
+potencia()
+geometrico()
 polinomial()
 
 
