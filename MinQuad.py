@@ -50,7 +50,6 @@ dataframe['unc_mon_mean'].apply(float)
 
 
 
-
 #dados usados para previsão com máximo de 50 anos no futuro
 prev_data = np.zeros(10)
 for i in range(10):
@@ -61,13 +60,25 @@ y_prev = np.zeros(10)
 
 
 
+
+f = open('Resolução_MMQ.txt','w')
+f.write('Método dos mínimos quadrado para média de partes por milhão de carbono na atmosfera em função do tempo\n')
+f.write('Amostra: \n\n')
+dataframe.sample(10).to_string(f)
+f.close()
+
+def outputtxt(texto):
+    with open('Resolução_MMQ.txt', 'a') as f:
+        f.write(texto)
+
+
 e = exp(1)
 def ln(x):
     return log(x, e)
 
 def linear():
     #construindo tabela
-    output = ''
+    output = "\n\nMétodo da regressão linear, ajuste geométrico"
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -99,7 +110,8 @@ def linear():
     x_prev = np.copy(prev_data)
     y_prev = a * x_prev + b
     for i in range(x_prev.size):
-        print(f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
+        pass
+        #f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
 
     #gráfico
     x_col = np.array(tabela['x']) 
@@ -110,11 +122,14 @@ def linear():
     eix.set_ylabel('Partes por milhão de Co2 ')
     graf.savefig('RL.png')
 
-    
+    with open('Tabela_Linear.txt','w') as f:
+        tabela.to_string(f)
 
+    outputtxt(output)
 
 def logaritmico():
     #construindo tabela
+    output = "\n\nMétodo da regressão linear, ajuste logaritimico"
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -145,7 +160,7 @@ def logaritmico():
     for i in range(x_prev.size):
         x_prev[i] = ln(x_prev[i])
         y_prev[i] = a * x_prev[i] + b
-        print(f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
+        #f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
 
     #gráfico
     x_col = np.array(tabela['Lnx']) 
@@ -158,15 +173,17 @@ def logaritmico():
 
     print("Logaritmico: R² = " + str(r2))
 
-    
-    
+    with open('Tabela_Log.txt', 'w') as f:
+        tabela.to_string(f)
 
+    outputtxt(output)
 
 
 
 def exponencial():
 
     # construindo a tabela
+    output = "\n\nMétodo da regressão linear, ajuste exponencial"
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -199,7 +216,7 @@ def exponencial():
     for i in range(x_prev.size):
         y_prev[i] = a * x_prev[i] + b
         y_prev[i] = exp(y_prev[i])
-        print(f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
+        #f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
     
     b = exp(b)
     
@@ -216,13 +233,15 @@ def exponencial():
     eix.set_ylabel('Partes por milhão de Co2 ')
     graf.savefig('RL_exp.png')
 
-
+    with open('Tabela_exponencial.txt','w') as f:
+            tabela.to_string(f)
     
     print("Exponencial: R² = " + str(r2))
-    
+    outputtxt(output)
 
 def potencia():
     # construindo a tabela
+    output = "\n\nMétodo da regressão linear, ajuste de potencia"
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -257,7 +276,7 @@ def potencia():
         x_prev[i] = ln(x_prev[i])
         y_prev[i] = a * x_prev[i] + b
         y_prev[i] = exp(y_prev[i])
-        print(f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
+        #f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
 
     b = exp(b)
     print("Potência: R² = " + str(r2))
@@ -274,13 +293,15 @@ def potencia():
     graf.savefig('RL_pot.png')
     
     
+    with open('Tabela_pot.txt','w') as f:
+        tabela.to_string(f)
 
-
-
+    outputtxt(output)
 
 #igual exponencial
 def geometrico():
     # construindo a tabela
+    output = "\n\nMétodo da regressão linear, ajuste geométrico"
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -314,7 +335,7 @@ def geometrico():
     for i in range(x_prev.size):
         y_prev[i] = a * x_prev[i] + b
         y_prev[i] = exp(y_prev[i])
-        print(f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
+        #f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
 
 
     #gráfico
@@ -328,10 +349,15 @@ def geometrico():
     eix.set_ylabel('Partes por milhão de Co2 ')
     graf.savefig('RL_Geo.png')
 
+    with open('Tabela_geo.txt','w') as f:
+        tabela.to_string(f)
     
-    print("Geometrica: R² = " + str(r2))
+    output += "R² = " + str(r2)
+    outputtxt(output)
+
 
 def polinomial(grau = 2):
+    output = '\n\n Método da regressão linear, ajuste polinimial de grau ' + str(grau)
     #criando tabela
     n = grau + 1
     tabela = pd.DataFrame()
@@ -366,8 +392,8 @@ def polinomial(grau = 2):
         for j in range(n-1, -1, -1):
             y_prev[i] += coef[j]*x_prev[i]**j
     for i in range(x_prev.size):
-        print(f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
-
+        #f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
+        pass
 
 
     #gráfico
@@ -379,14 +405,15 @@ def polinomial(grau = 2):
     eix.set_ylabel('Partes por milhão de Co2 ')
     graf.savefig('RL_Polinomial_grau' + str(grau)+ '.png')
 
+    with open('Tabela_pol.txt','w') as f:
+        tabela.to_string(f)
 
 
 
+    output += "R² = " + str(r2) + '\n Equação: ' + equac
+    outputtxt(output)
 
-    print("Polinomial de grau " + str(grau)+ ": R² = " + str(r2))
-    print(equac)
-
-#linear()
+linear()
 #logaritmico()
 #exponencial()
 #potencia()
