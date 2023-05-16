@@ -1,32 +1,13 @@
 import numpy as np
 
-def atribuiMatriz(Inpa,Inpb, pr = '0.0000000001'):
-    global A,B, output, m,p, Acopia, Bcopia
-    A = []
-    B = []
+def atribuiMatriz(Inpa,Inpb):
+    global A,B, output, m, Acopia, Bcopia
     m = []
     output = ''
-    if type(Inpa) == str:
-        a = Inpa.strip().split('\n')
-        b = Inpb.strip().split('\n')
-        for i in range(len(b)):
-            A.append(a[i].split(','))
-            B.append(b[i])
-        A = np.array(A, dtype=float)
-        B = np.array(B, dtype=float)
-    elif type(Inpa) == list:
-        A = np.array(Inpa)
-        B = np.array(Inpb)
-    else:
-        A = np.zeros((3,3))
-        B = np.zeros(3)
-    da = np.shape(A)
-    db = np.shape(B)
-    if da[0] != db:
-        IndexError
+    A = np.array(Inpa)
+    B = np.array(Inpb)
     f = open("Resolução_Sistema_Linear.txt", 'w')
     f.write("Matriz A|B: \n")
-    p = float(pr)
     f.close()
     outputMatrizesAB(mb = True)
     Acopia = np.copy(A)

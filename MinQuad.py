@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from math import log, exp
-import SistLinear
+import SistLinear as sl
 from urllib.request import urlopen
 import matplotlib.pyplot as plt
 
@@ -280,16 +280,56 @@ def geometrico():
     print("Geometrica: R² = " + str(r2))
     print(str(b) + '*' + str(a) + '^(x)')
 
-def polinomial():
+def polinomial(grau = 2):
+    #criando tabela
+    n = grau + 1
+    tabela = pd.DataFrame()
+    tabela['x'] = dataframe['decimal_date']
+    tabela['y'] = dataframe['monthly_average']
+    
+    #criando matrizes para receber coeficientes como resultado
+    mA = np.zeros((n,n))
+    mB = np.zeros(n)
+    for i in range(mB.size):
+        for j in range(mB.size):
+            mA[i][j] = (tabela['x']**(i + j)).sum()
+        mB[i] = (tabela['y'] * (tabela['x']**(i))).sum()
+    sl.atribuiMatriz(mA,mB)
+    coef = sl.EliminGauss()
+    
+    #cálculo R²
+    ymedio = tabela['y'].mean()
+    y_reg = 0
+    equac = ''
+    for i in range(n-1, -1, -1):
+        y_reg += coef[i]*tabela['x']**i
+        equac += '+(' + str(coef[i]) + '*x**' + str(i) + ')'
+    tabela['SQREG'] = (ymedio - y_reg)**2
+    tabela["SQTOT"] = (ymedio - tabela['y'] )**2
+    r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
 
-    pass
+    #gráfico
+    x_col = np.array(tabela['x']) 
+    y_reg = np.array(y_reg)
+    graf, eix = plt.subplots()
+    eix.plot(x_col, y_reg)
+    eix.set_xlabel('Ano')
+    eix.set_ylabel('Partes por milhão de Co2 ')
+    graf.savefig('RL_Polinomial_grau' + str(grau)+ '.png')
+
+
+
+
+
+    print("Polinomial de grau " + str(grau)+ ": R² = " + str(r2))
+    print(equac)
 
 linear()
-logaritmico()
-exponencial()
-potencia()
-geometrico()
-
+#logaritmico()
+#exponencial()
+#potencia()
+#geometrico()
+polinomial()
 
 
 
