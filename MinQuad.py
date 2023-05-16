@@ -4,6 +4,7 @@ from math import log, exp
 import SistLinear as sl
 from urllib.request import urlopen
 import matplotlib.pyplot as plt
+import random
 
 
 #tratamento dos dados
@@ -23,7 +24,7 @@ dados = {'year' : [],
 'std_dev_days' : [],
 'unc_mon_mean' : []}
 
-for item in lista[2:-1]:
+for item in lista[2:]:
     dados['year'].append(item[0:6])
     dados['month'].append(item[6:12])
     dados['decimal_date'].append(item[12:23])
@@ -50,6 +51,13 @@ dataframe['unc_mon_mean'].apply(float)
 
 
 
+#dados usados para previsão com máximo de 50 anos no futuro
+prev_data = np.zeros(10)
+for i in range(10):
+    datapre = round(dataframe['decimal_date'].max() + 50*random.random(), 4)
+    prev_data[i] = datapre
+prev_data.sort()
+y_prev = np.zeros(10)
 
 
 
@@ -66,6 +74,7 @@ def linear():
     tabela['xy'] = tabela['x'] * tabela['y']
     tabela["x²"] = tabela['x'] * tabela['x']
     print(tabela.head())
+    print(tabela.tail())
 
     #somas
     sumx2 = tabela["x²"].sum()
@@ -78,7 +87,7 @@ def linear():
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
     print(str(a) + '*x +(' + str(b) + ')')
-
+    print(n)
 
     # calculando R²
     ymedio = tabela['y'].mean()
@@ -86,6 +95,12 @@ def linear():
     tabela["SQTOT"] = (ymedio - tabela['y'] )**2
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
     print("Linear: R² = " + str(r2))
+
+    #Previsão
+    x_prev = np.copy(prev_data)
+    y_prev = a * x_prev + b
+    for i in range(x_prev.size):
+        print(f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
 
     #gráfico
     x_col = np.array(tabela['x']) 
@@ -97,6 +112,7 @@ def linear():
     graf.savefig('RL.png')
 
     
+
 
 def logaritmico():
     #construindo tabela
@@ -124,6 +140,13 @@ def logaritmico():
     tabela['SQREG'] = (ymedio - (a * tabela['Lnx']) - b)**2
     tabela["SQTOT"] = (ymedio - tabela['y'] )**2
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
+
+    #Previsão
+    x_prev = np.copy(prev_data)
+    for i in range(x_prev.size):
+        x_prev[i] = ln(x_prev[i])
+        y_prev[i] = a * x_prev[i] + b
+        print(f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
 
     #gráfico
     x_col = np.array(tabela['Lnx']) 
@@ -171,6 +194,17 @@ def exponencial():
     tabela['SQREG'] = (ymedio - (a * tabela['x']) - b)**2
     tabela["SQTOT"] = (ymedio - tabela["Ln y"] )**2
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
+    
+    #Previsão
+    x_prev = np.copy(prev_data)
+    for i in range(x_prev.size):
+        y_prev[i] = a * x_prev[i] + b
+        y_prev[i] = exp(y_prev[i])
+        print(f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} partes por milhão de carbono na atmosfera em média')
+    
+    
+    
+    
     b = exp(b)
     
     #gráfico
@@ -324,7 +358,7 @@ def polinomial(grau = 2):
     print("Polinomial de grau " + str(grau)+ ": R² = " + str(r2))
     print(equac)
 
-linear()
+#linear()
 #logaritmico()
 #exponencial()
 #potencia()
