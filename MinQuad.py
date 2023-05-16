@@ -145,6 +145,7 @@ def logaritmico():
     n = tabela["Lnx"].size
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
+    
 
     # calculando R²
     ymedio = tabela['y'].mean()
@@ -173,7 +174,7 @@ def logaritmico():
 
     with open('Tabela_Log.txt', 'w') as f:
         tabela.to_string(f)
-
+    output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + str(a) +'*Ln(x)'+str(b)
     outputtxt(output)
 
 
@@ -200,7 +201,6 @@ def exponencial():
     n = tabela["Ln y"].size
     a = (n*sumxy - sumx*sumy)/(-sumx**2 + n*sumx2)
     b = (sumx * sumxy - sumy*sumx2)/( sumx**2 - n*sumx2)
-    
 
     # calculando R²
     ymedio = tabela["Ln y"].mean()
@@ -232,7 +232,8 @@ def exponencial():
 
     with open('Tabela_exponencial.txt','w') as f:
             tabela.to_string(f)
-    
+    b = exp(b)
+    output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + str(b) +'*e'+'**(x*'+str(a)+')'
     outputtxt(output)
 
 def potencia():
@@ -287,9 +288,10 @@ def potencia():
     graf.savefig('RL_pot.png')
     
     
+    b= exp(b)
     with open('Tabela_pot.txt','w') as f:
         tabela.to_string(f)
-
+    output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + str(b) +'*x'+'**'+str(a)
     outputtxt(output)
 
 #igual exponencial
@@ -345,8 +347,10 @@ def geometrico():
 
     with open('Tabela_geo.txt','w') as f:
         tabela.to_string(f)
-    
-    output += "\n\nR² = " + str(r2)
+
+    a = exp(a)
+    b = exp(b)
+    output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + str(b) +'*'+str(a)+'**x'
     outputtxt(output)
 
 
@@ -404,7 +408,7 @@ def polinomial(grau = 2):
         tabela.to_string(f)
 
 
-    output += "\n\nR² = " + str(r2) + '\nEquação: ' + equac
+    output += "\n\nR² = " + str(r2) + '\nEquação: Y = ' + equac
     outputtxt(output)
 
 linear()
