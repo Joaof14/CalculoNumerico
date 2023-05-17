@@ -124,7 +124,7 @@ def linear():
 
     with open('Tabela_Linear.txt','w') as f:
         tabela.to_string(f)
-
+    output += "\n\nR² = " + str(r2) + '\n\n' + f'Equação: Y = {a}*x+({b})'
     outputtxt(output)
 
 def logaritmico():
@@ -176,7 +176,7 @@ def logaritmico():
 
     with open('Tabela_Log.txt', 'w') as f:
         tabela.to_string(f)
-    output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + str(a) +'*Ln(x)'+str(b)
+    output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + str(a) +'*Ln(x)+('+str(b)+')'
     outputtxt(output)
 
 
