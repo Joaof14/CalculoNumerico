@@ -60,7 +60,7 @@ y_prev = np.zeros(10)
 
 
 
-
+#abrindo arquivo para output geral
 f = open('Resolução_MMQ.txt','w')
 f.write('Método dos mínimos quadrado para média de partes por milhão de carbono na atmosfera em função do tempo\n')
 f.write('Amostra: \n\n')
