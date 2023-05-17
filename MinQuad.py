@@ -78,7 +78,7 @@ def ln(x):
 
 def linear():
     #construindo tabela
-    output = "\n\nMétodo da regressão linear, ajuste geométrico"
+    output = "\n\nMétodo da regressão linear simples"
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -207,13 +207,16 @@ def exponencial():
     tabela['SQREG'] = (ymedio - (a * tabela['x']) - b)**2
     tabela["SQTOT"] = (ymedio - tabela["Ln y"] )**2
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
+
+    #transformando ln de b em b
+    b = exp(b)
     
     #Previsão
     output+= '\nPrevisão'
     x_prev = np.copy(prev_data)
+    y_prev = np.array(b*e**(a*x_prev))
     for i in range(x_prev.size):
-        y_prev[i] = a * x_prev[i] + b
-        y_prev[i] = exp(y_prev[i])
+        
         output+= '\n'
         output += f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} ppm de carbono na atmosfera em média'
     
@@ -222,8 +225,8 @@ def exponencial():
     
     #gráfico
     x_col = np.array(tabela['x']) 
-    y_reg = e**(a*tabela['x'] + b)
-    y_reg = np.array(y_reg)
+    
+    y_reg = np.array(b*e**(a*x_col))
     graf, eix = plt.subplots()
     eix.plot(x_col, y_reg)
     eix.set_xlabel('Ano')
@@ -232,7 +235,7 @@ def exponencial():
 
     with open('Tabela_exponencial.txt','w') as f:
             tabela.to_string(f)
-    b = exp(b)
+    
     output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + str(b) +'*e'+'**(x*'+str(a)+')'
     outputtxt(output)
 
@@ -266,21 +269,20 @@ def potencia():
     tabela["SQTOT"] = (ymedio - tabela["Ln y"] )**2
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
 
+    #transformando ln de b em b
+    b= exp(b)
     #Previsão
     output+= '\nPrevisão'
     x_prev = np.copy(prev_data)
+    y_prev = b*(x_prev**a)
     for i in range(x_prev.size):
-        x_prev[i] = ln(x_prev[i])
-        y_prev[i] = a * x_prev[i] + b
-        y_prev[i] = exp(y_prev[i])
         output += '\n'
         output+= f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} ppm de carbono na atmosfera em média'
 
     
     #grafico
     x_col = np.array(tabela['x']) 
-    y_reg = e**(a * tabela['Ln x'] + b)
-    y_reg = np.array(y_reg)
+    y_reg = np.array(b*x_col**a)
     graf, eix = plt.subplots()
     eix.plot(x_col, y_reg)
     eix.set_xlabel('Ano')
@@ -288,7 +290,7 @@ def potencia():
     graf.savefig('RL_pot.png')
     
     
-    b= exp(b)
+    
     with open('Tabela_pot.txt','w') as f:
         tabela.to_string(f)
     output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + str(b) +'*x'+'**'+str(a)
@@ -323,22 +325,23 @@ def geometrico():
     tabela['SQREG'] = (ymedio - (a * tabela['x']) - b)**2
     tabela["SQTOT"] = (ymedio - tabela["Ln y"] )**2
     r2 = tabela['SQREG'].sum()/tabela['SQTOT'].sum()
-    
+
+    #transformando os ln de a & b em a & b
+    a = exp(a)
+    b = exp(b)
 
     #Previsão
     output+= '\nPrevisão'
     x_prev = np.copy(prev_data)
+    y_prev = np.array(b*(a**x_prev))
     for i in range(x_prev.size):
-        y_prev[i] = a * x_prev[i] + b
-        y_prev[i] = exp(y_prev[i])
         output += '\n'
         output+= f'na data decimal:{prev_data[i]} a previsão é de {y_prev[i]} ppm de carbono na atmosfera em média'
 
 
     #gráfico
     x_col = np.array(tabela['x']) 
-    y_reg = e**(a*tabela['x'] + b)
-    y_reg = np.array(y_reg)
+    y_reg = np.array(b*a**x_col)
     graf, eix = plt.subplots()
     eix.plot(x_col, y_reg)
     eix.set_xlabel('Ano')
@@ -348,14 +351,13 @@ def geometrico():
     with open('Tabela_geo.txt','w') as f:
         tabela.to_string(f)
 
-    a = exp(a)
-    b = exp(b)
+    
     output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + str(b) +'*'+str(a)+'**x'
     outputtxt(output)
 
 
 def polinomial(grau = 2):
-    output = '\n\n Método da regressão linear, ajuste polinimial de grau ' + str(grau)
+    output = '\n\nMétodo da regressão linear, ajuste polinimial de grau ' + str(grau)
     #criando tabela
     n = grau + 1
     tabela = pd.DataFrame()
