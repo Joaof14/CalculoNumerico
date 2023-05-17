@@ -48,6 +48,8 @@ dataframe['days'] = dataframe['days'].apply(float)
 dataframe['std_dev_days'].apply(float)
 dataframe['unc_mon_mean'].apply(float)
 
+plt.scatter(x=dataframe['decimal_date'], y=dataframe['monthly_average'])
+plt.savefig('plotagem_dos_dados.png')
 
 
 #dados usados para previsão com máximo de 50 anos no futuro
