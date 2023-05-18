@@ -80,7 +80,7 @@ def ln(x):
 
 def linear():
     #construindo tabela
-    output = "\n\nMétodo da regressão linear simples"
+    output = "\n\nMétodo dos Mínimos Quadrados simples"
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -129,7 +129,7 @@ def linear():
 
 def logaritmico():
     #construindo tabela
-    output = "\n\nMétodo da regressão linear, ajuste logaritimico"
+    output = "\n\nMétodo dos Mínimos Quadrados, ajuste logaritimico"
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -184,7 +184,7 @@ def logaritmico():
 def exponencial():
 
     # construindo a tabela
-    output = "\n\nMétodo da regressão linear, ajuste exponencial"
+    output = "\n\nMétodo dos Mínimos Quadrados, ajuste exponencial"
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -243,7 +243,7 @@ def exponencial():
 
 def potencia():
     # construindo a tabela
-    output = "\n\nMétodo da regressão linear, ajuste de potencia"
+    output = "\n\nMétodo dos Mínimos Quadrados, ajuste de potencia"
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -301,7 +301,7 @@ def potencia():
 #igual exponencial
 def geometrico():
     # construindo a tabela
-    output = "\n\nMétodo da regressão linear, ajuste geométrico"
+    output = "\n\nMétodo dos Mínimos Quadrados, ajuste geométrico"
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -359,7 +359,7 @@ def geometrico():
 
 
 def polinomial(grau = 2):
-    output = '\n\nMétodo da regressão linear, ajuste polinimial de grau ' + str(grau)
+    output = '\n\nMétodo dos Mínimos Quadrados, ajuste polinimial de grau ' + str(grau)
     #criando tabela
     n = grau + 1
     tabela = pd.DataFrame()
@@ -412,7 +412,7 @@ def polinomial(grau = 2):
         tabela.to_string(f)
 
 
-    output += "\n\nR² = " + str(r2) + '\nEquação: Y = ' + equac
+    output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + equac
     outputtxt(output)
 
 linear()
