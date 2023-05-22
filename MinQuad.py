@@ -129,7 +129,7 @@ def linear():
 
 def logaritmico():
     #construindo tabela
-    output = "\n\nMétodo dos Mínimos Quadrados, ajuste logaritimico"
+    output = "\n\nMétodo dos Mínimos Quadrados, ajuste logaritmico"
     tabela = pd.DataFrame()
     tabela['x'] = dataframe['decimal_date']
     tabela['y'] = dataframe['monthly_average']
@@ -359,7 +359,7 @@ def geometrico():
 
 
 def polinomial(grau = 2):
-    output = '\n\nMétodo dos Mínimos Quadrados, ajuste polinimial de grau ' + str(grau)
+    output = '\n\nMétodo dos Mínimos Quadrados, ajuste polinomial de grau ' + str(grau)
     #criando tabela
     n = grau + 1
     tabela = pd.DataFrame()
