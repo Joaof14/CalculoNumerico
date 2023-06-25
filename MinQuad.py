@@ -48,7 +48,7 @@ dataframe['days'] = dataframe['days'].apply(float)
 dataframe['std_dev_days'].apply(float)
 dataframe['unc_mon_mean'].apply(float)
 
-plt.scatter(x=dataframe['decimal_date'], y=dataframe['monthly_average'])
+plt.scatter(x=dataframe['decimal_date'], y=dataframe['monthly_average'], s= 0.1)
 plt.savefig('plotagem_dos_dados.png')
 
 
