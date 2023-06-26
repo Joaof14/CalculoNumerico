@@ -120,9 +120,9 @@ def linear():
     eix.plot(x_col, y_reg)
     eix.set_xlabel('Ano')
     eix.set_ylabel('Partes por milhão de Co2 ')
-    graf.savefig('RL.png')
+    graf.savefig('resultados/RL.png')
 
-    with open('Tabela_Linear.txt','w') as f:
+    with open('resultados/Tabela_Linear.txt','w') as f:
         tabela.to_string(f)
     output += "\n\nR² = " + str(r2) + '\n\n' + f'Equação: Y = {a}*x+({b})'
     outputtxt(output)
@@ -171,10 +171,10 @@ def logaritmico():
     eix.plot(x_col, y_reg)
     eix.set_xlabel('Ano')
     eix.set_ylabel('Partes por milhão de Co2 ')
-    graf.savefig('RL_log.png')
+    graf.savefig('resultados/RL_log.png')
 
 
-    with open('Tabela_Log.txt', 'w') as f:
+    with open('resultados/Tabela_Log.txt', 'w') as f:
         tabela.to_string(f)
     output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + str(a) +'*Ln(x)+('+str(b)+')'
     outputtxt(output)
@@ -233,9 +233,9 @@ def exponencial():
     eix.plot(x_col, y_reg)
     eix.set_xlabel('Ano')
     eix.set_ylabel('Partes por milhão de Co2 ')
-    graf.savefig('RL_exp.png')
+    graf.savefig('resultados/RL_exp.png')
 
-    with open('Tabela_exponencial.txt','w') as f:
+    with open('resultados/Tabela_exponencial.txt','w') as f:
             tabela.to_string(f)
     
     output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + str(b) +'*e'+'**(x*'+str(a)+')'
@@ -289,11 +289,11 @@ def potencia():
     eix.plot(x_col, y_reg)
     eix.set_xlabel('Ano')
     eix.set_ylabel('Partes por milhão de Co2 ')
-    graf.savefig('RL_pot.png')
+    graf.savefig('resultados/RL_pot.png')
     
     
     
-    with open('Tabela_pot.txt','w') as f:
+    with open('resultados/Tabela_pot.txt','w') as f:
         tabela.to_string(f)
     output += "\n\nR² = " + str(r2) + '\n\nEquação: Y = ' + str(b) +'*x'+'**'+str(a)
     outputtxt(output)
@@ -348,9 +348,9 @@ def geometrico():
     eix.plot(x_col, y_reg)
     eix.set_xlabel('Ano')
     eix.set_ylabel('Partes por milhão de Co2 ')
-    graf.savefig('RL_Geo.png')
+    graf.savefig('resultados/RL_Geo.png')
 
-    with open('Tabela_geo.txt','w') as f:
+    with open('resultados/Tabela_geo.txt','w') as f:
         tabela.to_string(f)
 
     
@@ -406,9 +406,9 @@ def polinomial(grau = 2):
     eix.plot(x_col, y_reg)
     eix.set_xlabel('Ano')
     eix.set_ylabel('Partes por milhão de Co2 ')
-    graf.savefig('RL_Polinomial_grau' + str(grau)+ '.png')
+    graf.savefig('resultados/RL_Polinomial_grau' + str(grau)+ '.png')
 
-    with open('Tabela_pol.txt','w') as f:
+    with open('resultados/Tabela_pol.txt','w') as f:
         tabela.to_string(f)
 
 

@@ -6,7 +6,7 @@ def atribuiMatriz(Inpa,Inpb):
     output = ''
     A = np.array(Inpa)
     B = np.array(Inpb)
-    f = open("Resolução_Sistema_Linear.txt", 'w')
+    f = open("resultados/Resolução_Sistema_Linear.txt", 'w')
     f.write("Matriz A|B: \n")
     f.close()
     outputMatrizesAB(mb = True)
@@ -77,12 +77,12 @@ def outputMatrizesAB(mb):
         if mb:
             outputM += '|' + str(np.round(B[i],4))
         outputM += '\n'
-        with open('Resolução_Sistema_Linear.txt', 'a') as f:
+        with open('resultados/Resolução_Sistema_Linear.txt', 'a') as f:
             f.write(outputM)
 
 def outputtxt():
     global output
-    with open('Resolução_Sistema_Linear.txt', 'a') as f:
+    with open('resultados/Resolução_Sistema_Linear.txt', 'a') as f:
         f.write(output)
     output = ''
 
