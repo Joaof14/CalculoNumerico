@@ -52,6 +52,7 @@ plt.scatter(x=dataframe['decimal_date'], y=dataframe['monthly_average'], s= 0.1)
 plt.savefig('plotagem_dos_dados.png')
 
 
+
 #dados usados para previsão com máximo de 50 anos no futuro
 prev_data = np.zeros(10)
 for i in range(10):
