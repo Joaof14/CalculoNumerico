@@ -443,3 +443,4 @@ def InterpNt():
     
 
 
+metodos = (EliminGauss, FatorLu, Gauss_Jacobi, Gauss_Seidel,Interpol,InterpLg,InterpNt)
