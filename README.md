@@ -29,7 +29,7 @@ Este repositório reúne implementações de métodos numéricos em Python, com 
 - Exemplos de sistemas, funções e dados de ajuste estão disponíveis nas pastas de cada módulo.
 - Resultados e gráficos são salvos automaticamente nas pastas `resultados/` ou `testes/` de cada módulo.
 
-## Autor
+## Autoria
 
 Projeto acadêmico de Cálculo Numérico, Semestre 2022.2
 Universidade Federal Rural do Semi-Árido
