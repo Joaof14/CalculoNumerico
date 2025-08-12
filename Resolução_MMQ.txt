@@ -1,0 +1,116 @@
+Método dos mínimos quadrado para média de partes por milhão de carbono na atmosfera em função do tempo
+Amostra: 
+
+     year  month  decimal_date  monthly_average  de_season_alized  days std_dev_days unc_mon_mean
+371  1989      2     1989.1250           353.43            352.69  25.0       0.38           0.15
+188  1973     11     1973.8740           328.16            330.13  -1.0      -9.99          -0.99
+104  1966     11     1966.8740           319.78            321.70  -1.0      -9.99          -0.99
+540  2003      3     2003.2083           376.64            374.99  28.0       0.63           0.23
+669  2013     12     2013.9583           397.03            397.78  30.0       0.48           0.17
+349  1987      4     1987.2917           351.40            348.84  26.0       0.68           0.25
+668  2013     11     2013.8750           395.36            397.35  30.0       0.60           0.21
+485  1998      8     1998.6250           366.10            367.69  30.0       0.30           0.10
+418  1993      1     1993.0417           357.10            357.06  28.0       0.58           0.21
+761  2021      8     2021.6250           414.47            416.43  26.0       0.72           0.27
+
+Método dos Mínimos Quadrados simples
+Previsão
+na data decimal:2026.7943 a previsão é de 416.5392837272557 ppm de carbono na atmosfera em média
+na data decimal:2033.6695 a previsão é de 427.68930508705125 ppm de carbono na atmosfera em média
+na data decimal:2034.6057 a previsão é de 429.20761000865923 ppm de carbono na atmosfera em média
+na data decimal:2037.3103 a previsão é de 433.59386026606353 ppm de carbono na atmosfera em média
+na data decimal:2041.3023 a previsão é de 440.0679825124421 ppm de carbono na atmosfera em média
+na data decimal:2043.6557 a previsão é de 443.8846657024792 ppm de carbono na atmosfera em média
+na data decimal:2049.7015 a previsão é de 453.689587615595 ppm de carbono na atmosfera em média
+na data decimal:2051.3258 a previsão é de 456.3238353021666 ppm de carbono na atmosfera em média
+na data decimal:2056.5843 a previsão é de 464.85193445862524 ppm de carbono na atmosfera em média
+na data decimal:2059.504 a previsão é de 469.5870283270501 ppm de carbono na atmosfera em média
+
+R² = 0.9764333289352096
+
+Equação: Y = 1.6217741098143568*x+(-2870.463237932057)
+
+Método dos Mínimos Quadrados, ajuste logaritmico
+Previsão
+na data decimal:2026.7943 a previsão é de 416.12428068474765 ppm de carbono na atmosfera em média
+na data decimal:2033.6695 a previsão é de 427.0505714790561 ppm de carbono na atmosfera em média
+na data decimal:2034.6057 a previsão é de 428.5355527203501 ppm de carbono na atmosfera em média
+na data decimal:2037.3103 a previsão é de 432.8216985543113 ppm de carbono na atmosfera em média
+na data decimal:2041.3023 a previsão é de 439.13768022644945 ppm de carbono na atmosfera em média
+na data decimal:2043.6557 a previsão é de 442.85535032066764 ppm de carbono na atmosfera em média
+na data decimal:2049.7015 a previsão é de 452.38632013604365 ppm de carbono na atmosfera em média
+na data decimal:2051.3258 a previsão é de 454.94217538001976 ppm de carbono na atmosfera em média
+na data decimal:2056.5843 a previsão é de 463.2026277457153 ppm de carbono na atmosfera em média
+na data decimal:2059.504 a previsão é de 467.7800003519442 ppm de carbono na atmosfera em média
+
+R² = 0.9752828270646015
+
+Equação: Y = 3226.5072899993997*Ln(x)+(-24151.181925535424)
+
+Método dos Mínimos Quadrados, ajuste exponencial
+Previsão
+na data decimal:2026.7943 a previsão é de 419.6097001646672 ppm de carbono na atmosfera em média
+na data decimal:2033.6695 a previsão é de 432.7972857293958 ppm de carbono na atmosfera em média
+na data decimal:2034.6057 a previsão é de 434.6248223499167 ppm de carbono na atmosfera em média
+na data decimal:2037.3103 a previsão é de 439.9478804436445 ppm de carbono na atmosfera em média
+na data decimal:2041.3023 a previsão é de 447.9240945694191 ppm de carbono na atmosfera em média
+na data decimal:2043.6557 a previsão é de 452.6938917410259 ppm de carbono na atmosfera em média
+na data decimal:2049.7015 a previsão é de 465.1814722086787 ppm de carbono na atmosfera em média
+na data decimal:2051.3258 a previsão é de 468.5947743977261 ppm de carbono na atmosfera em média
+na data decimal:2056.5843 a previsão é de 479.81771010724844 ppm de carbono na atmosfera em média
+na data decimal:2059.504 a previsão é de 486.16471469173956 ppm de carbono na atmosfera em média
+
+R² = 0.9848515860097652
+
+Equação: Y = 0.04581991408685718*e**(x*0.004500881747533272)
+
+Método dos Mínimos Quadrados, ajuste de potencia
+Previsão
+na data decimal:2026.7943 a previsão é de 419.1373355227728 ppm de carbono na atmosfera em média
+na data decimal:2033.6695 a previsão é de 432.0437984228223 ppm de carbono na atmosfera em média
+na data decimal:2034.6057 a previsão é de 433.82831211574944 ppm de carbono na atmosfera em média
+na data decimal:2037.3103 a previsão é de 439.02045462864464 ppm de carbono na atmosfera em média
+na data decimal:2041.3023 a previsão é de 446.7849609834498 ppm de carbono na atmosfera em média
+na data decimal:2043.6557 a previsão é de 451.41930091249884 ppm de carbono na atmosfera em média
+na data decimal:2049.7015 a previsão é de 463.5211116562946 ppm de carbono na atmosfera em média
+na data decimal:2051.3258 a previsão é de 466.82118031838735 ppm de carbono na atmosfera em média
+na data decimal:2056.5843 a previsão é de 477.64844064957094 ppm de carbono na atmosfera em média
+na data decimal:2059.504 a previsão é de 483.7559240327269 ppm de carbono na atmosfera em média
+
+R² = 0.9840016892616177
+
+Equação: Y = 1.016142765760162e-27*x**8.955883324424175
+
+Método dos Mínimos Quadrados, ajuste geométrico
+Previsão
+na data decimal:2026.7943 a previsão é de 419.6097001647341 ppm de carbono na atmosfera em média
+na data decimal:2033.6695 a previsão é de 432.7972857294647 ppm de carbono na atmosfera em média
+na data decimal:2034.6057 a previsão é de 434.6248223499866 ppm de carbono na atmosfera em média
+na data decimal:2037.3103 a previsão é de 439.9478804437147 ppm de carbono na atmosfera em média
+na data decimal:2041.3023 a previsão é de 447.92409456949116 ppm de carbono na atmosfera em média
+na data decimal:2043.6557 a previsão é de 452.69389174109864 ppm de carbono na atmosfera em média
+na data decimal:2049.7015 a previsão é de 465.1814722087539 ppm de carbono na atmosfera em média
+na data decimal:2051.3258 a previsão é de 468.59477439780176 ppm de carbono na atmosfera em média
+na data decimal:2056.5843 a previsão é de 479.81771010732575 ppm de carbono na atmosfera em média
+na data decimal:2059.504 a previsão é de 486.1647146918184 ppm de carbono na atmosfera em média
+
+R² = 0.9848515860097652
+
+Equação: Y = 0.04581991408685718*1.0045110259293302**x
+
+Método dos Mínimos Quadrados, ajuste polinomial de grau 2
+Previsão
+na data decimal:2026.7943 a previsão é de 428.9701571780024 ppm de carbono na atmosfera em média
+na data decimal:2033.6695 a previsão é de 447.2811078214945 ppm de carbono na atmosfera em média
+na data decimal:2034.6057 a previsão é de 449.8710806295712 ppm de carbono na atmosfera em média
+na data decimal:2037.3103 a previsão é de 457.4833025654734 ppm de carbono na atmosfera em média
+na data decimal:2041.3023 a previsão é de 469.0719468374009 ppm de carbono na atmosfera em média
+na data decimal:2043.6557 a previsão é de 476.10096550598973 ppm de carbono na atmosfera em média
+na data decimal:2049.7015 a previsão é de 494.8287501971354 ppm de carbono na atmosfera em média
+na data decimal:2051.3258 a previsão é de 500.02476676021615 ppm de carbono na atmosfera em média
+na data decimal:2056.5843 a previsão é de 517.3242110946376 ppm de carbono na atmosfera em média
+na data decimal:2059.504 a previsão é de 527.244736741086 ppm de carbono na atmosfera em média
+
+R² = 0.9948061565088783
+
+Equação: Y = +(0.013203819430906545*x**2)+(-50.95029729703603*x**1)+(49454.83670491356*x**0)
