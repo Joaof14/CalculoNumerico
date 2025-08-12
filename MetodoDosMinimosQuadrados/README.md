@@ -33,4 +33,5 @@ Obs: Resultados de Maio de 2023.
 
 ## Autor
 
-Projeto acadêmico de cálculo
+Projeto acadêmico de Cálculo Numérico, Semestre 2022.2
+Universidade Federal Rural do Semi-Árido

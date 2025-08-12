@@ -31,4 +31,5 @@ Este repositório reúne implementações de métodos numéricos em Python, com 
 
 ## Autor
 
-Projeto acadêmico de cálculo
+Projeto acadêmico de Cálculo Numérico, Semestre 2022.2
+Universidade Federal Rural do Semi-Árido

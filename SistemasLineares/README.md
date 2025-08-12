@@ -1,4 +1,4 @@
-# Sistemas Lineares - CalcN2
+# Sistemas Lineares
 
 Este projeto implementa métodos numéricos para resolução de sistemas lineares e interpolação em Python.
 
@@ -41,4 +41,5 @@ Veja exemplos de sistemas e resoluções em [`TesteSistLinear.txt`](TesteSistLin
 
 ## Autor
 
-Projeto acadêmico
+Projeto acadêmico de Cálculo Numérico, Semestre 2022.2
+Universidade Federal Rural do Semi-Árido

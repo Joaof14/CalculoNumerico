@@ -1,4 +1,4 @@
-## Descrição
+## Zero de Funções
 
 Este projeto implementa métodos numéricos para encontrar zeros de funções em Python, utilizando interface gráfica com Tkinter. Os métodos disponíveis são:
 
@@ -34,4 +34,5 @@ Veja exemplos de uso e resoluções na pasta [`testes/`](CalcN1/testes/).
 
 ## Autor
 
-Projeto acadêmico de
+Projeto acadêmico de Cálculo Numérico, Semestre 2022.2
+Universidade Federal Rural do Semi-Árido
