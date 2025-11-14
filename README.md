@@ -1,3 +1,41 @@
+# Numerical Calculus Project
+
+This repository brings together implementations of numerical methods in Python, focused on academic applications for solving linear systems, curve fitting (least squares method), and finding function zeros.
+
+## Repository Structure
+
+- [`LinearSystems/`](LinearSystems/): Methods for solving linear systems and interpolation.
+- [`LeastSquaresMethod/`](LeastSquaresMethod/): Curve fitting using least squares.
+- [`FunctionZeros/`](FunctionZeros/): Methods for finding function zeros.
+
+## Main Features
+
+- **Linear Systems:** Gaussian elimination, LU factorization, Gauss-Seidel, Gauss-Jacobi, Lagrange interpolation, Newton interpolation, and linear system interpolation.
+- **Least Squares:** Linear, polynomial, exponential, logarithmic, geometric, and power curve fitting, with chart generation and result export.
+- **Function Zeros:** Bisection, False Position, Fixed Point, Secant, and Newton methods, with graphical interface for data input.
+
+## Requirements
+
+- Python 3.x
+- Libraries: `numpy`, `matplotlib`, `sympy`, `tkinter`, `warnings`
+
+## How to Use
+
+1. Access the desired directory according to the numerical method you wish to use.
+2. Follow the instructions in the specific README of each folder to run scripts and view results.
+
+## Examples
+
+- Examples of systems, functions, and fitting data are available in each module’s folder.
+- Results and graphs are automatically saved in the `results/` or `tests/` folders within each module.
+
+## Authorship
+
+Academic project for Numerical Calculus, Semester 2022.2  
+Federal Rural University of Semi-Arid Region
+
+
+
 # Projeto de Cálculo Numérico
 
 Este repositório reúne implementações de métodos numéricos em Python, com foco em aplicações acadêmicas para resolução de sistemas lineares, ajuste de curvas (método dos mínimos quadrados) e busca de zeros de funções.
